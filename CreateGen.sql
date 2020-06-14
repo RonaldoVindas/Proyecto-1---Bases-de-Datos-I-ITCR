@@ -15,7 +15,7 @@ CREATE TABLESPACE gen_ind
     NEXT 512K
     MAXSIZE 200M;
     
-    
+/*If you run the 'create tablespace' script make sure to redefine the path for your pc*/
     
 
 CREATE USER gen

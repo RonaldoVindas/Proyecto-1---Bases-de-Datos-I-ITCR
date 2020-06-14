@@ -19,7 +19,7 @@ create sequence s_gender
 start with 0
 increment by 1
 minvalue 0
-maxvalue 100;**/
+maxvalue 100;
 
 
 CREATE OR REPLACE TRIGGER gen.beforeINSERTgender
@@ -30,7 +30,7 @@ BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
     :new.gender_id:=s_gender.nextval;
-END beforeinsertdepartment;
+END beforeINSERTgender;
 /
 CREATE OR REPLACE TRIGGER gen.beforeUpdateGender
 BEFORE UPDATE
