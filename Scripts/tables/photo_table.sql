@@ -14,9 +14,6 @@ using index tablespace gen_ind pctfree 20
 storage(initial 10k next 10k pctincrease 0);
 
 ALTER TABLE photo
-modify id_photo constraint id_photo_nn NOT NULL;
-
-ALTER TABLE photo
 modify photo_description constraint photo_description_nn NOT NULL;
 
 create sequence s_photo
