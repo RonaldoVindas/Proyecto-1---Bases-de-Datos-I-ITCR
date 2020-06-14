@@ -14,9 +14,6 @@ using index tablespace gen_ind pctfree 20
 storage(initial 10k next 10k pctincrease 0);
 
 ALTER TABLE user_type
-modify id_user constraint id_user_nn NOT NULL;
-
-ALTER TABLE user_type
 modify user_description constraint user_description_nn NOT NULL;
 
 create sequence s_usertype
