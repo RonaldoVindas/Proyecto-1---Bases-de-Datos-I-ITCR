@@ -1,7 +1,7 @@
 create table institution
 (
 institution_id number(6),
-institucion_name varchar2(50),
+institution_name varchar2(50),
 creation_date DATE,
 creation_user VARCHAR2(10),
 date_last_modification DATE,
@@ -13,8 +13,9 @@ add constraint pk_institution primary key(institution_id)
 using index tablespace gen_ind pctfree 20
 storage(initial 10k next 10k pctincrease 0);
 
+
 alter table institution
-modify constraint institution_name_nn NOT NULL;
+modify institution_name constraint institution_name_nn NOT NULL;
 
 create sequence s_institution
 start with 0
