@@ -1,7 +1,7 @@
 create table institution
 (
 institution_id number(6),
-institucion_name varchar2(50),
+institution_name varchar2(50),
 creation_date DATE,
 creation_user VARCHAR2(10),
 date_last_modification DATE,
