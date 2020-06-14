@@ -31,7 +31,7 @@ BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
     :new.institution_id:=s_institution.nextval;
-END beforeinsertdepartment;
+END beforeinsertinstitution;
 /
 CREATE OR REPLACE TRIGGER gen.beforeUpdateinstitution
 before update
