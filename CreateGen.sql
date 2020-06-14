@@ -1,5 +1,5 @@
 CREATE TABLESPACE gen_data
-    Datafile 'C:\app\andres\oradata\BD2\gendata01.dbf'
+    Datafile 'C:\app\andres\oradata\BDProyecto\gendata01.dbf'
     Size 10m
     REUSE
     AUTOEXTEND ON
@@ -8,7 +8,7 @@ CREATE TABLESPACE gen_data
     
     
 CREATE TABLESPACE gen_ind
-    Datafile 'C:\app\andres\oradata\BD2\genind01.dbf'
+    Datafile 'C:\app\andres\oradata\BDProyecto\genind01.dbf'
     Size 10m
     REUSE
     AUTOEXTEND ON
