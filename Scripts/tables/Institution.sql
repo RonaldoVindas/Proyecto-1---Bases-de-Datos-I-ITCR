@@ -13,6 +13,7 @@ add constraint pk_institution primary key(institution_id)
 using index tablespace gen_ind pctfree 20
 storage(initial 10k next 10k pctincrease 0);
 
+
 alter table institution
 modify institution_name constraint institution_name_nn NOT NULL;
 
