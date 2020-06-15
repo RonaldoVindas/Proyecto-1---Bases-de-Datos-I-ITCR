@@ -32,7 +32,7 @@ BEGIN
     :new.id_user:=s_usertype.nextval;
 END beforeINSERTusertype;
 
-
+/
 
 CREATE OR REPLACE TRIGGER gen.beforeUPDATEusertype
 BEFORE UPDATE
