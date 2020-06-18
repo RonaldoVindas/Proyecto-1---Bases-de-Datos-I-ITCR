@@ -31,7 +31,7 @@ USING INDEX
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE ban
@@ -39,15 +39,15 @@ ADD CONSTRAINT fk_ban_id_motive FOREIGN KEY
 (id_motive) REFERENCES ban_motive(id_ban_motive);
 
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 
 ALTER TABLE ban
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE SECUENCIAS PARA ID´s DE  TABLAS======================================================*/

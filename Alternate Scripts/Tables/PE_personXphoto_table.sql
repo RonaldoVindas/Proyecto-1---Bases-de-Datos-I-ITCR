@@ -25,7 +25,7 @@ ADD CONSTRAINT pk_personXphoto PRIMARY KEY (id_person, id_photo)
 USING INDEX 
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 
 /*En esquema PE ===============================================================*/
 
@@ -38,14 +38,14 @@ ADD CONSTRAINT fk_personXphoto_id_photo FOREIGN KEY
 (id_photo) REFERENCES photo(id_photo);
 
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE personXphoto
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 

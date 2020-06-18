@@ -4,9 +4,9 @@
 
 CREATE TABLE province(
 	id_province NUMBER(5),
-	name VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL
+	name VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL,
 	id_country NUMBER(5)
-);
+        );
 
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
@@ -32,14 +32,14 @@ USING INDEX
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 /*En esquema FI ===============================================================*/
 ALTER TABLE province
 ADD CONSTRAINT fk_province_id_country FOREIGN KEY
 (id_country) REFERENCES country(id_country);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
