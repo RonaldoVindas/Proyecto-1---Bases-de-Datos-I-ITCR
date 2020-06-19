@@ -31,7 +31,7 @@ begin
 
 END;
 /
-create or replace function getCommunityDistict(pId in number) return number
+create or replace function getCommunityDistrict(pId in number) return number
 is vcName number(7);
 begin
     select id_district
