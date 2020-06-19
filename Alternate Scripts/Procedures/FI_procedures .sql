@@ -7,7 +7,7 @@ as begin
 end insert_canton;
 
 /
-create or replace procedure remove_canton(p_id_Canton in number)
+create or replace procedure remove_canton(p_id_canton in number)
 as begin
     delete from canton
     where id_canton = p_id_canton;
