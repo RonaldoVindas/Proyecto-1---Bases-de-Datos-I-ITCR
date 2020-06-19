@@ -1,4 +1,4 @@
-/*==================================================CREACIÓN DE TABLESPACES======================================================*/
+﻿/*==================================================CREACIÓN DE TABLESPACES======================================================*/
 
 /*TABLESPACE para Expediente = file = fi*/
 CREATE TABLESPACE fi_data
@@ -34,5 +34,6 @@ GRANT create session to fi;
 GRANT create table to fi;
 GRANT create sequence to fi;
 GRANT create any trigger, alter any trigger, drop any trigger to fi;
+GRANT create procedure to FI;
 ALTER USER FI QUOTA UNLIMITED ON fi_data;
 ALTER USER FI QUOTA UNLIMITED ON fi_ind;
