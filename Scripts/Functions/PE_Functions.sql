@@ -88,16 +88,6 @@ BEGIN
     RETURN (vcEmail);
 END;
 /
-CREATE OR REPLACE FUNCTION getLastName(pId IN NUMBER) RETURN VARCHAR2
-IS vcLastName VARCHAR2(30);
-BEGIN
-    SELECT last_name
-    INTO vcLastName
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcLastName);
-END;
-/
 CREATE OR REPLACE FUNCTION getUsername(pId IN NUMBER) RETURN VARCHAR2
 IS vcUsername VARCHAR2(30);
 BEGIN
