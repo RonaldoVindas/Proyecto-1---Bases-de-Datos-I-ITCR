@@ -2,48 +2,37 @@
 
 /*En esquema FI ===============================================================*/
 
-CREATE TABLE province(
-	id_province NUMBER(5),
-	name VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL
-	id_country NUMBER(5)
+CREATE TABLE crime_type(
+	id_crime_type NUMBER(6),
+	description VARCHAR2(50) CONSTRAINT type_crime_description_nn NOT NULL
 );
-
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema FI ===============================================================*/
-COMMENT ON TABLE province
-IS 'Repository to store information about the province where Case Files happens.';
+COMMENT ON TABLE crime_type
+IS 'Repository to store information about crime types.';
 
-	COMMENT ON COLUMN province.id_province
-	IS 'Province identification.';
+	COMMENT ON COLUMN crime_type.id_crime_type
+	IS 'Crime Type identification.';
 
-	COMMENT ON COLUMN province.name
-	IS 'Province name.';
-
-	COMMENT ON COLUMN province.id_country
-	IS 'Country identification.';
+	COMMENT ON COLUMN crime_type.description
+	IS ' Crime Type description.';
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
-ADD CONSTRAINT pk_province PRIMARY KEY (id_province)
+ALTER TABLE crime_type
+ADD CONSTRAINT pk_crime_type PRIMARY KEY (id_crime_type)
 USING INDEX 
 TABLESPACE fi_ind PCTFREE 20
-STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
-
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
-/*En esquema FI ===============================================================*/
-ALTER TABLE province
-ADD CONSTRAINT fk_province_id_country FOREIGN KEY
-(id_country) REFERENCES country(id_country);
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 /*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
+ALTER TABLE crime_type
 ADD creation_date DATE
 ADD creation_user VARCHAR(10)
 ADD date_last_modification DATE
@@ -53,34 +42,34 @@ ADD user_last_modification VARCHAR(10);
 
 
 /*En esquema FI ===============================================================*/
-CREATE SEQUENCE s_province
+CREATE SEQUENCE s_crime_type
 START WITH 0
 INCREMENT BY 1
 MINVALUE 0
-MAXVALUE 99999
+MAXVALUE 999999
 NOCACHE
 NOCYCLE;
 
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER fi.beforeInsertprovince
+CREATE OR REPLACE TRIGGER fi.beforeInsertcrime_type
 BEFORE UPDATE
-ON fi.province
+ON fi.crime_type
 FOR EACH ROW
 BEGIN
-	:new.id_province := s_province.nextval;
+	:new.id_crime_type:=s_crime_type.nextval;
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertprovince; 
+END beforeInsertcrime_type; 
 
 /
 
-CREATE OR REPLACE TRIGGER fi.beforeUPDATEprovince
+CREATE OR REPLACE TRIGGER fi.beforeUPDATEcrime_type
 BEFORE UPDATE
-ON fi.province
+ON fi.crime_type
 FOR EACH ROW
 BEGIN
     :new.date_last_modification:= SYSDATE;
     :new.user_last_modification:= USER;
-END beforeUPDATEprovince; 
+END beforeUPDATEcrime_type; 

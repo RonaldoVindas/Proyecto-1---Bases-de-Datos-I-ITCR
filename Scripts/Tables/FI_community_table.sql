@@ -2,48 +2,50 @@
 
 /*En esquema FI ===============================================================*/
 
-CREATE TABLE province(
-	id_province NUMBER(5),
-	name VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL
-	id_country NUMBER(5)
+CREATE TABLE community(
+	id_community NUMBER(10),
+	name VARCHAR2(30) CONSTRAINT community_name_nn NOT NULL,
+	id_district NUMBER(10)
 );
-
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema FI ===============================================================*/
-COMMENT ON TABLE province
-IS 'Repository to store information about the province where Case Files happens.';
+COMMENT ON TABLE community
+IS 'Repository to store information about the community where Case Files happens.';
 
-	COMMENT ON COLUMN province.id_province
-	IS 'Province identification.';
+	COMMENT ON COLUMN community.id_community
+	IS 'Community identification.';
 
-	COMMENT ON COLUMN province.name
-	IS 'Province name.';
+	COMMENT ON COLUMN community.name
+	IS 'Community name.';
 
-	COMMENT ON COLUMN province.id_country
-	IS 'Country identification.';
+	COMMENT ON COLUMN community.id_district
+	IS 'District identification.';
+
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
-ADD CONSTRAINT pk_province PRIMARY KEY (id_province)
+ALTER TABLE community
+ADD CONSTRAINT pk_community PRIMARY KEY (id_community)
 USING INDEX 
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
 /*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+
 /*En esquema FI ===============================================================*/
-ALTER TABLE province
-ADD CONSTRAINT fk_province_id_country FOREIGN KEY
-(id_country) REFERENCES country(id_country);
+
+ALTER TABLE community
+ADD CONSTRAINT fk_community_id_district FOREIGN KEY
+(id_district) REFERENCES district(id_district);
 
 /*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
+ALTER TABLE community
 ADD creation_date DATE
 ADD creation_user VARCHAR(10)
 ADD date_last_modification DATE
@@ -53,34 +55,34 @@ ADD user_last_modification VARCHAR(10);
 
 
 /*En esquema FI ===============================================================*/
-CREATE SEQUENCE s_province
+CREATE SEQUENCE s_community
 START WITH 0
 INCREMENT BY 1
 MINVALUE 0
-MAXVALUE 99999
+MAXVALUE 9999999999
 NOCACHE
 NOCYCLE;
 
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER fi.beforeInsertprovince
+CREATE OR REPLACE TRIGGER fi.beforeInsertcommunity
 BEFORE UPDATE
-ON fi.province
+ON fi.community
 FOR EACH ROW
 BEGIN
-	:new.id_province := s_province.nextval;
+	:new.id_community := s_community.nextval;
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertprovince; 
+END beforeInsertcommunity; 
 
 /
 
-CREATE OR REPLACE TRIGGER fi.beforeUPDATEprovince
+CREATE OR REPLACE TRIGGER fi.beforeUPDATEcommunity
 BEFORE UPDATE
-ON fi.province
+ON fi.community
 FOR EACH ROW
 BEGIN
     :new.date_last_modification:= SYSDATE;
     :new.user_last_modification:= USER;
-END beforeUPDATEprovince; 
+END beforeUPDATEcommunity; 

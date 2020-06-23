@@ -2,48 +2,49 @@
 
 /*En esquema FI ===============================================================*/
 
-CREATE TABLE province(
-	id_province NUMBER(5),
-	name VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL
-	id_country NUMBER(5)
+CREATE TABLE canton(
+	id_canton NUMBER(10),
+	name VARCHAR2(30) CONSTRAINT canton_name_not_null NOT NULL,
+	id_province NUMBER(5)
 );
-
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema FI ===============================================================*/
-COMMENT ON TABLE province
-IS 'Repository to store information about the province where Case Files happens.';
+COMMENT ON TABLE canton
+IS 'Repository to store information about the canton where Case Files happens.';
 
-	COMMENT ON COLUMN province.id_province
+	COMMENT ON COLUMN canton.id_canton
+	IS 'Canton identification.';
+
+	COMMENT ON COLUMN canton.name
+	IS 'Canton name.';
+
+	COMMENT ON COLUMN canton.id_province
 	IS 'Province identification.';
 
-	COMMENT ON COLUMN province.name
-	IS 'Province name.';
-
-	COMMENT ON COLUMN province.id_country
-	IS 'Country identification.';
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
-ADD CONSTRAINT pk_province PRIMARY KEY (id_province)
+ALTER TABLE canton
+ADD CONSTRAINT pk_canton PRIMARY KEY (id_canton)
 USING INDEX 
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
+
 /*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
 /*En esquema FI ===============================================================*/
-ALTER TABLE province
-ADD CONSTRAINT fk_province_id_country FOREIGN KEY
-(id_country) REFERENCES country(id_country);
+ALTER TABLE canton
+ADD CONSTRAINT fk_canton_id_province FOREIGN KEY
+(id_province) REFERENCES province(id_province);
 
 /*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
+ALTER TABLE canton
 ADD creation_date DATE
 ADD creation_user VARCHAR(10)
 ADD date_last_modification DATE
@@ -53,34 +54,34 @@ ADD user_last_modification VARCHAR(10);
 
 
 /*En esquema FI ===============================================================*/
-CREATE SEQUENCE s_province
+CREATE SEQUENCE s_canton
 START WITH 0
 INCREMENT BY 1
 MINVALUE 0
-MAXVALUE 99999
+MAXVALUE 9999999999
 NOCACHE
 NOCYCLE;
 
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER fi.beforeInsertprovince
+CREATE OR REPLACE TRIGGER fi.beforeInsertcanton
 BEFORE UPDATE
-ON fi.province
+ON fi.canton
 FOR EACH ROW
 BEGIN
-	:new.id_province := s_province.nextval;
+	:new.id_canton := s_canton.nextval;
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertprovince; 
+END beforeInsertcanton; 
 
 /
 
-CREATE OR REPLACE TRIGGER fi.beforeUPDATEprovince
+CREATE OR REPLACE TRIGGER fi.beforeUPDATEcanton
 BEFORE UPDATE
-ON fi.province
+ON fi.canton
 FOR EACH ROW
 BEGIN
     :new.date_last_modification:= SYSDATE;
     :new.user_last_modification:= USER;
-END beforeUPDATEprovince; 
+END beforeUPDATEcanton; 

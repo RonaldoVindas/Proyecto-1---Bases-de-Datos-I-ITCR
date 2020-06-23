@@ -4,25 +4,15 @@
 
 CREATE TABLE person(
 	id_person NUMBER(8),
-    
-	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL,
-    
-	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL,
-    
+	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL
+	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL
 	birth_day DATE,
-    
-	email VARCHAR2(50) CONSTRAINT pereson_email_unique UNIQUE,
-    
-	user_name VARCHAR2(30) CONSTRAINT person_user_name_unique UNIQUE, 
-    /*Qué pasa con las personas que no están registraas en la base?*/
-	password VARCHAR2(20) CONSTRAINT person_password_not_null NOT NULL,
-    
+	email VARCHAR2(50) CONSTRAINT pereson_email_unique UNIQUE (email)
+	user_name VARCHAR2(30) CONSTRAINT person_user_name_unique UNIQUE, /*Qué pasa con las personas que no están registraas en la base?*/
+	password VARCHAR2(20) CONSTRAINT person_password_not_null NOT NULL
 	id_gender NUMBER(6),
-    
 	id_institution NUMBER(6),
-    
 	id_user_password_binnacle NUMBER(8),
-    
 	id_type_person NUMBER(6)
 );
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
@@ -49,7 +39,7 @@ Is 'Repository to store person´s information.';
 	COMMENT ON COLUMN person.password
 	IS 'Person´s password.';
 
-	COMMENT ON COLUMN person.id_gender
+	COMMENT ON COLUMN person.id_genre
 	IS 'Person´s genre identification';
 
 	COMMENT ON COLUMN person.id_institution
@@ -69,7 +59,7 @@ ADD CONSTRAINT pk_person PRIMARY KEY (id_person)
 USING INDEX 
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
-/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
 
 /*En esquema PE ===============================================================*/
 
@@ -90,15 +80,15 @@ ALTER TABLE person
 ADD CONSTRAINT fk_person_id_type_person FOREIGN KEY
 (id_type_person) REFERENCES type_person(id_type_person);
 
-/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE person
-ADD creation_date DATE
-ADD creation_user VARCHAR(10)
-ADD date_last_modification DATE
-ADD user_last_modification VARCHaR(10);
+ADD creation_date DATE;
+ADD creation_user VARCHAR(10);
+ADD date_last_modification DATE;
+ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE SECUENCIAS PARA ID´s DE TODAS LAS TABLAS======================================================*/
 

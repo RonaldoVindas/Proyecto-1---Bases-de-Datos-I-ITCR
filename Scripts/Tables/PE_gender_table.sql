@@ -3,7 +3,7 @@
 CREATE TABLE gender 
 	(
 		id_gender NUMBER(2),
-		description VARCHAR(50) CONSTRAINT gender_description_not_null NOT NULL
+		description VARCHAR(50) CONSTRAINT gender_description_not_null NOT NULL,
 	);
 
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
@@ -28,15 +28,15 @@ USING INDEX
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE gender
-ADD creation_date DATE
-ADD creation_user VARCHAR2(10)
-ADD date_last_modification DATE
-ADD user_last_modification VARCHAR2(10);
+ADD creation_date DATE;
+ADD creation_user VARCHAR(10);
+ADD date_last_modification DATE;
+ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE SECUENCIAS PARA ID´s DE  TABLAS======================================================*/
 

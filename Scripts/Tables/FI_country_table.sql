@@ -2,48 +2,39 @@
 
 /*En esquema FI ===============================================================*/
 
-CREATE TABLE province(
-	id_province NUMBER(5),
-	name VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL
-	id_country NUMBER(5)
+CREATE TABLE country(
+	id_country NUMBER(5),
+	name VARCHAR2(30) CONSTRAINT country_name_not_null NOT NULL
 );
+
 
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema FI ===============================================================*/
-COMMENT ON TABLE province
-IS 'Repository to store information about the province where Case Files happens.';
+COMMENT ON TABLE country
+IS 'Repository to store information about the country where Case Files happens.';
 
-	COMMENT ON COLUMN province.id_province
-	IS 'Province identification.';
-
-	COMMENT ON COLUMN province.name
-	IS 'Province name.';
-
-	COMMENT ON COLUMN province.id_country
+	COMMENT ON COLUMN country.id_country
 	IS 'Country identification.';
+
+	COMMENT ON COLUMN country.name
+	IS 'Country name.';
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
-ADD CONSTRAINT pk_province PRIMARY KEY (id_province)
+ALTER TABLE country
+ADD CONSTRAINT pk_country PRIMARY KEY (id_country)
 USING INDEX 
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
-
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
-/*En esquema FI ===============================================================*/
-ALTER TABLE province
-ADD CONSTRAINT fk_province_id_country FOREIGN KEY
-(id_country) REFERENCES country(id_country);
 
 /*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE province
+ALTER TABLE country
 ADD creation_date DATE
 ADD creation_user VARCHAR(10)
 ADD date_last_modification DATE
@@ -53,7 +44,7 @@ ADD user_last_modification VARCHAR(10);
 
 
 /*En esquema FI ===============================================================*/
-CREATE SEQUENCE s_province
+CREATE SEQUENCE s_country
 START WITH 0
 INCREMENT BY 1
 MINVALUE 0
@@ -64,23 +55,23 @@ NOCYCLE;
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER fi.beforeInsertprovince
+CREATE OR REPLACE TRIGGER fi.beforeInsertcountry
 BEFORE UPDATE
-ON fi.province
+ON fi.country
 FOR EACH ROW
 BEGIN
-	:new.id_province := s_province.nextval;
+	:new.id_country:=s_country.nextval;
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertprovince; 
+END beforeInsertcountry; 
 
 /
 
-CREATE OR REPLACE TRIGGER fi.beforeUPDATEprovince
+CREATE OR REPLACE TRIGGER fi.beforeUPDATEcountry
 BEFORE UPDATE
-ON fi.province
+ON fi.country
 FOR EACH ROW
 BEGIN
     :new.date_last_modification:= SYSDATE;
     :new.user_last_modification:= USER;
-END beforeUPDATEprovince; 
+END beforeUPDATEcountry; 

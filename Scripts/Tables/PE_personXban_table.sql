@@ -1,27 +1,28 @@
 /*==================================================CREACIÓN DE TABLAS======================================================*/
 /*En esquema PE ===============================================================*/
-CREATE TABLE personXphoto(
+CREATE TABLE personXban(
 	id_person NUMBER(8),
-	id_photo  NUMBER(12)
+	id_ban NUMBER(6)
 );
+
 
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema PE ===============================================================*/
-COMMENT ON TABLE personXphoto
-IS 'Repository to store the relationships between persons and their photos.';
+COMMENT ON TABLE personXban
+IS 'Repository to store the relationships between persons and bans.';
 
-	COMMENT ON COLUMN personXphoto.id_person
+	COMMENT ON COLUMN personXban.id_person
 	IS 'Person identification.';
 
-	COMMENT ON COLUMN personXphoto.id_photo
-	IS 'Photo identification.';
+	COMMENT ON COLUMN personXban.id_ban
+	IS 'Ban identification.';
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema PE ===============================================================*/
 
-ALTER TABLE personXphoto
-ADD CONSTRAINT pk_personXphoto PRIMARY KEY (id_person, id_photo)
+ALTER TABLE personXban
+ADD CONSTRAINT pk_personXban PRIMARY KEY (id_person, id_ban)
 USING INDEX 
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
@@ -29,44 +30,44 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 /*En esquema PE ===============================================================*/
 
-ALTER TABLE personXphoto
-ADD CONSTRAINT fk_personXphoto_id_person FOREIGN KEY
+ALTER TABLE personXban
+ADD CONSTRAINT fk_personXban_id_person FOREIGN KEY
 (id_person) REFERENCES person(id_person);
 
-ALTER TABLE personXphoto
-ADD CONSTRAINT fk_personXphoto_id_photo FOREIGN KEY
-(id_photo) REFERENCES photo(id_photo);
+ALTER TABLE personXban
+ADD CONSTRAINT fk_personXban_id_ban FOREIGN KEY
+(id_ban) REFERENCES ban(id_ban);
 
 
 /*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
-ALTER TABLE personXphoto
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ALTER TABLE personXban
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER pe.beforeInsertpersonXphoto
+CREATE OR REPLACE TRIGGER pe.beforeInsertpersonXban
 BEFORE UPDATE
-ON pe.personXphoto
+ON pe.personXban
 FOR EACH ROW
 BEGIN
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeUPDATEpersonXphoto; 
+END beforeInsertpersonXban; 
 
 /
 
-CREATE OR REPLACE TRIGGER pe.beforeUPDATEpersonXphoto
+CREATE OR REPLACE TRIGGER pe.beforeUPDATEpersonXban
 BEFORE UPDATE
-ON pe.personXphoto
+ON pe.personXban
 FOR EACH ROW
 BEGIN
     :new.date_last_modification:= SYSDATE;
     :new.user_last_modification:= USER;
-END beforeUPDATEpersonXphoto; 
+END beforeUPDATEpersonXban; 
