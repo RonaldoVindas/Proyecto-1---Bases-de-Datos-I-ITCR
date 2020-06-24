@@ -1,23 +1,134 @@
-CREATE OR REPLACE FUNCTION getBanTime(pId IN NUMBER) RETURN DATE
-IS vcTime DATE;
-BEGIN
-    SELECT ban_time
-    INTO vcTime
-    FROM ban
-    WHERE id_ban = pId;
-    RETURN (vcTime);
-END;
+/*Tabla: Gender*/
+
+CREATE OR REPLACE FUNCTION getGenderDescription(pid_gender IN NUMBER) RETURN VARCHAR2
+IS 
+    vcGenderDescription VARCHAR2(50);
+    BEGIN
+        SELECT description
+        INTO vcGenderDescription
+        FROM gender
+        WHERE id_gender = pid_gender;
+        RETURN (vcGenderDescription);
+    END;
+
 /
-CREATE OR REPLACE FUNCTION getIdMotive(pId IN NUMBER) RETURN NUMBER
-IS vcIdMotive NUMBER(4);
-BEGIN
-    SELECT id_motive
-    INTO vcIdMotive
-    FROM ban
-    WHERE id_ban = pId;
-    RETURN (vcIdMotive);
-END;
+
+/*Tabla: Institution*/
+CREATE OR REPLACE FUNCTION getInstitutionName(pid_institution IN NUMBER) RETURN VARCHAR2
+IS 
+    vcInstitutionN VARCHAR2(50);
+    BEGIN
+        SELECT name
+        INTO vcInstitutionName
+        FROM institution
+        WHERE id_institution = pid_institution;
+        RETURN (vcInstitutionName);
+    END;
+
 /
+
+CREATE OR REPLACE FUNCTION getPersonFirstName(pid_person IN NUMBER) RETURN VARCHAR2
+IS 
+    vcPersonFirstName VARCHAR2(20);
+    BEGIN
+        SELECT first_name
+        INTO vcPersonFirstName
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonFirstName);
+    END;
+
+/
+
+CREATE OR REPLACE FUNCTION getPersonLastName(pid_person IN NUMBER) RETURN VARCHAR2
+IS
+    vcPersonLastName VARCHAR2(30);
+    BEGIN
+        SELECT last_name
+        INTO vcPersonLastName
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonLastName);
+    END;
+
+/
+
+CREATE OR REPLACE FUNCTION getPersonBirthDay(pid_person IN NUMBER) RETURN DATE
+IS 
+    vcPersonBirthDay DATE;
+    BEGIN
+        SELECT birth_day
+        INTO vcPersonBirthDay
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonBirthDay);
+    END;
+
+/
+
+CREATE OR REPLACE FUNCTION getPersonPassword(pid_person IN NUMBER) RETURN VARCHAR2
+IS
+    vcPersonPassword VARCHAR(50);
+    BEGIN
+        SELECT password
+        INTO vcPersonPassword
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonPassword);
+    END;
+
+/
+
+CREATE OR REPLACE FUNCTION getPersonIdGender(pid_person IN NUMBER) RETURN NUMBER
+IS
+    vcPersonIdGender NUMBER(6);
+    BEGIN
+        SELECT id_gender
+        INTO vcPersonIdGender
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonIdGender);
+    END;
+/
+
+CREATE OR REPLACE FUNCTION getPersonIdInstitution(pid_person IN NUMBER) RETURN NUMBER
+IS
+    vcPersonIdInstitution NUMBER(6);
+    BEGIN
+        SELECT id_institution
+        INTO vcPersonIdInstitution
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonIdInstitution);
+    END;
+/
+
+CREATE OR REPLACE FUNCTION getPersonIdBinnacle(pid_person IN NUMBER) RETURN NUMBER
+IS
+    vcPersonIdBinnacle NUMBER(8);
+    BEGIN
+        SELECT id_user_password_binnacle
+        INTO vcPersonIdBinnacle
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonIdBinnacle);
+    END;
+
+/
+
+CREATE OR REPLACE FUNCTION getPersonIdTypePerson(pid_person IN NUMBER) RETURN NUMBER
+IS 
+    vcPersonIdTypePerson NUMBER(6);
+    BEGIN
+        SELECT id_type_person
+        INTO vcPersonIdTypePerson
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonIdTypePerson);
+    END;
+
+/
+
 CREATE OR REPLACE FUNCTION getBanMotiveDescription(pId IN NUMBER) RETURN VARCHAR2
 IS vcMotiveDescription VARCHAR2(20);
 BEGIN
@@ -27,164 +138,91 @@ BEGIN
     WHERE id_ban_motive = pId;
     RETURN (vcMotiveDescription);
 END;
+
 /
-CREATE OR REPLACE FUNCTION getGenderDescription(pId IN NUMBER) RETURN VARCHAR2
-IS vcGender VARCHAR2(50);
-BEGIN
-    SELECT description
-    INTO vcGender
-    FROM gender
-    WHERE id_gender = pId;
-    RETURN (vcGender);
-END;
-/
-CREATE OR REPLACE FUNCTION getInstitution(pId IN NUMBER) RETURN VARCHAR2
-IS vcInstitution VARCHAR2(50);
-BEGIN
-    SELECT name
-    INTO vcInstitution
-    FROM institution
-    WHERE id_institution = pId;
-    RETURN (vcInstitution);
-END;
-/
-CREATE OR REPLACE FUNCTION getFirstName(pId IN NUMBER) RETURN VARCHAR2
-IS vcFirstName VARCHAR2(20);
-BEGIN
-    SELECT first_name
-    INTO vcFirstName
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcFirstName);
-END;
-/
-CREATE OR REPLACE FUNCTION getLastName(pId IN NUMBER) RETURN VARCHAR2
-IS vcLastName VARCHAR2(30);
-BEGIN
-    SELECT last_name
-    INTO vcLastName
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcLastName);
-END;
-/
-CREATE OR REPLACE FUNCTION getBirthday(pId IN NUMBER) RETURN DATE
-IS vcBirthday DATE;
-BEGIN
-    SELECT birth_day
-    INTO vcBirthday
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcBirthday);
-END;
-/
-CREATE OR REPLACE FUNCTION getEmail(pId IN NUMBER) RETURN VARCHAR2
-IS vcEmail VARCHAR2(50);
-BEGIN
-    SELECT email
-    INTO vcEmail
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcEmail);
-END;
-/
-CREATE OR REPLACE FUNCTION getUsername(pId IN NUMBER) RETURN VARCHAR2
-IS vcUsername VARCHAR2(30);
-BEGIN
-    SELECT user_name
-    INTO vcUsername
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcUsername);
-END;
-/
-CREATE OR REPLACE FUNCTION getPassword(pId IN NUMBER) RETURN VARCHAR2
-IS vcPassword VARCHAR2(20);
-BEGIN
-    SELECT password
-    INTO vcPassword
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcPassword);
-END;
-/
-CREATE OR REPLACE FUNCTION getIdGender(pId IN NUMBER) RETURN NUMBER
-IS vcIdGender NUMBER(6);
-BEGIN
-    SELECT id_gender
-    INTO vcIdGender
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcIdGender);
-END;
-/
-CREATE OR REPLACE FUNCTION getIdInstitution(pId IN NUMBER) RETURN NUMBER
-IS vcIdInstitution NUMBER(6);
-BEGIN
-    SELECT id_institution
-    INTO vcIdInstitution
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcIdInstitution);
-END;
-/
-CREATE OR REPLACE FUNCTION getIdUserPasswordBinnacle(pId IN NUMBER) RETURN NUMBER
-IS vcIdUserPasswordBinnacle NUMBER(8);
-BEGIN
-    SELECT id_user_password_binnacle
-    INTO vcIdUserPasswordBinnacle
-    FROM person
-    WHERE id_person = pId;
-    RETURN (vcIdUserPasswordBinnacle);
-END;
-/
+
+
 CREATE OR REPLACE FUNCTION getPhotodescription(pId IN NUMBER) RETURN VARCHAR2
 IS vcPhotoDescription VARCHAR2(50);
 BEGIN
     SELECT description
     INTO vcPhotoDescription
     FROM photo
-    WHERE id_person = pId;
+    WHERE id_photo = pId;
     RETURN (vcPhotoDescription);
 END;
+
 /
+
 CREATE OR REPLACE FUNCTION getTypePersonDescription(pId IN NUMBER) RETURN VARCHAR2
-IS vcPersonDescription VARCHAR2(50);
+IS vcTypePersonDescription VARCHAR2(50);
 BEGIN
     SELECT description
-    INTO vcPersonDescription
+    INTO vcTypePersonDescription
     FROM type_person
-    WHERE id_person = pId;
-    RETURN (vcPersonDescription);
+    WHERE id_type_person = pId;
+    RETURN (vcTypePersonDescription);
 END;
+
 /
-CREATE OR REPLACE FUNCTION getUserPasswordDate(pId IN NUMBER) RETURN DATE
-IS vcUserPasswordDate DATE;
+
+CREATE OR REPLACE FUNCTION getBinnacleUserPasswordDate(pId IN NUMBER) RETURN DATE
+IS vcBinnacleUserPasswordDate DATE;
 BEGIN
     SELECT user_password_date
-    INTO vcUserPasswordDate
+    INTO vcBinnacleUserPasswordDate
     FROM user_password_binnacle
-    WHERE id_person = pId;
-    RETURN (vcUserPasswordDate);
+    WHERE id_user_password_binnacle = pId;
+    RETURN (vcBinnacleUserPasswordDate);
 END;
+
 /
-CREATE OR REPLACE FUNCTION getOldPassword(pId IN NUMBER) RETURN VARCHAR2
-IS vcOldPassword VARCHAR2(20);
+
+CREATE OR REPLACE FUNCTION getBinnacleOldPassword(pId IN NUMBER) RETURN VARCHAR2
+IS vcBinnacleOldPassword VARCHAR2(20);
 BEGIN
     SELECT old_password
-    INTO vcOldPassword
+    INTO vcBinnacleOldPassword
     FROM user_password_binnacle
-    WHERE id_person = pId;
-    RETURN (vcOldPassword);
+    WHERE id_user_password_binnacle = pId;
+    RETURN (vcBinnacleOldPassword);
 END;
+
 /
-CREATE OR REPLACE FUNCTION getNewPassword(pId IN NUMBER) RETURN VARCHAR2
-IS vcNewPassword VARCHAR2(20);
+
+CREATE OR REPLACE FUNCTION getBinnacleNewPassword(pId IN NUMBER) RETURN VARCHAR2
+IS vcBinnacleNewPassword VARCHAR2(20);
 BEGIN
     SELECT new_password
-    INTO vcNewPassword
+    INTO vcBinnacleNewPassword
     FROM user_password_binnacle
-    WHERE id_person = pId;
-    RETURN (vcNewPassword);
+    WHERE id_user_password_binnacle = pId;
+    RETURN (vcBinnacleNewPassword);
 END;
+
 /
+
+
+CREATE OR REPLACE FUNCTION getPersonXBanIdBan(pid_person IN NUMBER) RETURN NUMBER
+IS
+    vcPersonXBanIdBan NUMBER(6);
+    BEGIN 
+        SELECT id_ban
+        INTO vcPersonXBanIdBan
+        FROM personxban
+        WHERE id_person = pid_person;
+        RETURN (vcPersonXBanIdBan);
+    END;
+
+/
+
+CREATE OR REPLACE FUNCTION getPersonXBanIdPerson(pid_ban IN NUMBER) RETURN NUMBER
+IS
+    vcPersonXBanIdPerson NUMBER(6);
+    BEGIN 
+        SELECT id_person
+        INTO vcPersonXBanIdPerson
+        FROM personxban
+        WHERE id_ban = pid_ban;
+        RETURN (vcPersonXBanIdPerson);
+    END;
