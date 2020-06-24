@@ -27,6 +27,7 @@ IS
 
 /
 
+/*Tabla: Person*/
 CREATE OR REPLACE FUNCTION getPersonFirstName(pid_person IN NUMBER) RETURN VARCHAR2
 IS 
     vcPersonFirstName VARCHAR2(20);
@@ -129,6 +130,8 @@ IS
 
 /
 
+
+/*Tabla: Ban Motive*/
 CREATE OR REPLACE FUNCTION getBanMotiveDescription(pId IN NUMBER) RETURN VARCHAR2
 IS vcMotiveDescription VARCHAR2(20);
 BEGIN
@@ -141,7 +144,7 @@ END;
 
 /
 
-
+/*Tabla: Photo*/
 CREATE OR REPLACE FUNCTION getPhotodescription(pId IN NUMBER) RETURN VARCHAR2
 IS vcPhotoDescription VARCHAR2(50);
 BEGIN
@@ -154,6 +157,7 @@ END;
 
 /
 
+/*Tabla: Type Person*/
 CREATE OR REPLACE FUNCTION getTypePersonDescription(pId IN NUMBER) RETURN VARCHAR2
 IS vcTypePersonDescription VARCHAR2(50);
 BEGIN
@@ -166,6 +170,7 @@ END;
 
 /
 
+/*Tabla: User Password Binnacle*/
 CREATE OR REPLACE FUNCTION getBinnacleUserPasswordDate(pId IN NUMBER) RETURN DATE
 IS vcBinnacleUserPasswordDate DATE;
 BEGIN
@@ -202,7 +207,7 @@ END;
 
 /
 
-
+/*Tabla: PersonXBan*/
 CREATE OR REPLACE FUNCTION getPersonXBanIdBan(pid_person IN NUMBER) RETURN NUMBER
 IS
     vcPersonXBanIdBan NUMBER(6);
@@ -226,3 +231,41 @@ IS
         WHERE id_ban = pid_ban;
         RETURN (vcPersonXBanIdPerson);
     END;
+
+
+
+
+
+/*========================= FUNCIONES ADICIONALES ===============================================*/
+
+/*Encriptación de Passwords*/
+
+CREATE OR REPLACE FUNCTION EncryptPassword(pencrypt_password IN VARCHAR2) RETURN VARCHAR2
+AS
+    data VARCHAR2(255);
+    BEGIN
+    data := rpad( p_str, (trunc(length(pencrypt_password)/8)+1)*8, chr(0) );
+    dbms_obfuscation_toolkit.DESEncrypt
+          ( input_string => data,
+            key_string   => 'DBAKey03',
+            encrypted_string=> data );
+ 
+    RETURN data;
+  END;
+
+/
+
+/*Desencriptación de Llaves*/
+
+CREATE OR REPLACE FUNCTION DecryptPassword(pdecrypt_password IN VARCHAR2) RETURN VARCHAR2
+AS
+    data VARCHAR2(255);
+    BEGIN
+     dbms_obfuscation_toolkit.DESDecrypt
+          ( input_string => pdecrypt_password,
+            key_string   => 'DBAKey03',
+            decrypted_string=> data );
+    return rtrim( data, chr(0) );
+    END;
+
+
