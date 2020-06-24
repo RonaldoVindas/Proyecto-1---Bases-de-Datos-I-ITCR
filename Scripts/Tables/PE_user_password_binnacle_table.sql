@@ -68,6 +68,7 @@ FOR EACH ROW
 BEGIN
 	:new.id_user_password_binnacle:=s_user_password_binnacle.nextval;
     :new.creation_date := SYSDATE;
+    :new.date_last_modification:= SYSDATE;
     :new.creation_user := USER;
 END beforeUPDATEpassword_binnacle; 
 

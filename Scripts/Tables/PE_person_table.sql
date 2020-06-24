@@ -14,48 +14,52 @@ CREATE TABLE person(
 	id_institution NUMBER(6),
 	id_user_password_binnacle NUMBER(8),
 	id_type_person NUMBER(6)
+	/*person_age NUMBER(4,4)*/
 );
 
 ALTER TABLE person
 ADD person_age NUMBER(4,4);
+
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema PE ===============================================================*/
 COMMENT ON TABLE person
-Is 'Repository to store person´s information.';
+Is 'Repository to store person�s information.';
 
 	COMMENT ON COLUMN person.id_person
-	IS 'Person´s identification.';
+	IS 'Person�s identification.';
 
 	COMMENT ON COLUMN person.first_name
-	IS 'Person´s first name.';
+	IS 'Person�s first name.';
 
 	COMMENT ON COLUMN person.last_name
-	IS 'Person´s last name.';
+	IS 'Person�s last name.';
 
 	COMMENT ON COLUMN person.birth_day
-	IS 'Person´s birth day.';
+	IS 'Person�s birth day.';
     
     COMMENT ON COLUMN person.person_age
-	IS 'Person´s age.';
+	IS 'Person�s age.';
 
 	COMMENT ON COLUMN person.user_name
-	IS 'Person´s user name.';
+	IS 'Person�s user name.';
 
 	COMMENT ON COLUMN person.password
-	IS 'Person´s password.';
+	IS 'Person�s password.';
 
 	COMMENT ON COLUMN person.id_genre
-	IS 'Person´s genre identification';
+	IS 'Person�s genre identification';
 
 	COMMENT ON COLUMN person.id_institution
-	IS 'Person´s institution identification.';
+	IS 'Person�s institution identification.';
 
 	COMMENT ON COLUMN person.id_user_password_binnacle
-	IS 'Person´s password identification in the binnacle.';
+	IS 'Person�s password identification in the binnacle.';
 
 	COMMENT ON COLUMN person.id_type_person
-	IS 'Person´s type identification.';
+	IS 'Person�s type identification.';
+
+
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema PE ===============================================================*/
@@ -103,6 +107,7 @@ ADD user_last_modification VARCHAR(10);
 
 /*En esquema PE ===============================================================*/
 
+/*
 CREATE SEQUENCE s_person
 START WITH 0
 INCREMENT BY 1
@@ -110,7 +115,7 @@ MINVALUE 0
 MAXVALUE 99999999
 NOCACHE
 NOCYCLE;
-
+*/
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
@@ -119,7 +124,6 @@ BEFORE UPDATE
 ON pe.person
 FOR EACH ROW
 BEGIN
-	:new.id_person:=s_person.nextval;
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
 END beforeUPDATEperson; 

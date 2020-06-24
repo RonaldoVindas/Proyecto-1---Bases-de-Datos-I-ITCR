@@ -4,6 +4,7 @@
 
 CREATE TABLE crime_type(
 	id_crime_type NUMBER(6),
+	crime_level NUMBER(2),
 	description VARCHAR2(50) CONSTRAINT type_crime_description_nn NOT NULL
 );
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
@@ -15,8 +16,11 @@ IS 'Repository to store information about crime types.';
 	COMMENT ON COLUMN crime_type.id_crime_type
 	IS 'Crime Type identification.';
 
-	COMMENT ON COLUMN crime_type.description
-	IS ' Crime Type description.';
+	COMMENT ON COLUMN crime_type.crime_level
+	IS 'Crime Type severity level.';
+
+	COMMENT ON COLUMN crime_level.description
+	IS 'Crime Type description.';
 /*==================================================CREACIÓN DE LLAVES PRIMARIAS======================================================*/
 
 /*En esquema FI ===============================================================*/
