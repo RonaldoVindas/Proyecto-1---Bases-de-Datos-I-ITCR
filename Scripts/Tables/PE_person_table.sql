@@ -1,15 +1,17 @@
 /*==================================================CREACIÓN DE TABLAS======================================================*/
-
+DROP TABLE person;
 /*En esquema PE ===============================================================*/
 
 CREATE TABLE person(
 	id_person NUMBER(8),
-	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL
-	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL
+	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL,
+	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL,
 	birth_day DATE,
-	email VARCHAR2(50) CONSTRAINT pereson_email_unique UNIQUE (email)
+    person_age NUMBER(4,4),
+	email VARCHAR2(50) CONSTRAINT person_email_unique UNIQUE,
 	user_name VARCHAR2(30) CONSTRAINT person_user_name_unique UNIQUE, /*Qué pasa con las personas que no están registraas en la base?*/
-	password VARCHAR2(20) CONSTRAINT person_password_not_null NOT NULL
+	password VARCHAR2(20) CONSTRAINT person_password_not_null NOT NULL,
+    
 	id_gender NUMBER(6),
 	id_institution NUMBER(6),
 	id_user_password_binnacle NUMBER(8),
@@ -32,6 +34,9 @@ Is 'Repository to store person´s information.';
 
 	COMMENT ON COLUMN person.birth_day
 	IS 'Person´s birth day.';
+    
+    COMMENT ON COLUMN person.person_age
+	IS 'Person´s age.';
 
 	COMMENT ON COLUMN person.user_name
 	IS 'Person´s user name.';
@@ -59,7 +64,7 @@ ADD CONSTRAINT pk_person PRIMARY KEY (id_person)
 USING INDEX 
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 
 /*En esquema PE ===============================================================*/
 
@@ -80,8 +85,10 @@ ALTER TABLE person
 ADD CONSTRAINT fk_person_id_type_person FOREIGN KEY
 (id_type_person) REFERENCES type_person(id_type_person);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+ALTER TABLE person
+MODIFY birth_day CONSTRAINT birtH_day_not_null NOT NULL;
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE person

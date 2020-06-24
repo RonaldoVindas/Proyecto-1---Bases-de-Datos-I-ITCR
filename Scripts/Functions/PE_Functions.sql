@@ -68,6 +68,16 @@ BEGIN
     RETURN (vcLastName);
 END;
 /
+CREATE OR REPLACE FUNCTION getAge(pId IN NUMBER) RETURN NUMBER
+IS vcAge NUMBER(4);
+BEGIN
+    SELECT person_age
+    INTO vcAge
+    FROM person
+    WHERE id_person = pId;
+    RETURN (vcAge);
+END;
+/
 CREATE OR REPLACE FUNCTION getBirthday(pId IN NUMBER) RETURN DATE
 IS vcBirthday DATE;
 BEGIN

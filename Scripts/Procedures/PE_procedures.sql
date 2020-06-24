@@ -5,7 +5,7 @@
 
 /*Tabla: Gender: ========================================*/
 
-CREATE PROCEDURE insert_gender (pdescription IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE insert_gender (pdescription IN VARCHAR2) AS
 BEGIN
 	INSERT INTO gender(description)
 	VALUES(pdescription);
@@ -14,7 +14,7 @@ END insert_gender;
 
 /
 
-CREATE PROCEDURE remove_gender (pid_gender IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_gender (pid_gender IN NUMBER) AS
 BEGIN
 	DELETE FROM gender
 	WHERE id_gender = pid_gender;
@@ -23,7 +23,7 @@ END remove_gender;
 
 /
 
-CREATE PROCEDURE update_gender_description(pid_gender IN NUMBER, pdescription IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_gender_description(pid_gender IN NUMBER, pdescription IN VARCHAR2) AS
 BEGIN
 	UPDATE gender
 	SET description = pdescription
@@ -31,12 +31,12 @@ BEGIN
 	COMMIT;
 END update_gender_description;
 
-
+/
 
 /*Tabla: Institution: ========================================*/
 
 
-CREATE PROCEDURE update_institution_name(pid_institution IN NUMBER, pname IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_institution_name(pid_institution IN NUMBER, pname IN VARCHAR2) AS
 BEGIN
 	UPDATE institution
 	SET name = pname
@@ -46,7 +46,7 @@ END update_institution_name;
 
 /
 
-CREATE PROCEDURE remove_institution (pid_institution IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_institution (pid_institution IN NUMBER) AS
 BEGIN
 	DELETE FROM institution
 	WHERE id_institution = pid_institution;
@@ -55,31 +55,31 @@ END remove_institution;
 
 /
 
-CREATE PROCEDURE update_institution_name(pid_institution IN NUMBER, pname IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_institution_name(pid_institution IN NUMBER, pname IN VARCHAR2) AS
 BEGIN
 	UPDATE institution
 	SET name = pname
 	WHERE id_institution = pid_institution;
 	COMMIT;
 END update_institution_name;
-
+/
 
 /*Tabla: Person: ========================================*/
 
-CREATE PROCEDURE insert_person (pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
+CREATE OR REPLACE PROCEDURE insert_person (pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
 								pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
 								pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, 
 								pid_type_person NUMBER)  AS
 
 BEGIN
-	INSERT INTO person(first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person)
-	VALUES(pfirst_name, plast_name, pbirth_day, pemail, puser_name, ppassword, pid_gender, pid_institution,pid_binnacle,pid_type_person);
+	INSERT INTO person(first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person,person_age)
+	VALUES(pfirst_name, plast_name, pbirth_day, pemail, puser_name, ppassword, pid_gender, pid_institution,pid_binnacle,pid_type_person,TRUNC((SYSDATE - pbirth_day)/365.25));
 	COMMIT;
 END insert_person;
 
 /
 
-CREATE PROCEDURE remove_person (pid_person IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_person (pid_person IN NUMBER) AS
 BEGIN
 	DELETE FROM person
 	WHERE id_person = pid_person;
@@ -88,7 +88,7 @@ END remove_person;
 
 /
 
-CREATE PROCEDURE update_person_first_name(pid_person IN NUMBER, pfirst_name IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_first_name(pid_person IN NUMBER, pfirst_name IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET first_name = pfirst_name
@@ -98,38 +98,43 @@ END update_person_first_name;
 
 /
 
-CREATE PROCEDURE update_person_last_name(pid_person IN NUMBER, plast_name IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_last_name(pid_person IN NUMBER, plast_name IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET last_name = plast_name
-	WHERE id_person = id_person;
+	WHERE id_person = pid_person;
 	COMMIT;
 END update_person_last_name;
 
 /
 
-CREATE PROCEDURE update_person_birth_day(pid_person IN NUMBER, pbirth_day IN DATE) AS
+CREATE OR REPLACE PROCEDURE update_person_birth_day(pid_person IN NUMBER, pbirth_day IN DATE) AS
 BEGIN
 	UPDATE person
 	SET birth_day = pbirth_day
-	WHERE id_person = id_person;
+    WHERE id_person = pid_person;
+    COMMIT;
+    UPDATE person
+    SET person_age = TRUNC((SYSDATE - pbirth_day)/365.25)
+    WHERE id_person = pid_person;
 	COMMIT;
 END update_person_birth_day;
 
 /
 
-CREATE PROCEDURE update_person_email(pid_person IN NUMBER, pemail IN VARCHAR2) AS
+
+CREATE OR REPLACE PROCEDURE update_person_email(pid_person IN NUMBER, pemail IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET email = pemail
-	WHERE id_person = id_person;
+	WHERE id_person = pid_person;
 	COMMIT;
 END update_person_email;
 
 /
 
 
-CREATE PROCEDURE update_person_username(pid_person IN NUMBER, puser_name IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_username(pid_person IN NUMBER, puser_name IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET user_name = puser_name
@@ -139,17 +144,17 @@ END update_person_username;
 
 /
 
-CREATE PROCEDURE update_person_username(pid_person IN NUMBER, pusername IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_username(pid_person IN NUMBER, pusername IN VARCHAR2) AS
 BEGIN
 	UPDATE person
-	SET username = pusername
+	SET user_name = pusername
 	WHERE id_person = id_person;
 	COMMIT;
 END update_person_username;
 
 /
 
-CREATE PROCEDURE update_person_password(pid_person IN NUMBER, ppassword IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_password(pid_person IN NUMBER, ppassword IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET password = ppassword
@@ -159,7 +164,7 @@ END update_person_password;
 
 /
 
-CREATE PROCEDURE update_person_id_gender(pid_person IN NUMBER, pid_gender IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_id_gender(pid_person IN NUMBER, pid_gender IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET id_gender = pid_gender
@@ -169,20 +174,20 @@ END update_person_id_gender;
 
 /
 
-CREATE PROCEDURE update_person_id_institution(pid_person IN NUMBER, pid_institution IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_person_id_institution(pid_person IN NUMBER, pid_institution IN VARCHAR2) AS
 BEGIN
 	UPDATE person
 	SET id_institution = pid_institution
-	WHERE id_gender = pid_gender;
+	WHERE id_gender = pid_person;
 	COMMIT;
-END update_person_pid_institution;
+END update_person_id_institution;
 
 
-
+/
 /*Tabla: PersonXBan: ========================================*/
 
 
-CREATE PROCEDURE insert_personXban (pid_person IN NUMBER, pid_ban NUMBER)  AS
+CREATE OR REPLACE PROCEDURE insert_personXban (pid_person IN NUMBER, pid_ban NUMBER)  AS
 BEGIN
 	INSERT INTO personXban(id_person, id_ban)
 	VALUES(pid_person, pid_ban);
@@ -191,7 +196,7 @@ END insert_personXban;
 
 /
 
-CREATE PROCEDURE remove_personXban (pid_person IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_personXban (pid_person IN NUMBER) AS
 BEGIN
 	DELETE FROM personXban
 	WHERE id_person = pid_person;
@@ -200,7 +205,7 @@ END remove_personXban;
 
 /
 
-CREATE PROCEDURE update_personXban_id_person(pid_person IN NUMBER, pnewid_person NUMBER) AS
+CREATE OR REPLACE PROCEDURE update_personXban_id_person(pid_person IN NUMBER, pnewid_person NUMBER) AS
 BEGIN
 	UPDATE personXban
 	SET id_person = pnewid_person
@@ -210,17 +215,17 @@ END update_personXban_id_person;
 
 /
 
-CREATE PROCEDURE update_personXban_id_ban(pid_ban IN NUMBER, pnewid_ban NUMBER) AS
+CREATE OR REPLACE PROCEDURE update_personXban_id_ban(pid_ban IN NUMBER, pnewid_ban NUMBER) AS
 BEGIN
 	UPDATE personXban
 	SET id_ban = pnewid_ban
 	WHERE id_ban = pid_ban;
 	COMMIT;
 END update_personXban_id_ban;
-
+/
 /*Tabla: PersonXPhoto: ========================================*/
 
-CREATE PROCEDURE insert_personXphoto (pid_person IN NUMBER, pid_photo NUMBER)  AS
+CREATE OR REPLACE PROCEDURE insert_personXphoto (pid_person IN NUMBER, pid_photo NUMBER)  AS
 BEGIN
 	INSERT INTO personXphoto(id_person, id_photo)
 	VALUES(pid_person, pid_photo);
@@ -229,7 +234,7 @@ END insert_personXphoto;
 
 /
 
-CREATE PROCEDURE remove_personXphoto (pid_person IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_personXphoto (pid_person IN NUMBER) AS
 BEGIN
 	DELETE FROM personXphoto
 	WHERE id_person = pid_person;
@@ -238,7 +243,7 @@ END remove_personXphoto;
 
 /
 
-CREATE PROCEDURE update_personXphoto_id_person(pid_person IN NUMBER, pnewid_person NUMBER) AS
+CREATE OR REPLACE PROCEDURE update_personXphoto_id_person(pid_person IN NUMBER, pnewid_person NUMBER) AS
 BEGIN
 	UPDATE personXphoto
 	SET id_person = pnewid_person
@@ -248,17 +253,17 @@ END update_personXphoto_id_person;
 
 /
 
-CREATE PROCEDURE update_personXphoto_id_photo(pid_photo IN NUMBER, pnewid_photo NUMBER) AS
+CREATE OR REPLACE PROCEDURE update_personXphoto_id_photo(pid_photo IN NUMBER, pnewid_photo NUMBER) AS
 BEGIN
 	UPDATE personXphoto
 	SET id_photo = pnewid_photo
 	WHERE id_photo = pid_photo;
 	COMMIT;
 END update_personXphoto_id_photo;
-
+/
 /*Tabla: Photo: ========================================*/
 
-CREATE PROCEDURE insert_photo (pdescription IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE insert_photo (pdescription IN VARCHAR2) AS
 BEGIN
 	INSERT INTO photo(description)
 	VALUES(pdescription);
@@ -267,7 +272,7 @@ END insert_photo;
 
 /
 
-CREATE PROCEDURE remove_photo (pid_photo IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_photo (pid_photo IN NUMBER) AS
 BEGIN
 	DELETE FROM photo
 	WHERE id_photo = pid_photo;
@@ -276,7 +281,7 @@ END remove_photo;
 
 /
 
-CREATE PROCEDURE update_photo_description(pid_photo IN NUMBER, pdescription IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_photo_description(pid_photo IN NUMBER, pdescription IN VARCHAR2) AS
 BEGIN
 	UPDATE photo
 	SET description = pdescription
@@ -284,10 +289,10 @@ BEGIN
 	COMMIT;
 END update_photo_description;
 
-
+/
 /*Tabla: Type Person: ========================================*/
 
-CREATE PROCEDURE insert_type_person (pdescription IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE insert_type_person (pdescription IN VARCHAR2) AS
 BEGIN
 	INSERT INTO type_person(description)
 	VALUES(pdescription);
@@ -296,7 +301,7 @@ END insert_type_person;
 
 /
 
-CREATE PROCEDURE remove_type_person (pid_type_person IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_type_person (pid_type_person IN NUMBER) AS
 BEGIN
 	DELETE FROM type_person
 	WHERE id_type_person = pid_type_person;
@@ -305,7 +310,7 @@ END remove_type_person;
 
 /
 
-CREATE PROCEDURE update_type_person_description(pid_type_person IN NUMBER, pdescription IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_type_person_description(pid_type_person IN NUMBER, pdescription IN VARCHAR2) AS
 BEGIN
 	UPDATE type_person
 	SET description = pdescription
@@ -313,7 +318,7 @@ BEGIN
 	COMMIT;
 END update_type_person_description;
 
-
+/
 /*Tabla: Ban: ========================================*/
 
 
