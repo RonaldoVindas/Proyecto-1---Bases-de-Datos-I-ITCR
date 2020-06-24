@@ -7,16 +7,17 @@ CREATE TABLE person(
 	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL,
 	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL,
 	birth_day DATE,
-    person_age NUMBER(4,4),
 	email VARCHAR2(50) CONSTRAINT person_email_unique UNIQUE,
 	user_name VARCHAR2(30) CONSTRAINT person_user_name_unique UNIQUE, /*Qu√© pasa con las personas que no est√°n registraas en la base?*/
 	password VARCHAR2(20) CONSTRAINT person_password_not_null NOT NULL,
-    
 	id_gender NUMBER(6),
 	id_institution NUMBER(6),
 	id_user_password_binnacle NUMBER(8),
 	id_type_person NUMBER(6)
 );
+
+ALTER TABLE person
+ADD person_age NUMBER(4,4);
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema PE ===============================================================*/
@@ -86,7 +87,7 @@ ADD CONSTRAINT fk_person_id_type_person FOREIGN KEY
 (id_type_person) REFERENCES type_person(id_type_person);
 
 ALTER TABLE person
-MODIFY birth_day CONSTRAINT birtH_day_not_null NOT NULL;
+MODIFY birth_day CONSTRAINT birth_day_not_null NOT NULL;
 /*==================================================CAMPOS DE AUDITOR√?A PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITOR√?A A√öN NO TIENEN COMENTARIOS!!!!!!!!!*/
 

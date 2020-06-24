@@ -16,7 +16,7 @@ IS
 /*Tabla: Institution*/
 CREATE OR REPLACE FUNCTION getInstitutionName(pid_institution IN NUMBER) RETURN VARCHAR2
 IS 
-    vcInstitutionN VARCHAR2(50);
+    vcInstitutionName VARCHAR2(50);
     BEGIN
         SELECT name
         INTO vcInstitutionName
@@ -91,7 +91,7 @@ IS
         RETURN(vcPersonIdGender);
     END;
 /
-<<<<<<< HEAD
+
 CREATE OR REPLACE FUNCTION getAge(pId IN NUMBER) RETURN NUMBER
 IS vcAge NUMBER(4);
 BEGIN
@@ -111,8 +111,7 @@ BEGIN
     WHERE id_person = pId;
     RETURN (vcBirthday);
 END;
-=======
-
+/
 CREATE OR REPLACE FUNCTION getPersonIdInstitution(pid_person IN NUMBER) RETURN NUMBER
 IS
     vcPersonIdInstitution NUMBER(6);
@@ -123,7 +122,7 @@ IS
         WHERE id_person = pid_person;
         RETURN(vcPersonIdInstitution);
     END;
->>>>>>> f78bfedacb7ffb9741246e0daeaa1a65d479603b
+
 /
 
 CREATE OR REPLACE FUNCTION getPersonIdBinnacle(pid_person IN NUMBER) RETURN NUMBER
@@ -256,7 +255,7 @@ IS
 
 
 
-
+/
 
 /*========================= FUNCIONES ADICIONALES ===============================================*/
 
