@@ -67,6 +67,19 @@ IS
 
 /
 
+CREATE OR REPLACE FUNCTION getPersonUsername(pid_person IN NUMBER) RETURN VARCHAR2
+IS 
+    vcPersonUsername VARCHAR2(30);
+    BEGIN
+        SELECT user_name
+        INTO vcPersonUsername
+        FROM person
+        WHERE id_person = pid_person;
+        RETURN(vcPersonUsername);
+    END;
+
+/
+
 CREATE OR REPLACE FUNCTION getPersonPassword(pid_person IN NUMBER) RETURN VARCHAR2
 IS
     vcPersonPassword VARCHAR(50);
@@ -92,7 +105,7 @@ IS
     END;
 /
 
-CREATE OR REPLACE FUNCTION getAge(pId IN NUMBER) RETURN NUMBER
+CREATE OR REPLACE FUNCTION getPersonAge(pId IN NUMBER) RETURN NUMBER
 IS vcAge NUMBER(4);
 BEGIN
     SELECT person_age
@@ -101,7 +114,9 @@ BEGIN
     WHERE id_person = pId;
     RETURN (vcAge);
 END;
+
 /
+
 CREATE OR REPLACE FUNCTION getBirthday(pId IN NUMBER) RETURN DATE
 IS vcBirthday DATE;
 BEGIN
@@ -265,7 +280,7 @@ CREATE OR REPLACE FUNCTION EncryptPassword(pencrypt_password IN VARCHAR2) RETURN
 AS
     data VARCHAR2(255);
     BEGIN
-    data := rpad( p_str, (trunc(length(pencrypt_password)/8)+1)*8, chr(0) );
+    data := rpad(pencrypt_password, (trunc(length(pencrypt_password)/8)+1)*8, chr(0) );
     dbms_obfuscation_toolkit.DESEncrypt
           ( input_string => data,
             key_string   => 'DBAKey03',
