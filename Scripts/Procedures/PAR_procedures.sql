@@ -1,5 +1,5 @@
 
-CREATE PROCEDURE insert_parameter (pName IN VARCHAR2,pValue IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE insert_parameter (pName IN VARCHAR2,pValue IN VARCHAR2) AS
 BEGIN
 	INSERT INTO parameter(name,value)
 	VALUES(pName,pValue);
@@ -8,7 +8,7 @@ END insert_parameter;
 
 /
 
-CREATE PROCEDURE remove_parameter (pid_parameter IN NUMBER) AS
+CREATE OR REPLACE PROCEDURE remove_parameter (pid_parameter IN NUMBER) AS
 BEGIN
 	DELETE FROM parameter
 	WHERE id_parameter = pid_parameter;
@@ -17,7 +17,7 @@ END remove_parameter;
 
 /
 
-CREATE PROCEDURE update_parameter_name(pid_parameter IN NUMBER, pname IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_parameter_name(pid_parameter IN NUMBER, pname IN VARCHAR2) AS
 BEGIN
 	UPDATE parameter
 	SET name = pname
@@ -27,7 +27,7 @@ END update_parameter_name;
 
 /
 
-CREATE PROCEDURE update_parameter_value(pid_parameter IN NUMBER, pValue IN VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE update_parameter_value(pid_parameter IN NUMBER, pValue IN VARCHAR2) AS
 BEGIN
 	UPDATE parameter
 	SET value = pValue
