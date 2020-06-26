@@ -44,9 +44,6 @@ IS vcInstitutionName VARCHAR2(50);
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -72,10 +69,7 @@ IS vcPersonFirstName VARCHAR2(20);
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -94,16 +88,13 @@ IS vcPersonLastName VARCHAR2(30);
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonLastName);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -122,16 +113,13 @@ IS vcPersonBirthDay DATE;
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonBirthDay);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -150,16 +138,13 @@ IS vcPersonPassword VARCHAR(50);
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonPassword);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -178,16 +163,13 @@ IS vcPersonIdGender NUMBER(6);
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonIdGender);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -205,16 +187,13 @@ BEGIN
     FROM person
     WHERE id_person = pId;
     RETURN (vcAge);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -231,16 +210,13 @@ BEGIN
     FROM person
     WHERE id_person = pId;
     RETURN (vcBirthday);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -258,16 +234,13 @@ IS
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonIdInstitution);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -286,16 +259,13 @@ IS vcPersonIdBinnacle NUMBER(8);
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonIdBinnacle);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -314,16 +284,13 @@ IS vcPersonIdTypePerson NUMBER(6);
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonIdTypePerson);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -344,16 +311,13 @@ BEGIN
     FROM ban_motive
     WHERE id_ban_motive = pId;
     RETURN (vcMotiveDescription);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -373,16 +337,13 @@ BEGIN
     FROM photo
     WHERE id_photo = pId;
     RETURN (vcPhotoDescription);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -402,16 +363,13 @@ BEGIN
     FROM type_person
     WHERE id_type_person = pId;
     RETURN (vcTypePersonDescription);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -430,16 +388,13 @@ IS
         FROM person
         WHERE id_person = pid_person;
         RETURN(vcPersonUsername);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -457,16 +412,13 @@ BEGIN
     FROM user_password_binnacle
     WHERE id_user_password_binnacle = pId;
     RETURN (vcBinnacleUserPasswordDate);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -485,16 +437,13 @@ BEGIN
     FROM user_password_binnacle
     WHERE id_user_password_binnacle = pId;
     RETURN (vcBinnacleOldPassword);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -513,16 +462,13 @@ BEGIN
     FROM user_password_binnacle
     WHERE id_user_password_binnacle = pId;
     RETURN (vcBinnacleNewPassword);
-    EXCEPTION
+     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -542,16 +488,13 @@ IS vcPersonXBanIdBan NUMBER(6);
         FROM personxban
         WHERE id_person = pid_person;
         RETURN (vcPersonXBanIdBan);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
@@ -570,16 +513,13 @@ IS vcPersonXBanIdPerson NUMBER(6);
         FROM personxban
         WHERE id_ban = pid_ban;
         RETURN (vcPersonXBanIdPerson);
-        EXCEPTION
+         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
+            DBMS_OUTPUT.PUT_LINE('Could not find register.');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
