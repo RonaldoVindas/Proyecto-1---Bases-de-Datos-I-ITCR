@@ -15,9 +15,6 @@ IS vcGenderDescription VARCHAR2(50);
             WHEN NO_DATA_FOUND THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-            WHEN DUP_VAL_ON_INDEX THEN
-            ROLLBACK;
-            DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
             WHEN STORAGE_ERROR THEN
             ROLLBACK;
             DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');

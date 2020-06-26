@@ -7,24 +7,18 @@ begin
     where id_canton=pID ;
     return (VCNAME);
     EXCEPTION
-    WHEN TOO_MANY_ROWS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-    WHEN NO_DATA_FOUND THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
-    WHEN DUP_VAL_ON_INDEX THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-    WHEN STORAGE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory ws corrupted.');
-    WHEN VALUE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
-    WHEN OTHERS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getCantonProvince(pId in number) return number
@@ -36,24 +30,18 @@ begin
     where id_canton=pID ;
     return (VCNAME);
     EXCEPTION
-    WHEN TOO_MANY_ROWS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-    WHEN NO_DATA_FOUND THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
-    WHEN DUP_VAL_ON_INDEX THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-    WHEN STORAGE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory ws corrupted.');
-    WHEN VALUE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
-    WHEN OTHERS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getCommunityName(pId in number) return varchar2 
@@ -65,24 +53,18 @@ begin
     where id_community=pID ;
     return (VCNAME);
     EXCEPTION
-    WHEN TOO_MANY_ROWS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-    WHEN NO_DATA_FOUND THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
-    WHEN DUP_VAL_ON_INDEX THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-    WHEN STORAGE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory ws corrupted.');
-    WHEN VALUE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
-    WHEN OTHERS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getCommunityDistrict(pId in number) return number
@@ -94,24 +76,18 @@ begin
     where id_community=pID ;
     return (VCNAME);
     EXCEPTION
-    WHEN TOO_MANY_ROWS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-    WHEN NO_DATA_FOUND THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
-    WHEN DUP_VAL_ON_INDEX THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-    WHEN STORAGE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-    WHEN VALUE_ERROR THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
-    WHEN OTHERS THEN
-    ROLLBACK;
-    DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 
@@ -124,21 +100,18 @@ begin
     where id_country=pID ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 
 /
@@ -151,21 +124,18 @@ begin
     where id_crime_type=pID ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getCriminalRecordDescription(pId in number) return varchar2 
@@ -176,22 +146,19 @@ begin
     from criminal_record
     where id_criminal_record=pID ;
     return (VCNAME);
-   EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+    EXCEPTION
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getCriminalRecordCrimeType(pId in number) return number
@@ -203,21 +170,18 @@ begin
     where id_criminal_record=pID ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getCriminalRecordCommunity(pId in number) return number
@@ -229,21 +193,18 @@ begin
     where id_criminal_record=pID ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getDistrictName(pId in number) return varchar2 
@@ -255,21 +216,18 @@ begin
     where id_district=pID ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getDistrictCanton(pId in number) return number
@@ -281,21 +239,18 @@ begin
     where id_district=pID ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 
@@ -309,21 +264,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getPRFSentence_start(pIdPerson in number, pIdCriminalRecord in number) return date
@@ -335,21 +287,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getPRFSentence_end(pIdPerson in number, pIdCriminalRecord in number) return date
@@ -361,21 +310,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getPRFSentence_expiration(pIdPerson in number, pIdCriminalRecord in number) return date
@@ -387,21 +333,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 
@@ -414,21 +357,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getPRFSentence_number(pIdPerson in number, pIdCriminalRecord in number) return number
@@ -440,21 +380,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getPRFHouse_For_Jail(pIdPerson in number, pIdCriminalRecord in number) return varchar2
@@ -466,21 +403,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 create or replace function getPRFResolution(pIdPerson in number, pIdCriminalRecord in number) return varchar2
@@ -492,21 +426,18 @@ begin
     where id_person=pIdPerson and id_criminal_record=pIdCriminalRecord ;
     return (VCNAME);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 
@@ -519,21 +450,18 @@ begin
     where id_province=pid;
     return (vcname);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 end;
 /
 Create or replace function getProvinceCountry(pId in number) return number
@@ -545,20 +473,17 @@ begin
     where id_province=pid;
     return (vcname);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Could not find register.');
+            WHEN STORAGE_ERROR THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN OTHERS THEN
+            ROLLBACK;
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 end;
 
