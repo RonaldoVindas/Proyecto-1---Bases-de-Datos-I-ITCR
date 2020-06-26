@@ -1,0 +1,25 @@
+create or replace procedure ExpiringRecordWithPerson
+as
+Cursor ExpiringRecordWithPerson
+is 
+select a.id_criminal_record,a.description recordDescription , b.sentence_expiration, c.id_person, c.first_name, c.last_name, d.description genderDescription
+from criminal_record a
+inner join person_Register_file b
+on a.id_criminal_record = b.id_criminal_record
+inner join pe.person c
+on b.id_person = c.id_person
+join pe.gender d 
+on c.id_gender = d.id_gender
+where b.sentence_expiration < sysdate or (sysdate - b.sentence_expiration) < 30;
+
+begin 
+    for i in ExpiringRecordWithPerson loop 
+        dbms_output.put_line(i.id_criminal_record);
+        dbms_output.put_line(i.recordDescription);
+        dbms_output.put_line(i.sentence_expiration);
+        dbms_output.put_line(i.id_person);
+        dbms_output.put_line(i.first_name);
+        dbms_output.put_line(i.last_name);
+        dbms_output.put_line(i.genderDescription);
+    end loop;
+end ExpiringRecordWithPerson;
