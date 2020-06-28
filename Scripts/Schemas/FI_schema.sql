@@ -37,3 +37,4 @@ GRANT create any trigger, alter any trigger, drop any trigger to fi;
 ALTER USER FI QUOTA UNLIMITED ON fi_data;
 ALTER USER FI QUOTA UNLIMITED ON fi_ind;
 GRANT CREATE PROCEDURE TO FI;
+GRANT CREATE JOB TO FI;
