@@ -1,8 +1,7 @@
 /*=======================================CONSULTAS PARA ADMINS===============================*/
 
 /*En esquema FI ===============================*/
-
-*/Listado de expedientes nuevos*/
+/*Listado de expedientes nuevos*/
 
 create or replace procedure NewCriminalRecord
 as
@@ -24,24 +23,28 @@ begin
     end loop;
 end NewCriminalRecord;
 
-
+/
 
 /*Listado de usuario con claves no modificadas*/ 
 
-create or replace procedure UserWithoutChange(pDays in number)
+create or replace function UserWihtoutChange(pdays in number) return sys_refcursor
 as
-cursor UserWithoutChange(pDays in number)
-is 
+vcCursor sys_refcursor;
+begin 
+open vcCursor for
 Select a.Id_person, a.first_name, a.last_name, a.user_name
 from person a
-inner  join user_password_binnacle b 
+join user_password_binnacle b 
 on a.id_user_password_binnacle = b.id_user_password_binnacle
 where sysdate - b.user_password_date >= pDays;
-begin 
-    for i in UserWithoutChange(pdays) loop 
+
+return vcCursor;
+/**begin 
+    for i in UserWihtoutChange(pdays) loop 
         dbms_output.put_line(i.id_person);
         dbms_output.put_line(i.first_name);
         dbms_output.put_line(i.last_name);
         dbms_output.put_line(i.user_name);
-    end loop;
-end UserWithoutChange;
+    end loop;**/
+end;
+        /
