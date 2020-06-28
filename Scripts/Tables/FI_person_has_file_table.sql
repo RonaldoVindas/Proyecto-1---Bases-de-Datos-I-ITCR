@@ -29,7 +29,7 @@ ADD CONSTRAINT pk_person_has_file PRIMARY KEY (id_person, id_criminal_record)
 USING INDEX 
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 /*En esquema FI ===============================================================*/
 
 ALTER TABLE person_has_file
@@ -40,8 +40,8 @@ ALTER TABLE person_has_file
 ADD CONSTRAINT fk_personhasfile_idcrimrecord FOREIGN KEY
 (id_criminal_record) REFERENCES criminal_record(id_criminal_record);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
@@ -57,7 +57,7 @@ ADD user_last_modification VARCHAR(10);
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER fi.beforeInsertperson_has_file
-BEFORE UPDATE
+BEFORE INSERT
 ON fi.person_has_file
 FOR EACH ROW
 BEGIN

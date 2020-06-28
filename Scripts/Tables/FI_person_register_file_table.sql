@@ -60,7 +60,7 @@ USING INDEX
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 /*En esquema FI ===============================================================*/
 ALTER TABLE fi.person_register_file
 ADD CONSTRAINT fk_personRegfile_id_person FOREIGN KEY
@@ -69,8 +69,8 @@ ADD CONSTRAINT fk_personRegfile_id_person FOREIGN KEY
 ALTER TABLE person_register_file
 ADD CONSTRAINT fk_personRegfile_idcrimerecord FOREIGN KEY
 (id_criminal_record) REFERENCES criminal_record(id_criminal_record);
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
@@ -85,14 +85,14 @@ ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER fi.beforeInsertperson_register_file
-BEFORE UPDATE
+CREATE OR REPLACE TRIGGER fi.beforeInsertperRegFile
+BEFORE INSERT
 ON fi.person_register_file
 FOR EACH ROW
 BEGIN
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertperson_register_file; 
+END beforeInsertperRegFile; 
 
 /
 

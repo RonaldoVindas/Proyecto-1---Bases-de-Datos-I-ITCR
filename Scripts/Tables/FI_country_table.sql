@@ -29,8 +29,8 @@ USING INDEX
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
@@ -56,14 +56,14 @@ NOCYCLE;
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER fi.beforeInsertcountry
-BEFORE UPDATE
+BEFORE INSERT
 ON fi.country
 FOR EACH ROW
 BEGIN
 	:new.id_country:=s_country.nextval;
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertcountry; 
+END beforeInsertcountry;
 
 /
 

@@ -36,7 +36,7 @@ USING INDEX
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 /*En esquema FI ===============================================================*/
 ALTER TABLE criminal_record
 ADD CONSTRAINT fk_criminalrecord_id_crimetype FOREIGN KEY
@@ -45,8 +45,8 @@ ADD CONSTRAINT fk_criminalrecord_id_crimetype FOREIGN KEY
 ALTER TABLE criminal_record
 ADD CONSTRAINT fk_criminalrecord_id_community FOREIGN KEY
 (id_community) REFERENCES community(id_community);
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
@@ -72,7 +72,7 @@ NOCYCLE;
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER fi.beforeInsertcriminal_record
-BEFORE UPDATE
+BEFORE INSERT
 ON fi.criminal_record
 FOR EACH ROW
 BEGIN

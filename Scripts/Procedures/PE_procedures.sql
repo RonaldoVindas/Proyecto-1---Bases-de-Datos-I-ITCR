@@ -115,14 +115,14 @@ END update_institution_name;
 
 /*Tabla: Person: ========================================*/
 
-CREATE OR REPLACE PROCEDURE insert_person (pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
+CREATE OR REPLACE PROCEDURE insert_person (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
 								pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
 								pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, 
 								pid_type_person NUMBER)  AS
 
-BEGIN
-	INSERT INTO person(first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person,person_age)
-	VALUES(pfirst_name, plast_name, pbirth_day, pemail, puser_name, ppassword, pid_gender, pid_institution,pid_binnacle,pid_type_person,TRUNC((SYSDATE - pbirth_day)/365.25));
+BEGIN 
+	INSERT INTO person(id_person,first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person)
+	VALUES(pid_person,pfirst_name, plast_name, pbirth_day, pemail, puser_name, encryptpassword(ppassword), pid_gender, pid_institution,pid_binnacle,pid_type_person);
 	COMMIT;
 END insert_person;
 

@@ -33,14 +33,14 @@ TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
 
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 /*En esquema FI ===============================================================*/
 ALTER TABLE district
 ADD CONSTRAINT fk_district_id_canton FOREIGN KEY
 (id_canton) REFERENCES canton(id_canton);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
@@ -66,7 +66,7 @@ NOCYCLE;
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER fi.beforeInsertdistrict
-BEFORE UPDATE
+BEFORE INSERT
 ON fi.district
 FOR EACH ROW
 BEGIN

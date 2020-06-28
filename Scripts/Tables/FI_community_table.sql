@@ -32,7 +32,7 @@ USING INDEX
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 
-/*==================================================CREACIÓN DE LLAVES FORÁNEAS======================================================*/
+/*==================================================CREACIÓN DE LLAVES FOR�?NEAS======================================================*/
 
 /*En esquema FI ===============================================================*/
 
@@ -40,8 +40,8 @@ ALTER TABLE community
 ADD CONSTRAINT fk_community_id_district FOREIGN KEY
 (id_district) REFERENCES district(id_district);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
 
@@ -67,7 +67,7 @@ NOCYCLE;
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER fi.beforeInsertcommunity
-BEFORE UPDATE
+BEFORE INSERT
 ON fi.community
 FOR EACH ROW
 BEGIN

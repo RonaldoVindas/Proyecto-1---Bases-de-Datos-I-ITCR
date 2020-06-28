@@ -77,6 +77,8 @@ ALTER TABLE person
 ADD CONSTRAINT fk_person_id_gender FOREIGN KEY
 (id_gender) REFERENCES gender(id_gender);
 
+ALTER TABLE person
+MODIFY id_person NUMBER(20);
 
 ALTER TABLE person
 ADD CONSTRAINT fk_person_id_institution FOREIGN KEY
