@@ -4,8 +4,7 @@
 
 CREATE TABLE user_password_binnacle(
 	id_user_password_binnacle NUMBER(8),
-	user_password_date DATE, 				
-	old_password VARCHAR2(20) CONSTRAINT pass_binnacle_oldpassword_nn NOT NULL,
+	old_password VARCHAR2(20) ,
 	new_password VARCHAR2(20) CONSTRAINT pass_binnacle_newpassword_nn NOT NULL
 	);
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
@@ -16,9 +15,6 @@ IS 'Binnacle to store the control of dates and how many password changes has a s
 
 	COMMENT ON COLUMN user_password_binnacle.id_user_password_binnacle
 	IS 'Password change indentification of a specific user.';
-
-	COMMENT ON COLUMN user_password_binnacle.user_password_date
-	IS 'User´s password change date.';
 
 	COMMENT ON COLUMN user_password_binnacle.old_password
 	IS 'User old password.';
@@ -35,8 +31,8 @@ USING INDEX
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE user_password_binnacle
