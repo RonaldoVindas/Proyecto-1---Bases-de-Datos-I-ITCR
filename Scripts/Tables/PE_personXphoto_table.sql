@@ -52,7 +52,7 @@ ADD user_last_modification VARCHAR(10);
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER pe.beforeInsertpersonXphoto
-BEFORE UPDATE
+BEFORE INSERT
 ON pe.personXphoto
 FOR EACH ROW
 BEGIN

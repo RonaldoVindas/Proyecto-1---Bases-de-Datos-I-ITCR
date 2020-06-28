@@ -122,7 +122,7 @@ NOCYCLE;
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER pe.beforeInsertperson
-BEFORE UPDATE
+BEFORE INSERT
 ON pe.person
 FOR EACH ROW
 BEGIN

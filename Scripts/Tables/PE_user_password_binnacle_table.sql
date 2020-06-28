@@ -58,7 +58,7 @@ NOCYCLE;
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER pe.beforeInsertpassword_binnacle
-BEFORE UPDATE
+BEFORE INSERT
 ON pe.user_password_binnacle
 FOR EACH ROW
 BEGIN
