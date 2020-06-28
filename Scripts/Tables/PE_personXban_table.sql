@@ -53,7 +53,7 @@ ADD user_last_modification VARCHAR(10);
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
 CREATE OR REPLACE TRIGGER pe.beforeInsertpersonXban
-BEFORE UPDATE
+BEFORE INSERT
 ON pe.personXban
 FOR EACH ROW
 BEGIN
