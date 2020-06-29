@@ -2,50 +2,49 @@
 
 /*En esquema FI ===============================*/
 
-/*TOP N LUGARES M√ÅS PELIGROSOS=============*/
+/*TOP N LUGARES M√?S PELIGROSOS=============*/
 
-create or replace procedure MostDangerousZones(pNumber in number)
+create or replace function MostDangerousZones(pNumber in number)
+return sys_refcursor
 as
-cursor MostDangerousZones(pnumber in number)
-is 
-Select a.name , count(1) counter 
-from district a
-join community b
-on a.id_district= b.id_district
-join criminal_record c 
-on b.id_community = c.id_community
-group by district order by contador desc
-fetch first pnumber rows only;
+vcCursor sys_refcursor;
 begin 
-    for i in MostDangerousZones(pnumber) loop 
-        dbms_output.put_line(i.name);
-        dbms_output.put_line(i.counter);
-    end loop;
-end MostDangerousZones;
+open vcCursor for
+Select *
+from(
+Select a.name , count(1) counter 
+from FI.district a
+join fi.community b
+on a.id_district= b.id_district
+inner join fi.criminal_record c 
+on b.id_community = c.id_community
+group by a.name order by counter desc)
+where rownum <= 10;
+end;
 
-
-
+/
 /*LISTA DE USUARIOS*/
-Create or replace procedure usersList
+Create or replace function usersList
+return sys_refcursor
 as
-cursor usersList
-is
+vcCursor sys_refcursor;
+begin 
+open vcCursor for
 Select user_name, count(1)
 from person
 where  ID_type_person = 1;
-begin 
-    for i in usersList loop 
-        dbms_output.put_line(i.user_name);
-    end loop;
-end usersList;
+return vcCursor;
+end;
 
-
+/
 /*LISTA DE USUARIOS BANEADOS Y MOTIVO*/
 
-Create or replace procedure BanUsers
+Create or replace function BanUsers
+return sys_refcursor
 as
-cursor banUsers
-is
+vcCursor sys_refcursor;
+begin 
+open vcCursor for
 Select d.user_name, a.ban_motive_Description
 from ban_motive a
 join ban b
@@ -55,9 +54,28 @@ on c.id_ban = b.ID_ban
 join person d
 on d.id_person = c.id_person
 where  b.Ban_Time >Sysdate;
+return vcCursor;
+end;
+/
+
+/*LISTA DE CONDENAS Y DENUNCIADOS PROXIMOS A VENCER*/
+
+
+create or replace function ExpiringRecordWithPerson
+return sys_refcursor
+as
+vcCursor sys_refcursor;
 begin 
-    for i in BanUsers loop 
-        dbms_output.put_line(i.user_name);
-        dbms_output.put_line(i.ban_motive_description);
-    end loop;
-end BanUsers;
+open vcCursor for
+select a.id_criminal_record,a.description recordDescription , b.sentence_expiration, c.id_person, c.first_name, c.last_name, d.description genderDescription
+from fi.criminal_record a
+inner join fi.person_Register_file b
+on a.id_criminal_record = b.id_criminal_record
+inner join person c
+on b.id_person = c.id_person
+join gender d 
+on c.id_gender = d.id_gender
+where b.sentence_expiration < sysdate or (sysdate - b.sentence_expiration) < 30;
+return vcCursor;
+
+end; 

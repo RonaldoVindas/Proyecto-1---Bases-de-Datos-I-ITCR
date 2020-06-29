@@ -3,26 +3,21 @@
 /*En esquema FI ===============================*/
 /*Listado de expedientes nuevos*/
 
-create or replace procedure NewCriminalRecord
+create or replace function NewCriminalRecord return sys_refcursor
 as
-cursor newCriminalRecord
-is 
+vcCursor sys_refcursor;
+begin
+open vcCursor for
 Select a.id_criminal_record, a.description descript1, c.description descript2, b.name
-from Criminal_Record a
-join Community b
+from fi.Criminal_Record a
+join fi.Community b
 on a.id_community = b.id_community
-join crime_type c
+join fi.crime_type c
 on a.id_crime_type = c.id_crime_type
 where sysdate = a.creation_date;
-begin 
-    for i in newCriminalRecord loop 
-        dbms_output.put_line(i.id_criminal_record);
-        dbms_output.put_line(i.descript1);
-        dbms_output.put_line(i.name);
-        dbms_output.put_line(i.descript2);
-    end loop;
-end NewCriminalRecord;
+return vcCursor;
 
+end;
 /
 
 /*Listado de usuario con claves no modificadas*/ 
