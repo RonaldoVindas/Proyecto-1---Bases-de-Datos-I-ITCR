@@ -5,7 +5,7 @@
 CREATE TABLE user_password_binnacle(
 	id_user_password_binnacle NUMBER(8),
 	old_password VARCHAR2(20) ,
-	new_password VARCHAR2(20) CONSTRAINT pass_binnacle_newpassword_nn NOT NULL
+	new_password VARCHAR2(20)
 	);
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
