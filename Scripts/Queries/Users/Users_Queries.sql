@@ -2,7 +2,7 @@
 
 /*En esquema FI ===============================*/
 
-/*TOP N LUGARES MÃ?S PELIGROSOS=============*/
+/*TOP N LUGARES MÁS PELIGROSOS=============*/
 
 create or replace function MostDangerousZones(pNumber in number)
 return sys_refcursor
@@ -79,3 +79,64 @@ where b.sentence_expiration < sysdate or (sysdate - b.sentence_expiration) < 30;
 return vcCursor;
 
 end; 
+/
+/*Recuperar información del usuario*/
+
+create or replace function recoverInfo(pid IN NUMBER)
+return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin 
+open vcCursor for
+select a.first_name, a.last_name, a.email, a.user_name, b.description genderDescription, c.institution_name, d.description type_personDescription
+from person a
+inner join gender b
+on a.id_gender = b.id_gender
+inner join institution c
+on a.id_institution = c.id_institution
+join type_person d 
+on a.id_type_person = d.id_type_person
+where a.id_person=pid;
+return vcCursor;
+end;
+/
+/*Crimenes en un mismo día*/
+create or replace function crimesAmountOneDay(pdate IN DATE)
+return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin 
+open vcCursor for
+select a.description, count(1) 
+from FI.criminal_record a
+where a.crime_date=pdate;
+return vccursor;
+end;
+/
+/*Persona tiene o no tiene expediente*/
+create or replace function personHasFile(pid_person in number)return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select a.first_name, a.last_name, c.description file_name,d.description crimeDescription,e.name community_name
+from person a
+inner join fi.person_has_file b
+on a.id_person=b.id_person
+inner join fi.criminal_record c
+on b.id_criminal_record=c.id_criminal_record
+inner join fi.crime_type d
+on c.id_crime_type=d.id_crime_type
+inner join fi.community e
+on c.id_community=e.id_community
+where a.id_person=pid_person;
+return vcCursor;
+end;
+
+
+
+
+
+
+
+

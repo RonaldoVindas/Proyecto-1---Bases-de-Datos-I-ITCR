@@ -314,10 +314,10 @@ end update_Province;
 /
 
 ------Tabla Criminal_Record-----
-Create or replace procedure insert_Criminal_Record (p_description in varchar2, p_community_id number,p_id_crime_type in number)as 
+Create or replace procedure insert_Criminal_Record (p_description in varchar2, p_community_id number,p_id_crime_type in number,p_crime_date IN DATE)as 
 begin
-    insert into Criminal_Record(description, id_crime_type, id_community)
-    values (p_description,  p_community_id,p_id_crime_type );
+    insert into Criminal_Record(description, id_crime_type, id_community,crime_date)
+    values (p_description,  p_community_id,p_id_crime_type,p_crime_date);
     commit;
 end insert_Criminal_Record;
 
@@ -385,6 +385,28 @@ begin
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
 end UCriminalRecordCrimeType;
+
+/
+create or replace procedure UCriminalRecordCrimeDate(pcrime_date in date, p_id_Criminal_Record number)as 
+e_invalid_criminal_record EXCEPTION;
+begin
+    update Criminal_Record
+    set crime_date=pcrime_date
+    where id_Criminal_Record=p_id_Criminal_Record;
+    commit;
+    IF SQL%NOTFOUND THEN 
+        RAISE e_invalid_criminal_record;
+    END IF;
+    EXCEPTION
+    WHEN e_invalid_criminal_record THEN
+        DBMS_OUTPUT.PUT_LINE('No such criminal record.');
+        DBMS_OUTPUT.PUT_LINE(SQLERRM);
+        DBMS_OUTPUT.PUT_LINE(SQLCODE);
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to update.');
+        DBMS_OUTPUT.PUT_LINE(SQLERRM);
+        DBMS_OUTPUT.PUT_LINE(SQLCODE);
+end UCriminalRecordCrimeDate;
 
 /
 create or replace procedure UCriminalRecordCommunity(p_community in number, p_id_Criminal_Record number)as 
@@ -504,7 +526,7 @@ end insert_person_REgister_file;
 
 /
 
-create or replace procedure remove_person_regiter_file(p_id_person in number,p_criminal_record in number)as 
+create or replace procedure remove_person_register_file(p_id_person in number,p_criminal_record in number)as 
 e_invalid_person EXCEPTION;
 begin
     delete from person_register_file
@@ -522,7 +544,7 @@ begin
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to remove.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-end remove_person_regiter_file;
+end remove_person_register_file;
 
 /
 

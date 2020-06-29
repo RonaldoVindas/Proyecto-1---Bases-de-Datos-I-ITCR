@@ -7,21 +7,16 @@ BEGIN
     WHERE id_parameter = pId;
     RETURN (vcName);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+            WHEN STORAGE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
+            WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
 CREATE OR REPLACE FUNCTION getParameterValue(pId IN NUMBER) RETURN VARCHAR2
@@ -33,19 +28,14 @@ BEGIN
     WHERE id_parameter = pId;
     RETURN (vcValue);
     EXCEPTION
-        WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-        WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Could not find register.');
-        WHEN DUP_VAL_ON_INDEX THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Attempted to insert duplicate values in a column that is constrained by a unique index');
-        WHEN STORAGE_ERROR THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-        WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+            WHEN TOO_MANY_ROWS THEN
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+            WHEN STORAGE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
+            WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;

@@ -1,4 +1,4 @@
-/*====================================================CREACIÓN DE PROCEDIMIENTOS DE TABLAS====================================*/
+﻿/*====================================================CREACIÓN DE PROCEDIMIENTOS DE TABLAS====================================*/
 
 /*EN ESQUEMA PE: ========================================*/
 
@@ -62,7 +62,7 @@ END update_gender_description;
 
 CREATE OR REPLACE PROCEDURE insert_institution_name( pname IN VARCHAR2) AS
 BEGIN
-    INSERT INTO institution(name)
+    INSERT INTO institution(institution_name)
 	VALUES(pname);
 	COMMIT;
 END insert_institution_name;
@@ -95,7 +95,7 @@ CREATE OR REPLACE PROCEDURE update_institution_name(pid_institution IN NUMBER, p
 e_invalid_institution EXCEPTION;
 BEGIN
 	UPDATE institution
-	SET name = pname
+	SET institution_name = pname
 	WHERE id_institution = pid_institution;
 	COMMIT;
     IF SQL%NOTFOUND THEN 
@@ -271,11 +271,10 @@ END update_person_username;
 
 /
 
-CREATE OR REPLACE PROCEDURE update_person_username(pid_person IN NUMBER, pusername IN VARCHAR2) AS
-e_invalid_person EXCEPTION;
+CREATE OR REPLACE PROCEDURE update_person_type_person(pid_person IN NUMBER, ptype IN NUMBER)
 BEGIN
 	UPDATE person
-	SET user_name = pusername
+	SET id_type_person = ptypee
 	WHERE id_person = id_person;
 	COMMIT;
     IF SQL%NOTFOUND THEN 
@@ -290,7 +289,7 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to update.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-END update_person_username;
+END update_person_type_person;
 
 /
 
