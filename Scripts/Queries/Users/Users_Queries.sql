@@ -20,6 +20,7 @@ inner join fi.criminal_record c
 on b.id_community = c.id_community
 group by a.name order by counter desc)
 where rownum <= 10;
+return vcCursor;
 end;
 
 /
@@ -30,9 +31,9 @@ as
 vcCursor sys_refcursor;
 begin 
 open vcCursor for
-Select user_name, count(1)
+Select user_name
 from person
-where  ID_type_person = 1;
+where  ID_type_person = 0;
 return vcCursor;
 end;
 
@@ -107,7 +108,7 @@ as
 vcCursor sys_refcursor;
 begin 
 open vcCursor for
-select a.description, count(1) 
+select a.description
 from FI.criminal_record a
 where a.crime_date=pdate;
 return vccursor;
@@ -121,7 +122,7 @@ begin
 open vcCursor for
 select a.first_name, a.last_name, c.description file_name,d.description crimeDescription,e.name community_name
 from person a
-inner join fi.person_has_file b
+inner join fi.person_register_file b
 on a.id_person=b.id_person
 inner join fi.criminal_record c
 on b.id_criminal_record=c.id_criminal_record
@@ -133,8 +134,22 @@ where a.id_person=pid_person;
 return vcCursor;
 end;
 
-
-
+/*lista de usuarios que crearon un expediente en un rango de tiempo*/
+create or replace function usersCreateFileInRangeDate(pdate_begin IN DATE,pdate_end IN DATE)
+return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin 
+open vcCursor for
+select b.user_name user_that_registered, c.description file_name
+from FI.person_create_file a
+inner join person b
+on a.id_person=b.id_person
+inner join fi.criminal_record c
+on a.id_criminal_record=c.id_criminal_record
+where a.creation_date<=pdate_end and a.creation_date>=pdate_begin;
+return vcCursor;
+end;
 
 
 

@@ -431,19 +431,19 @@ begin
 end UCriminalRecordCommunity;
 /
 ----Tabla person_has_file----
-Create or replace procedure insert_person_has_file (p_id_person in number, p_id_criminal_record in number)as
+Create or replace procedure insert_person_create_file (p_id_person in number, p_id_criminal_record in number)as
 begin
-    insert into person_has_file(id_person, id_criminal_record)
+    insert into person_create_file(id_person, id_criminal_record)
     values (p_id_person, p_id_criminal_record);
     commit;
-end insert_person_has_file;
+end insert_person_create_file;
 
 /
 
-create or replace procedure remove_person_has_file(p_id_person in number,p_id_criminal_record in number )as 
+create or replace procedure remove_person_create_file(p_id_person in number,p_id_criminal_record in number )as 
 e_invalid_person EXCEPTION;
 begin
-    delete from person_has_file
+    delete from person_create_file
     where id_person = p_id_person and id_criminal_record = p_id_criminal_record ;
     commit;
     IF SQL%NOTFOUND THEN 
@@ -458,16 +458,16 @@ begin
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to remove.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-end remove_person_has_file;
+end remove_person_create_file;
 
 
 /
 
 
-create or replace procedure UPersonHasFilePerson(current_id_person in number,p_id_Criminal_Record in number, new_id_person in number)as 
+create or replace procedure UPersonCreateFilePerson(current_id_person in number,p_id_Criminal_Record in number, new_id_person in number)as 
 e_invalid_person EXCEPTION;
 begin
-    update person_has_file
+    update person_create_file
     set ID_person=new_id_person
     where id_person=current_id_person and id_criminal_record = p_id_Criminal_Record;
     commit;
@@ -483,13 +483,13 @@ begin
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to update.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-end UPersonHasFilePerson;
+end UPersonCreateFilePerson;
 /
 
-create or replace procedure UPersonHasFileCriminalRecord(current_id_Criminal_record in number,p_id_person in number, new_id_criminal_record in number)as 
+create or replace procedure UPersonCreateFileRecord(current_id_Criminal_record in number,p_id_person in number, new_id_criminal_record in number)as 
 e_invalid_person EXCEPTION;
 begin
-    update person_has_file
+    update person_create_file
     set ID_criminal_record=new_id_criminal_record
     where id_person=p_id_person and id_criminal_record = current_id_Criminal_Record;
     commit;
@@ -505,7 +505,7 @@ begin
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to update.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-end UPersonHasFileCriminalRecord;
+end UPersonCreateFileRecord;
 
 /
 

@@ -2,21 +2,21 @@
 
 /*En esquema FI ===============================================================*/
 
-CREATE TABLE person_has_file(
+CREATE TABLE person_create_file(
 	id_person NUMBER(20),
 	id_criminal_record NUMBER(6)
 );
-
+/*cambiar los nombres de has a create para evitar confusion*/
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema FI ===============================================================*/
-COMMENT ON TABLE person_has_file
+COMMENT ON TABLE person_create_file
 IS 'Repository to store information about the relationship between the guilty Person and Case File.';
 
-	COMMENT ON COLUMN person_has_file.id_person
+	COMMENT ON COLUMN person_create_file.id_person
 	IS 'Person identification.';
 
-	COMMENT ON COLUMN person_has_file.id_criminal_record
+	COMMENT ON COLUMN person_create_file.id_criminal_record
 	IS 'Case File identification.';
 
 
@@ -24,30 +24,30 @@ IS 'Repository to store information about the relationship between the guilty Pe
 
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE person_has_file
-ADD CONSTRAINT pk_person_has_file PRIMARY KEY (id_person, id_criminal_record)
+ALTER TABLE person_create_file
+ADD CONSTRAINT pk_person_create_file PRIMARY KEY (id_person, id_criminal_record)
 USING INDEX 
 TABLESPACE fi_ind PCTFREE 20
 STORAGE (INITIAL 10k NEXT 10K PCTINCREASE 0);
 /*==================================================CREACIÃ“N DE LLAVES FORÃ?NEAS======================================================*/
 /*En esquema FI ===============================================================*/
 
-ALTER TABLE person_has_file
-ADD CONSTRAINT fk_personhasfile_id_person FOREIGN KEY
+ALTER TABLE person_create_file
+ADD CONSTRAINT fk_personcreatefileId_person FOREIGN KEY
 (id_person) REFERENCES pe.person(id_person);
 
-ALTER TABLE person_has_file
-ADD CONSTRAINT fk_personhasfile_idcrimrecord FOREIGN KEY
+ALTER TABLE person_create_file
+ADD CONSTRAINT fk_personcreatefile_idcrimrecord FOREIGN KEY
 (id_criminal_record) REFERENCES criminal_record(id_criminal_record);
 
 /*==================================================CAMPOS DE AUDITORÃ?A PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÃ?A AÃšN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
-ALTER TABLE person_has_file
+ALTER TABLE person_create_file
 MODIFY id_person NUMBER(20);
 
-ALTER TABLE person_has_file
+ALTER TABLE person_create_file
 ADD creation_date DATE
 ADD creation_user VARCHAR(10)
 ADD date_last_modification DATE
