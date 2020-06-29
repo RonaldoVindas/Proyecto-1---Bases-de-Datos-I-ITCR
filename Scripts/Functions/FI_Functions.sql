@@ -8,19 +8,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -34,19 +29,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -60,19 +50,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -86,19 +71,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -113,19 +93,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 
@@ -140,19 +115,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -166,19 +136,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -192,19 +157,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -218,19 +178,35 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
+        DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+END;
+/
+create or replace function getCriminalCrimeDate(pId in number) return date
+is vcName date;
+begin
+    select crime_date
+    into vcName
+    from criminal_record
+    where id_criminal_record=pID ;
+    return (VCNAME);
+    EXCEPTION
+        WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+        WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+        WHEN STORAGE_ERROR THEN
+        DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+        WHEN VALUE_ERROR THEN
+        DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
+        WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -244,19 +220,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -270,19 +241,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -298,19 +264,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -324,19 +285,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -350,19 +306,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -376,19 +327,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -403,19 +349,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -429,19 +370,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -455,19 +391,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -481,19 +412,14 @@ begin
     return (VCNAME);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 END;
 /
@@ -508,19 +434,14 @@ begin
     return (vcname);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 end;
 /
@@ -534,19 +455,14 @@ begin
     return (vcname);
     EXCEPTION
         WHEN TOO_MANY_ROWS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
         WHEN STORAGE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
         WHEN OTHERS THEN
-        ROLLBACK;
         DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
 end;
 

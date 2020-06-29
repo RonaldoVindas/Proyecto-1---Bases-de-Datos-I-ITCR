@@ -62,7 +62,7 @@ END update_gender_description;
 
 CREATE OR REPLACE PROCEDURE insert_institution_name( pname IN VARCHAR2) AS
 BEGIN
-    INSERT INTO institution(name)
+    INSERT INTO institution(institution_name)
 	VALUES(pname);
 	COMMIT;
 END insert_institution_name;
@@ -95,7 +95,7 @@ CREATE OR REPLACE PROCEDURE update_institution_name(pid_institution IN NUMBER, p
 e_invalid_institution EXCEPTION;
 BEGIN
 	UPDATE institution
-	SET name = pname
+	SET institution_name = pname
 	WHERE id_institution = pid_institution;
 	COMMIT;
     IF SQL%NOTFOUND THEN 

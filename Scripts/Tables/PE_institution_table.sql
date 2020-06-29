@@ -3,7 +3,7 @@
 CREATE TABLE institution 
 	(
 		id_institution NUMBER(6),
-		name VARCHAR2(50) CONSTRAINT institution_description_nn NOT NULL
+		institution_name VARCHAR2(50) CONSTRAINT institution_description_nn NOT NULL
 	);
 
 
@@ -29,8 +29,11 @@ USING INDEX
 TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-/*==================================================CAMPOS DE AUDITORÍA PARA TABLAS======================================================*/
-/* CAMPOS DE AUDITORÍA AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
+
+ALTER TABLE institution
+RENAME COLUMN name TO institution_name;
+/*==================================================CAMPOS DE AUDITOR�?A PARA TABLAS======================================================*/
+/* CAMPOS DE AUDITOR�?A AÚN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE institution

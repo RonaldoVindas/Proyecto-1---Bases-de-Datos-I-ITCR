@@ -7,6 +7,7 @@ CREATE TABLE criminal_record(
 	description VARCHAR(100) CONSTRAINT criminal_record_description_nn NOT NULL,
 	id_crime_type NUMBER(6),
 	id_community NUMBER(10)
+    
 );
 
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
@@ -49,6 +50,9 @@ ADD CONSTRAINT fk_criminalrecord_id_community FOREIGN KEY
 /* CAMPOS DE AUDITORÃ?A AÃšN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
+
+ALTER TABLE criminal_record
+ADD crime_date DATE;
 
 ALTER TABLE criminal_record
 ADD creation_date DATE

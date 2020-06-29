@@ -3,7 +3,7 @@
 /*En esquema FI ===============================================================*/
 
 CREATE TABLE person_has_file(
-	id_person NUMBER(8),
+	id_person NUMBER(20),
 	id_criminal_record NUMBER(6)
 );
 
@@ -44,6 +44,8 @@ ADD CONSTRAINT fk_personhasfile_idcrimrecord FOREIGN KEY
 /* CAMPOS DE AUDITORÃ?A AÃšN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
+ALTER TABLE person_has_file
+MODIFY id_person NUMBER(20);
 
 ALTER TABLE person_has_file
 ADD creation_date DATE
