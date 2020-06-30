@@ -89,7 +89,7 @@ as
 vcCursor sys_refcursor;
 begin 
 open vcCursor for
-select a.first_name, a.last_name, a.email, a.user_name, b.description genderDescription, c.institution_name, d.description type_personDescription
+select a.first_name, a.last_name, a.email, a.user_name, b.description genderDescription, c.institution_name
 from person a
 inner join gender b
 on a.id_gender = b.id_gender
@@ -134,24 +134,77 @@ where a.id_person=pid_person;
 return vcCursor;
 end;
 
-/*lista de usuarios que crearon un expediente en un rango de tiempo*/
-create or replace function usersCreateFileInRangeDate(pdate_begin IN DATE,pdate_end IN DATE)
+/*Expedientes por genero*/
+/
+create or replace function filesbygender(pid_gender in number)
+return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select b.description gender, a.first_name, a.last_name, d.description filename
+from person a
+inner join gender b
+on a.id_gender=b.id_gender
+inner join FI.person_create_file c
+on a.id_person=c.id_person
+inner join fi.criminal_record d
+on c.id_criminal_record=d.id_criminal_record
+where a.id_gender =pid_gender;
+return vcCursor;
+end;
+/
+/*crimenes por mes en un año*/
+create or replace function crimes_per_month(pyear number)
 return sys_refcursor
 as
 vcCursor sys_refcursor;
 begin 
 open vcCursor for
-select b.user_name user_that_registered, c.description file_name
-from FI.person_create_file a
-inner join person b
-on a.id_person=b.id_person
-inner join fi.criminal_record c
-on a.id_criminal_record=c.id_criminal_record
-where a.creation_date<=pdate_end and a.creation_date>=pdate_begin;
+select Extract(MONTH from a.crime_date) month ,COUNT(1) crime_quantity
+from fi.criminal_record a
+Where extract(YEAR from a.crime_date)= pyear
+group by Extract(MONTH from a.crime_date);
 return vcCursor;
 end;
+/
+/*Personas con mas expedientes ligados*/
+create or replace function topPersonMostFiles(pNumber in number)
+return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select *
+from(
+Select a.first_name,a.last_name,c.description filename , count(1) counter
+from person a
+inner join FI.person_create_file b
+on a.id_person= b.id_person
+join fi.criminal_record c
+on b.id_criminal_record = c.id_criminal_record
+group by c.description order by counter desc)
+where rownum <= 10;
+return vcCursor;
+end;
+/
+/*Listado de personas que han cometido un crimen específico*/
 
-
-
-
+create or replace function personbycrime(pid_crime in number)
+return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select b.description crime ,a.description filename, d.last_name, d.first_name
+from FI.criminal_record a
+inner join FI.crime_type b
+on a.id_crime_type=b.id_crime_type
+inner join FI.person_create_file c
+on a.id_criminal_record=c.id_criminal_record
+inner join person d
+on c.id_person=d.id_person
+where b.id_crime_type = pid_crime;
+return vcCursor;
+end;
 
