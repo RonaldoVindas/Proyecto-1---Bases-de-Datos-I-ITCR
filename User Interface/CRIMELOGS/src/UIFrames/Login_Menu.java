@@ -15,9 +15,10 @@ public class Login_Menu extends javax.swing.JFrame {
      * Creates new form Main_Menu
      */
     public Login_Menu() {
-        this.setLocationRelativeTo(null);
-        //this.setUndecorated(true);
+       
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**

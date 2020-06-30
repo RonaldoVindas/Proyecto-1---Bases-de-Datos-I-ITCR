@@ -18,6 +18,8 @@ public class Register_Window extends javax.swing.JFrame {
      */
     public Register_Window() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -39,7 +41,7 @@ public class Register_Window extends javax.swing.JFrame {
         NewUser_Label = new javax.swing.JLabel();
         RegisterButton_Panel = new javax.swing.JPanel();
         Register_Button = new javax.swing.JButton();
-        FirstName_TextField = new javax.swing.JTextField();
+        Identification_TextField = new javax.swing.JTextField();
         BirthDay_DateChooser = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,6 +49,7 @@ public class Register_Window extends javax.swing.JFrame {
         Company_ComboBox = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         Gender_ComboBox = new javax.swing.JComboBox<>();
+        FirstName_TextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,7 +90,7 @@ public class Register_Window extends javax.swing.JFrame {
                 LastName_TextFieldActionPerformed(evt);
             }
         });
-        DecorationPanel.add(LastName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 260, 20));
+        DecorationPanel.add(LastName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 260, 20));
 
         Username_TextField.setBackground(new java.awt.Color(219, 219, 219));
         Username_TextField.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -109,7 +112,7 @@ public class Register_Window extends javax.swing.JFrame {
                 Username_TextFieldActionPerformed(evt);
             }
         });
-        DecorationPanel.add(Username_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 260, 20));
+        DecorationPanel.add(Username_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 260, 20));
 
         Password_TextField.setBackground(new java.awt.Color(219, 219, 219));
         Password_TextField.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -131,7 +134,7 @@ public class Register_Window extends javax.swing.JFrame {
                 Password_TextFieldActionPerformed(evt);
             }
         });
-        DecorationPanel.add(Password_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 260, 20));
+        DecorationPanel.add(Password_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 260, 20));
 
         NewUser_Label.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         NewUser_Label.setForeground(new java.awt.Color(0, 0, 0));
@@ -163,40 +166,40 @@ public class Register_Window extends javax.swing.JFrame {
 
         DecorationPanel.add(RegisterButton_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 160, 150));
 
-        FirstName_TextField.setBackground(new java.awt.Color(219, 219, 219));
-        FirstName_TextField.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        FirstName_TextField.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        FirstName_TextField.setText("First name");
-        FirstName_TextField.setBorder(null);
-        FirstName_TextField.setCaretColor(new java.awt.Color(44, 168, 109));
-        FirstName_TextField.addMouseListener(new java.awt.event.MouseAdapter() {
+        Identification_TextField.setBackground(new java.awt.Color(219, 219, 219));
+        Identification_TextField.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Identification_TextField.setForeground(new java.awt.Color(153, 153, 153));
+        Identification_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Identification_TextField.setText("Identification");
+        Identification_TextField.setBorder(null);
+        Identification_TextField.setCaretColor(new java.awt.Color(44, 168, 109));
+        Identification_TextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                FirstName_TextFieldMouseEntered(evt);
+                Identification_TextFieldMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                FirstName_TextFieldMouseExited(evt);
+                Identification_TextFieldMouseExited(evt);
             }
         });
-        FirstName_TextField.addActionListener(new java.awt.event.ActionListener() {
+        Identification_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_TextFieldActionPerformed(evt);
+                Identification_TextFieldActionPerformed(evt);
             }
         });
-        DecorationPanel.add(FirstName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 260, 20));
+        DecorationPanel.add(Identification_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 260, 20));
 
         BirthDay_DateChooser.setBackground(new java.awt.Color(219, 219, 219));
-        DecorationPanel.add(BirthDay_DateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 160, 30));
+        DecorationPanel.add(BirthDay_DateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 160, 30));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Company:");
-        DecorationPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 100, -1));
+        DecorationPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 100, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("Birth Day:");
-        DecorationPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 100, -1));
+        DecorationPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 100, -1));
 
         Email_TextField.setBackground(new java.awt.Color(219, 219, 219));
         Email_TextField.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -218,22 +221,44 @@ public class Register_Window extends javax.swing.JFrame {
                 Email_TextFieldActionPerformed(evt);
             }
         });
-        DecorationPanel.add(Email_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 260, 20));
+        DecorationPanel.add(Email_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 260, 20));
 
         Company_ComboBox.setBackground(new java.awt.Color(219, 219, 219));
         Company_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        DecorationPanel.add(Company_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 160, 20));
+        DecorationPanel.add(Company_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 160, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Gender:");
-        DecorationPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, -1));
+        DecorationPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 100, -1));
 
         Gender_ComboBox.setBackground(new java.awt.Color(219, 219, 219));
         Gender_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        DecorationPanel.add(Gender_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 160, 20));
+        DecorationPanel.add(Gender_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 160, 20));
 
-        LogIn_Panel.add(DecorationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 480, 310));
+        FirstName_TextField1.setBackground(new java.awt.Color(219, 219, 219));
+        FirstName_TextField1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        FirstName_TextField1.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_TextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        FirstName_TextField1.setText("First name");
+        FirstName_TextField1.setBorder(null);
+        FirstName_TextField1.setCaretColor(new java.awt.Color(44, 168, 109));
+        FirstName_TextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FirstName_TextField1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FirstName_TextField1MouseExited(evt);
+            }
+        });
+        FirstName_TextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_TextField1ActionPerformed(evt);
+            }
+        });
+        DecorationPanel.add(FirstName_TextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 260, 20));
+
+        LogIn_Panel.add(DecorationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 480, 320));
 
         getContentPane().add(LogIn_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 520, 450));
 
@@ -298,20 +323,20 @@ public class Register_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LastName_TextFieldActionPerformed
 
-    private void FirstName_TextFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FirstName_TextFieldMouseEntered
-        FirstName_TextField.setBackground(new java.awt.Color(200,200,200));
-        FirstName_TextField.setForeground(new java.awt.Color(255,255,255));
+    private void Identification_TextFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Identification_TextFieldMouseEntered
+        Identification_TextField.setBackground(new java.awt.Color(200,200,200));
+        Identification_TextField.setForeground(new java.awt.Color(255,255,255));
 
-    }//GEN-LAST:event_FirstName_TextFieldMouseEntered
+    }//GEN-LAST:event_Identification_TextFieldMouseEntered
 
-    private void FirstName_TextFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FirstName_TextFieldMouseExited
-        FirstName_TextField.setBackground(new java.awt.Color(219,219,219));
-        FirstName_TextField.setForeground(new java.awt.Color(153,153,153));
-    }//GEN-LAST:event_FirstName_TextFieldMouseExited
+    private void Identification_TextFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Identification_TextFieldMouseExited
+        Identification_TextField.setBackground(new java.awt.Color(219,219,219));
+        Identification_TextField.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_Identification_TextFieldMouseExited
 
-    private void FirstName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_TextFieldActionPerformed
+    private void Identification_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Identification_TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_TextFieldActionPerformed
+    }//GEN-LAST:event_Identification_TextFieldActionPerformed
 
     private void Email_TextFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Email_TextFieldMouseEntered
        Email_TextField.setBackground(new java.awt.Color(200,200,200));
@@ -326,6 +351,18 @@ public class Register_Window extends javax.swing.JFrame {
     private void Email_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Email_TextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Email_TextFieldActionPerformed
+
+    private void FirstName_TextField1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FirstName_TextField1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_TextField1MouseEntered
+
+    private void FirstName_TextField1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FirstName_TextField1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_TextField1MouseExited
+
+    private void FirstName_TextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_TextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_TextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -370,8 +407,9 @@ public class Register_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Company_ComboBox;
     private javax.swing.JPanel DecorationPanel;
     private javax.swing.JTextField Email_TextField;
-    private javax.swing.JTextField FirstName_TextField;
+    private javax.swing.JTextField FirstName_TextField1;
     private javax.swing.JComboBox<String> Gender_ComboBox;
+    private javax.swing.JTextField Identification_TextField;
     private javax.swing.JTextField LastName_TextField;
     private javax.swing.JLabel LogIn_Logo;
     private javax.swing.JPanel LogIn_Panel;
