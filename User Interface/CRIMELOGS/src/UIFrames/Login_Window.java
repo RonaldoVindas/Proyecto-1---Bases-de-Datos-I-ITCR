@@ -17,7 +17,7 @@ public class Login_Window extends javax.swing.JFrame {
      * Creates new form Logiin_Window
      */
     public Login_Window() {
-        this.setLocationRelativeTo(null);
+        this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -47,6 +47,7 @@ public class Login_Window extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LogIn_Panel.setBackground(new java.awt.Color(44, 168, 109));
+        LogIn_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         LogIn_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LogIn_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/white_logo2.png"))); // NOI18N
@@ -149,7 +150,15 @@ public class Login_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_Username_TextFieldActionPerformed
 
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
-    
+       
+        //if type_person == admin
+             Admin_Main_Menu result = new Admin_Main_Menu();
+             result.setVisible(true); 
+       //else
+             //User_Main_Menu resultuser = new User_Main_Menu();
+             //resultuser.setVisible(true);   
+          this.setVisible(false);
+          
     }//GEN-LAST:event_Login_ButtonActionPerformed
 
     private void Username_TextFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Username_TextFieldMouseEntered

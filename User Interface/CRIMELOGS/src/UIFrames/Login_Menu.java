@@ -113,7 +113,9 @@ public class Login_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_buttonActionPerformed
-        // TODO add your handling code here:
+        Register_Window result = new Register_Window();
+        result.setVisible(true);
+        //this.setVisible(false);
     }//GEN-LAST:event_Register_buttonActionPerformed
 
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed

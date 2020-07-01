@@ -5,6 +5,20 @@
  */
 package UIFrames;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PiePlot3D;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+
+
 /**
  *
  * @author Ronaldo
@@ -14,9 +28,15 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     /**
      * Creates new form Main_Menu
      */
+    
+    private ChartFrame frame;
     public Admin_Main_Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
+        
+        
     }
 
     /**
@@ -78,11 +98,18 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Panel_Wallpaper8 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         RegisterInfo_Person_JInternalFrame = new javax.swing.JInternalFrame();
+        DeletePerson_Panel = new javax.swing.JPanel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        RegisterInfoName_TextField20 = new javax.swing.JTextField();
+        Go_Panel9 = new javax.swing.JPanel();
+        RegisterPersonGo_Button1 = new javax.swing.JButton();
+        jLabel113 = new javax.swing.JLabel();
         Decoration_Panel6 = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel29 = new javax.swing.JPanel();
-        jLabel65 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
         Decoration_Panel8 = new javax.swing.JPanel();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
@@ -97,8 +124,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         RegisterInfoCompany_ComboBox = new javax.swing.JComboBox<>();
         RegisterInfoDate_jDateChooser = new com.toedter.calendar.JDateChooser();
         jLabel72 = new javax.swing.JLabel();
-        Go_Panel5 = new javax.swing.JPanel();
-        RegisterPersonGo_Button = new javax.swing.JButton();
+        RegisterUpdatePersonGo_Panel = new javax.swing.JPanel();
+        RegisterUpdatePersonGo_Button = new javax.swing.JButton();
+        jLabel65 = new javax.swing.JLabel();
         Panel_Wallpaper2 = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
         DangerousZones_Logo2 = new javax.swing.JLabel();
@@ -108,6 +136,15 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         ShowList_TextArea = new javax.swing.JTextArea();
         ExitList_Button = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
+        Delete_Panel1 = new javax.swing.JPanel();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        RegisterInfoName_TextField21 = new javax.swing.JTextField();
+        Go_Panel10 = new javax.swing.JPanel();
+        RegisterPersonGo_Button7 = new javax.swing.JButton();
+        jLabel114 = new javax.swing.JLabel();
+        Show_Panel = new javax.swing.JPanel();
+        Show_Button = new javax.swing.JButton();
         Decoration_Panel10 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
@@ -119,8 +156,6 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         RegisterPersonGo_Button6 = new javax.swing.JButton();
         jLabel119 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
-        Show_Panel = new javax.swing.JPanel();
-        Show_Button = new javax.swing.JButton();
         Decoration_Panel36 = new javax.swing.JPanel();
         RegisterInfoName_TextField10 = new javax.swing.JTextField();
         jLabel118 = new javax.swing.JLabel();
@@ -139,6 +174,13 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         ShowList_TextArea1 = new javax.swing.JTextArea();
         ExitList_Button1 = new javax.swing.JButton();
         jLabel76 = new javax.swing.JLabel();
+        Delete_Panel2 = new javax.swing.JPanel();
+        jLabel111 = new javax.swing.JLabel();
+        jLabel112 = new javax.swing.JLabel();
+        RegisterInfoName_TextField22 = new javax.swing.JTextField();
+        DeletePlaceGo_Panel = new javax.swing.JPanel();
+        DeletePlaceGo_Button = new javax.swing.JButton();
+        jLabel115 = new javax.swing.JLabel();
         Show_Panel1 = new javax.swing.JPanel();
         Show_Button1 = new javax.swing.JButton();
         Decoration_Panel28 = new javax.swing.JPanel();
@@ -155,9 +197,11 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel87 = new javax.swing.JLabel();
         RegisterInfoIdentification_TextField2 = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
-        RegisterPersonGo_Button2 = new javax.swing.JButton();
         jLabel90 = new javax.swing.JLabel();
         RegisterInfoName_TextField12 = new javax.swing.JTextField();
+        jLabel103 = new javax.swing.JLabel();
+        RegisterPlaceGo_Panel = new javax.swing.JPanel();
+        RegisterPlaceGo_Button = new javax.swing.JButton();
         Panel_Wallpaper12 = new javax.swing.JLabel();
         jPanel42 = new javax.swing.JPanel();
         DangerousZones_Logo12 = new javax.swing.JLabel();
@@ -167,15 +211,23 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         ShowList_TextArea2 = new javax.swing.JTextArea();
         ExitList_Button2 = new javax.swing.JButton();
         jLabel77 = new javax.swing.JLabel();
+        Delete_Panel3 = new javax.swing.JPanel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel134 = new javax.swing.JLabel();
+        RegisterInfoName_TextField23 = new javax.swing.JTextField();
+        Go_Panel12 = new javax.swing.JPanel();
+        RegisterPersonGo_Button13 = new javax.swing.JButton();
+        jLabel135 = new javax.swing.JLabel();
         Show_Panel2 = new javax.swing.JPanel();
         Show_Button2 = new javax.swing.JButton();
         Decoration_Panel37 = new javax.swing.JPanel();
         RegisterInfoName_TextField13 = new javax.swing.JTextField();
-        RegisterPersonGo_Button8 = new javax.swing.JButton();
         jLabel123 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
         RegisterInfoName_TextField14 = new javax.swing.JTextField();
+        RegisterPlaceGo_Panel1 = new javax.swing.JPanel();
+        RegisterPlaceGo_Button1 = new javax.swing.JButton();
         Decoration_Panel30 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jLabel91 = new javax.swing.JLabel();
@@ -183,9 +235,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel92 = new javax.swing.JLabel();
         Decoration_Panel31 = new javax.swing.JPanel();
         RegisterInfoName_TextField7 = new javax.swing.JTextField();
-        RegisterPersonGo_Button3 = new javax.swing.JButton();
         jLabel99 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
+        Go_Panel16 = new javax.swing.JPanel();
+        RegisterPersonGo_Button16 = new javax.swing.JButton();
         Panel_Wallpaper13 = new javax.swing.JLabel();
         jPanel43 = new javax.swing.JPanel();
         DangerousZones_Logo13 = new javax.swing.JLabel();
@@ -197,6 +250,13 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel78 = new javax.swing.JLabel();
         Show_Panel3 = new javax.swing.JPanel();
         Show_Button3 = new javax.swing.JButton();
+        Delete_Panel4 = new javax.swing.JPanel();
+        jLabel137 = new javax.swing.JLabel();
+        RegisterInfoName_TextField24 = new javax.swing.JTextField();
+        Go_Panel13 = new javax.swing.JPanel();
+        RegisterPersonGo_Button14 = new javax.swing.JButton();
+        jLabel138 = new javax.swing.JLabel();
+        Go_Panel17 = new javax.swing.JPanel();
         Decoration_Panel32 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jLabel100 = new javax.swing.JLabel();
@@ -204,16 +264,18 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel101 = new javax.swing.JLabel();
         Decoration_Panel38 = new javax.swing.JPanel();
         RegisterInfoName_TextField15 = new javax.swing.JTextField();
-        RegisterPersonGo_Button9 = new javax.swing.JButton();
         jLabel127 = new javax.swing.JLabel();
         jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
         RegisterInfoName_TextField16 = new javax.swing.JTextField();
+        Go_Panel18 = new javax.swing.JPanel();
+        RegisterPersonGo_Button17 = new javax.swing.JButton();
         Decoration_Panel33 = new javax.swing.JPanel();
         RegisterInfoName_TextField8 = new javax.swing.JTextField();
-        RegisterPersonGo_Button4 = new javax.swing.JButton();
         jLabel108 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
+        Go_Panel19 = new javax.swing.JPanel();
+        RegisterPersonGo_Button18 = new javax.swing.JButton();
         Panel_Wallpaper14 = new javax.swing.JLabel();
         jPanel44 = new javax.swing.JPanel();
         DangerousZones_Logo14 = new javax.swing.JLabel();
@@ -223,15 +285,22 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         ShowList_TextArea4 = new javax.swing.JTextArea();
         ExitList_Button4 = new javax.swing.JButton();
         jLabel79 = new javax.swing.JLabel();
+        Delete_Panel5 = new javax.swing.JPanel();
+        jLabel139 = new javax.swing.JLabel();
+        RegisterInfoName_TextField25 = new javax.swing.JTextField();
+        Go_Panel14 = new javax.swing.JPanel();
+        RegisterPersonGo_Button15 = new javax.swing.JButton();
+        jLabel140 = new javax.swing.JLabel();
         Show_Panel4 = new javax.swing.JPanel();
         Show_Button4 = new javax.swing.JButton();
         Decoration_Panel39 = new javax.swing.JPanel();
         RegisterInfoName_TextField17 = new javax.swing.JTextField();
-        RegisterPersonGo_Button10 = new javax.swing.JButton();
         jLabel131 = new javax.swing.JLabel();
         jLabel132 = new javax.swing.JLabel();
         jLabel133 = new javax.swing.JLabel();
         RegisterInfoName_TextField18 = new javax.swing.JTextField();
+        Go_Panel20 = new javax.swing.JPanel();
+        RegisterPersonGo_Button19 = new javax.swing.JButton();
         Decoration_Panel34 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jLabel109 = new javax.swing.JLabel();
@@ -239,9 +308,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel110 = new javax.swing.JLabel();
         Decoration_Panel35 = new javax.swing.JPanel();
         RegisterInfoName_TextField9 = new javax.swing.JTextField();
-        RegisterPersonGo_Button5 = new javax.swing.JButton();
         jLabel117 = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
+        Go_Panel21 = new javax.swing.JPanel();
+        RegisterPersonGo_Button20 = new javax.swing.JButton();
         Panel_Wallpaper15 = new javax.swing.JLabel();
         jPanel45 = new javax.swing.JPanel();
         DangerousZones_Logo15 = new javax.swing.JLabel();
@@ -351,16 +421,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Decoration_Panel26 = new javax.swing.JPanel();
         Company4 = new javax.swing.JLabel();
         Places2 = new javax.swing.JButton();
-        Profile_Button6 = new javax.swing.JButton();
-        jLabel51 = new javax.swing.JLabel();
         UserLists_Button = new javax.swing.JButton();
-        Company5 = new javax.swing.JLabel();
         Profile_Button7 = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
-        Profile_Button8 = new javax.swing.JButton();
         Company6 = new javax.swing.JLabel();
-        Profile_Button9 = new javax.swing.JButton();
-        Company7 = new javax.swing.JLabel();
         Panel_Wallpaper11 = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
         DangerousZones_Logo11 = new javax.swing.JLabel();
@@ -379,12 +443,14 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         Panel_Wallpaper1 = new javax.swing.JLabel();
+        jPanel49 = new javax.swing.JPanel();
         RegisterCriminalRecord_JInternalFrame = new javax.swing.JInternalFrame();
         DangerousZones_Logo7 = new javax.swing.JLabel();
         Decoration_Panel17 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
+        jLabel88 = new javax.swing.JLabel();
         Decoration_Panel27 = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         jTextField27 = new javax.swing.JTextField();
@@ -412,6 +478,36 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Go_Button5 = new javax.swing.JButton();
         Panel_Wallpaper7 = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
+        UserList_JInternalFrame = new javax.swing.JInternalFrame();
+        Decoration_Panel40 = new javax.swing.JPanel();
+        jPanel47 = new javax.swing.JPanel();
+        jLabel84 = new javax.swing.JLabel();
+        jPanel48 = new javax.swing.JPanel();
+        jLabel93 = new javax.swing.JLabel();
+        Decoration_Panel41 = new javax.swing.JPanel();
+        RegisterInfoName_TextField19 = new javax.swing.JTextField();
+        Panel_Wallpaper16 = new javax.swing.JLabel();
+        jPanel50 = new javax.swing.JPanel();
+        DangerousZones_Logo16 = new javax.swing.JLabel();
+        Statistics_JInternalFrame = new javax.swing.JInternalFrame();
+        Chart_Panel = new javax.swing.JPanel();
+        jLabel98 = new javax.swing.JLabel();
+        ExittGraphic_Button = new javax.swing.JButton();
+        Decoration_Panel42 = new javax.swing.JPanel();
+        jPanel51 = new javax.swing.JPanel();
+        jLabel94 = new javax.swing.JLabel();
+        jPanel52 = new javax.swing.JPanel();
+        jLabel96 = new javax.swing.JLabel();
+        Decoration_Panel43 = new javax.swing.JPanel();
+        jLabel95 = new javax.swing.JLabel();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        Go_Panel15 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        Panel_Wallpaper17 = new javax.swing.JLabel();
+        jPanel53 = new javax.swing.JPanel();
+        DangerousZones_Logo17 = new javax.swing.JLabel();
+        Decoration_Panel44 = new javax.swing.JPanel();
+        jLabel97 = new javax.swing.JLabel();
         Lateral_Menu_Panel = new javax.swing.JPanel();
         Profile_Panel = new javax.swing.JPanel();
         Profile_Button = new javax.swing.JButton();
@@ -800,6 +896,61 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         RegisterInfo_Person_JInternalFrame.setVisible(false);
         RegisterInfo_Person_JInternalFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        DeletePerson_Panel.setBackground(new java.awt.Color(219, 219, 219));
+        DeletePerson_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel104.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel104.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel104.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel104.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        DeletePerson_Panel.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 30));
+
+        jLabel105.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel105.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel105.setText("ID:");
+        jLabel105.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        DeletePerson_Panel.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 30, 30));
+        DeletePerson_Panel.add(RegisterInfoName_TextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 140, 30));
+
+        Go_Panel9.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button1.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button1.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button1.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button1.setText("Go!");
+        RegisterPersonGo_Button1.setBorder(null);
+        RegisterPersonGo_Button1.setBorderPainted(false);
+        RegisterPersonGo_Button1.setContentAreaFilled(false);
+        RegisterPersonGo_Button1.setFocusPainted(false);
+        RegisterPersonGo_Button1.setFocusable(false);
+        RegisterPersonGo_Button1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button1MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button1ActionPerformed(evt);
+            }
+        });
+        Go_Panel9.add(RegisterPersonGo_Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        DeletePerson_Panel.add(Go_Panel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 100, 50));
+
+        jLabel113.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel113.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel113.setText("Delete:");
+        jLabel113.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        DeletePerson_Panel.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 80, 30));
+
+        RegisterInfo_Person_JInternalFrame.getContentPane().add(DeletePerson_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 340, 280));
+
         Decoration_Panel6.setBackground(new java.awt.Color(40, 170, 108));
         Decoration_Panel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -814,12 +965,12 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jPanel28.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, -1));
         jPanel28.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 170, 180));
 
-        jLabel65.setBackground(new java.awt.Color(219, 219, 219));
-        jLabel65.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel65.setText("Register or update information about a person out of the database");
-        jLabel65.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel28.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 630, 40));
+        jLabel102.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel102.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel102.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel102.setText("Register, update or delete information about a person out of the database");
+        jLabel102.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel28.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 680, 40));
 
         Decoration_Panel6.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -833,88 +984,95 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel66.setForeground(new java.awt.Color(0, 0, 0));
         jLabel66.setText("Photo");
         jLabel66.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 70, 30));
+        Decoration_Panel8.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 70, 30));
 
         jLabel67.setBackground(new java.awt.Color(219, 219, 219));
         jLabel67.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel67.setForeground(new java.awt.Color(0, 0, 0));
         jLabel67.setText("Last Name:");
         jLabel67.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 110, 30));
+        Decoration_Panel8.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 30));
 
         jLabel68.setBackground(new java.awt.Color(219, 219, 219));
         jLabel68.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel68.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel68.setText("Identification:");
+        jLabel68.setText("ID:");
         jLabel68.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 150, 30));
-        Decoration_Panel8.add(RegisterInfoLastName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 140, 30));
-        Decoration_Panel8.add(RegisterInfoName_TextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 140, 30));
-        Decoration_Panel8.add(RegisterInfoGender_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 140, 30));
+        Decoration_Panel8.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 30, 30));
+        Decoration_Panel8.add(RegisterInfoLastName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 140, 30));
+        Decoration_Panel8.add(RegisterInfoName_TextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 140, 30));
+        Decoration_Panel8.add(RegisterInfoGender_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 140, 30));
 
         jLabel69.setBackground(new java.awt.Color(219, 219, 219));
         jLabel69.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(0, 0, 0));
         jLabel69.setText("Gender:");
         jLabel69.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 110, 30));
+        Decoration_Panel8.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 80, 30));
 
         jLabel70.setBackground(new java.awt.Color(219, 219, 219));
         jLabel70.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel70.setForeground(new java.awt.Color(0, 0, 0));
         jLabel70.setText("Company:");
         jLabel70.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 110, 30));
-        Decoration_Panel8.add(RegisterInfoIdentification_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 140, 30));
+        Decoration_Panel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 110, 30));
+        Decoration_Panel8.add(RegisterInfoIdentification_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 140, 30));
 
         jLabel71.setBackground(new java.awt.Color(219, 219, 219));
         jLabel71.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(0, 0, 0));
         jLabel71.setText("Birth Day:");
         jLabel71.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 110, 30));
+        Decoration_Panel8.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 100, 30));
 
         RegisterInfoCompany_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Decoration_Panel8.add(RegisterInfoCompany_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 140, 30));
-        Decoration_Panel8.add(RegisterInfoDate_jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 140, 30));
+        Decoration_Panel8.add(RegisterInfoCompany_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 140, 30));
+        Decoration_Panel8.add(RegisterInfoDate_jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 140, 30));
 
         jLabel72.setBackground(new java.awt.Color(219, 219, 219));
         jLabel72.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(0, 0, 0));
         jLabel72.setText("Name:");
         jLabel72.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel8.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 90, 40));
+        Decoration_Panel8.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 60, 40));
 
-        Go_Panel5.setBackground(new java.awt.Color(48, 166, 109));
-        Go_Panel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        RegisterUpdatePersonGo_Panel.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterUpdatePersonGo_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(48, 166, 109));
-        RegisterPersonGo_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
-        RegisterPersonGo_Button.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button.setText("Go!");
-        RegisterPersonGo_Button.setBorder(null);
-        RegisterPersonGo_Button.setBorderPainted(false);
-        RegisterPersonGo_Button.setContentAreaFilled(false);
-        RegisterPersonGo_Button.setFocusPainted(false);
-        RegisterPersonGo_Button.setFocusable(false);
-        RegisterPersonGo_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+        RegisterUpdatePersonGo_Button.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterUpdatePersonGo_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterUpdatePersonGo_Button.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterUpdatePersonGo_Button.setText("Go!");
+        RegisterUpdatePersonGo_Button.setBorder(null);
+        RegisterUpdatePersonGo_Button.setBorderPainted(false);
+        RegisterUpdatePersonGo_Button.setContentAreaFilled(false);
+        RegisterUpdatePersonGo_Button.setFocusPainted(false);
+        RegisterUpdatePersonGo_Button.setFocusable(false);
+        RegisterUpdatePersonGo_Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_ButtonMouseEntered(evt);
+                RegisterUpdatePersonGo_ButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_ButtonMouseExited(evt);
+                RegisterUpdatePersonGo_ButtonMouseExited(evt);
             }
         });
-        RegisterPersonGo_Button.addActionListener(new java.awt.event.ActionListener() {
+        RegisterUpdatePersonGo_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_ButtonActionPerformed(evt);
+                RegisterUpdatePersonGo_ButtonActionPerformed(evt);
             }
         });
-        Go_Panel5.add(RegisterPersonGo_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 50));
+        RegisterUpdatePersonGo_Panel.add(RegisterUpdatePersonGo_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
 
-        Decoration_Panel8.add(Go_Panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, 50));
+        Decoration_Panel8.add(RegisterUpdatePersonGo_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 100, 50));
 
-        RegisterInfo_Person_JInternalFrame.getContentPane().add(Decoration_Panel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 840, 360));
+        jLabel65.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel65.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel65.setText("Register or Update:");
+        jLabel65.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Decoration_Panel8.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 180, 30));
+
+        RegisterInfo_Person_JInternalFrame.getContentPane().add(Decoration_Panel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 470, 350));
 
         Panel_Wallpaper2.setBackground(new java.awt.Color(219, 219, 219));
         Panel_Wallpaper2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -965,7 +1123,91 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel75.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         List_Panel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 120, 40));
 
-        RegisterInfo_Company_JInternalFrame.getContentPane().add(List_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 680, 370));
+        RegisterInfo_Company_JInternalFrame.getContentPane().add(List_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 680, 370));
+
+        Delete_Panel1.setBackground(new java.awt.Color(219, 219, 219));
+        Delete_Panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel106.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel106.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel106.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel106.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel1.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 30));
+
+        jLabel107.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel107.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel107.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel107.setText("ID:");
+        jLabel107.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel1.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 30, 30));
+        Delete_Panel1.add(RegisterInfoName_TextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 140, 30));
+
+        Go_Panel10.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button7.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button7.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button7.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button7.setText("Go!");
+        RegisterPersonGo_Button7.setBorder(null);
+        RegisterPersonGo_Button7.setBorderPainted(false);
+        RegisterPersonGo_Button7.setContentAreaFilled(false);
+        RegisterPersonGo_Button7.setFocusPainted(false);
+        RegisterPersonGo_Button7.setFocusable(false);
+        RegisterPersonGo_Button7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button7MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button7ActionPerformed(evt);
+            }
+        });
+        Go_Panel10.add(RegisterPersonGo_Button7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        Delete_Panel1.add(Go_Panel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 100, 50));
+
+        jLabel114.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel114.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel114.setText("Delete:");
+        jLabel114.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel1.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 80, 30));
+
+        RegisterInfo_Company_JInternalFrame.getContentPane().add(Delete_Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 310, 210));
+
+        Show_Panel.setBackground(new java.awt.Color(219, 219, 219));
+        Show_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Show_Button.setBackground(new java.awt.Color(48, 166, 109));
+        Show_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        Show_Button.setForeground(new java.awt.Color(48, 166, 109));
+        Show_Button.setText("Show Existing");
+        Show_Button.setBorder(null);
+        Show_Button.setBorderPainted(false);
+        Show_Button.setContentAreaFilled(false);
+        Show_Button.setFocusPainted(false);
+        Show_Button.setFocusable(false);
+        Show_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Show_ButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Show_ButtonMouseExited(evt);
+            }
+        });
+        Show_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Show_ButtonActionPerformed(evt);
+            }
+        });
+        Show_Panel.add(Show_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
+
+        RegisterInfo_Company_JInternalFrame.getContentPane().add(Show_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, -1, -1));
 
         Decoration_Panel10.setBackground(new java.awt.Color(40, 170, 108));
         Decoration_Panel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -984,9 +1226,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel74.setBackground(new java.awt.Color(219, 219, 219));
         jLabel74.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel74.setText("Register information about a company out of the database.");
+        jLabel74.setText("Register, update or delete information about a company.");
         jLabel74.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel30.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 560, 40));
+        jPanel30.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 530, 40));
 
         Decoration_Panel10.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -1039,36 +1281,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel120.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Decoration_Panel11.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 90, 40));
 
-        RegisterInfo_Company_JInternalFrame.getContentPane().add(Decoration_Panel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 340, 340));
-
-        Show_Panel.setBackground(new java.awt.Color(219, 219, 219));
-        Show_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Show_Button.setBackground(new java.awt.Color(48, 166, 109));
-        Show_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
-        Show_Button.setForeground(new java.awt.Color(48, 166, 109));
-        Show_Button.setText("Show Existing");
-        Show_Button.setBorder(null);
-        Show_Button.setBorderPainted(false);
-        Show_Button.setContentAreaFilled(false);
-        Show_Button.setFocusPainted(false);
-        Show_Button.setFocusable(false);
-        Show_Button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Show_ButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Show_ButtonMouseExited(evt);
-            }
-        });
-        Show_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Show_ButtonActionPerformed(evt);
-            }
-        });
-        Show_Panel.add(Show_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
-
-        RegisterInfo_Company_JInternalFrame.getContentPane().add(Show_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, -1));
+        RegisterInfo_Company_JInternalFrame.getContentPane().add(Decoration_Panel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 340));
 
         Decoration_Panel36.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel36.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1129,7 +1342,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
 
         Decoration_Panel36.add(Go_Panel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 50));
 
-        RegisterInfo_Company_JInternalFrame.getContentPane().add(Decoration_Panel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 340, 340));
+        RegisterInfo_Company_JInternalFrame.getContentPane().add(Decoration_Panel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 340, 340));
 
         Panel_Wallpaper4.setBackground(new java.awt.Color(219, 219, 219));
         Panel_Wallpaper4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -1180,7 +1393,62 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel76.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         List_Panel1.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 120, 40));
 
-        RegisterInfo_Place_JInternalFrame.getContentPane().add(List_Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 680, 370));
+        RegisterInfo_Place_JInternalFrame.getContentPane().add(List_Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 680, 370));
+
+        Delete_Panel2.setBackground(new java.awt.Color(219, 219, 219));
+        Delete_Panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel111.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel111.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel111.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel2.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 30));
+
+        jLabel112.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel112.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel112.setText("ID:");
+        jLabel112.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel2.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 30, 30));
+        Delete_Panel2.add(RegisterInfoName_TextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, 30));
+
+        DeletePlaceGo_Panel.setBackground(new java.awt.Color(48, 166, 109));
+        DeletePlaceGo_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        DeletePlaceGo_Button.setBackground(new java.awt.Color(48, 166, 109));
+        DeletePlaceGo_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        DeletePlaceGo_Button.setForeground(new java.awt.Color(255, 255, 255));
+        DeletePlaceGo_Button.setText("Go!");
+        DeletePlaceGo_Button.setBorder(null);
+        DeletePlaceGo_Button.setBorderPainted(false);
+        DeletePlaceGo_Button.setContentAreaFilled(false);
+        DeletePlaceGo_Button.setFocusPainted(false);
+        DeletePlaceGo_Button.setFocusable(false);
+        DeletePlaceGo_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DeletePlaceGo_ButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DeletePlaceGo_ButtonMouseExited(evt);
+            }
+        });
+        DeletePlaceGo_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeletePlaceGo_ButtonActionPerformed(evt);
+            }
+        });
+        DeletePlaceGo_Panel.add(DeletePlaceGo_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        Delete_Panel2.add(DeletePlaceGo_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 100, 50));
+
+        jLabel115.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel115.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel115.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel115.setText("Delete:");
+        jLabel115.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel2.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 80, 30));
+
+        RegisterInfo_Place_JInternalFrame.getContentPane().add(Delete_Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 340, 280));
 
         Show_Panel1.setBackground(new java.awt.Color(219, 219, 219));
         Show_Panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1207,9 +1475,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
                 Show_Button1ActionPerformed(evt);
             }
         });
-        Show_Panel1.add(Show_Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
+        Show_Panel1.add(Show_Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 150, 50));
 
-        RegisterInfo_Place_JInternalFrame.getContentPane().add(Show_Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 390, 160, -1));
+        RegisterInfo_Place_JInternalFrame.getContentPane().add(Show_Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 160, -1));
 
         Decoration_Panel28.setBackground(new java.awt.Color(40, 170, 108));
         Decoration_Panel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1230,7 +1498,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("Register or update information about an ubication out of the database");
         jLabel83.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel32.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 590, 40));
+        jPanel32.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 690, 40));
 
         Decoration_Panel28.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -1271,36 +1539,51 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel89.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Decoration_Panel29.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 110, 30));
 
-        RegisterPersonGo_Button2.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button2.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button2.setText("Go!");
-        RegisterPersonGo_Button2.setBorder(null);
-        RegisterPersonGo_Button2.setFocusable(false);
-        RegisterPersonGo_Button2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button2MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button2ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel29.add(RegisterPersonGo_Button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 80, 40));
-
         jLabel90.setBackground(new java.awt.Color(219, 219, 219));
         jLabel90.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel90.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel90.setText("Country:");
+        jLabel90.setText("Register or Update:");
         jLabel90.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel29.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 90, 40));
+        Decoration_Panel29.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 180, 40));
         Decoration_Panel29.add(RegisterInfoName_TextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 140, 30));
 
-        RegisterInfo_Place_JInternalFrame.getContentPane().add(Decoration_Panel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 440, 360));
+        jLabel103.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel103.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel103.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel103.setText("Country:");
+        jLabel103.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Decoration_Panel29.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 90, 40));
+
+        RegisterPlaceGo_Panel.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPlaceGo_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPlaceGo_Button.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPlaceGo_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPlaceGo_Button.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPlaceGo_Button.setText("Go!");
+        RegisterPlaceGo_Button.setBorder(null);
+        RegisterPlaceGo_Button.setBorderPainted(false);
+        RegisterPlaceGo_Button.setContentAreaFilled(false);
+        RegisterPlaceGo_Button.setFocusPainted(false);
+        RegisterPlaceGo_Button.setFocusable(false);
+        RegisterPlaceGo_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPlaceGo_ButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPlaceGo_ButtonMouseExited(evt);
+            }
+        });
+        RegisterPlaceGo_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPlaceGo_ButtonActionPerformed(evt);
+            }
+        });
+        RegisterPlaceGo_Panel.add(RegisterPlaceGo_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
+
+        Decoration_Panel29.add(RegisterPlaceGo_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 100, 30));
+
+        RegisterInfo_Place_JInternalFrame.getContentPane().add(Decoration_Panel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 440, 340));
 
         Panel_Wallpaper12.setBackground(new java.awt.Color(219, 219, 219));
         Panel_Wallpaper12.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -1351,7 +1634,62 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel77.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         List_Panel2.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 120, 40));
 
-        RegisterInfo_Gender_JInternalFrame.getContentPane().add(List_Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 680, 370));
+        RegisterInfo_Gender_JInternalFrame.getContentPane().add(List_Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+
+        Delete_Panel3.setBackground(new java.awt.Color(219, 219, 219));
+        Delete_Panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel116.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel116.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel116.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel3.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 30));
+
+        jLabel134.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel134.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel134.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel134.setText("ID:");
+        jLabel134.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel3.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 30, 30));
+        Delete_Panel3.add(RegisterInfoName_TextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 140, 30));
+
+        Go_Panel12.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button13.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button13.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button13.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button13.setText("Go!");
+        RegisterPersonGo_Button13.setBorder(null);
+        RegisterPersonGo_Button13.setBorderPainted(false);
+        RegisterPersonGo_Button13.setContentAreaFilled(false);
+        RegisterPersonGo_Button13.setFocusPainted(false);
+        RegisterPersonGo_Button13.setFocusable(false);
+        RegisterPersonGo_Button13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button13MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button13ActionPerformed(evt);
+            }
+        });
+        Go_Panel12.add(RegisterPersonGo_Button13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        Delete_Panel3.add(Go_Panel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 100, 50));
+
+        jLabel135.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel135.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel135.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel135.setText("Delete:");
+        jLabel135.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel3.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 80, 30));
+
+        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Delete_Panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 290, 210));
 
         Show_Panel2.setBackground(new java.awt.Color(219, 219, 219));
         Show_Panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1380,56 +1718,64 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         });
         Show_Panel2.add(Show_Button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
 
-        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Show_Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 160, -1));
+        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Show_Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, 160, 50));
 
         Decoration_Panel37.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Decoration_Panel37.add(RegisterInfoName_TextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 140, 30));
-
-        RegisterPersonGo_Button8.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button8.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button8.setText("Go!");
-        RegisterPersonGo_Button8.setBorder(null);
-        RegisterPersonGo_Button8.setFocusable(false);
-        RegisterPersonGo_Button8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button8MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button8MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button8ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel37.add(RegisterPersonGo_Button8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 90, 40));
+        Decoration_Panel37.add(RegisterInfoName_TextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 140, 30));
 
         jLabel123.setBackground(new java.awt.Color(219, 219, 219));
         jLabel123.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel123.setForeground(new java.awt.Color(0, 0, 0));
         jLabel123.setText("Update:");
         jLabel123.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel37.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 90, 40));
+        Decoration_Panel37.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 90, 40));
 
         jLabel124.setBackground(new java.awt.Color(219, 219, 219));
         jLabel124.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel124.setForeground(new java.awt.Color(0, 0, 0));
         jLabel124.setText("New Name:");
         jLabel124.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel37.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 110, 40));
+        Decoration_Panel37.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 110, 40));
 
         jLabel125.setBackground(new java.awt.Color(219, 219, 219));
         jLabel125.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel125.setForeground(new java.awt.Color(0, 0, 0));
         jLabel125.setText("Old Name:");
         jLabel125.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel37.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 110, 40));
-        Decoration_Panel37.add(RegisterInfoName_TextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 140, 30));
+        Decoration_Panel37.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 110, 40));
+        Decoration_Panel37.add(RegisterInfoName_TextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 140, 30));
 
-        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Decoration_Panel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 400, 360));
+        RegisterPlaceGo_Panel1.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPlaceGo_Panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPlaceGo_Button1.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPlaceGo_Button1.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPlaceGo_Button1.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPlaceGo_Button1.setText("Go!");
+        RegisterPlaceGo_Button1.setBorder(null);
+        RegisterPlaceGo_Button1.setBorderPainted(false);
+        RegisterPlaceGo_Button1.setContentAreaFilled(false);
+        RegisterPlaceGo_Button1.setFocusPainted(false);
+        RegisterPlaceGo_Button1.setFocusable(false);
+        RegisterPlaceGo_Button1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPlaceGo_Button1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPlaceGo_Button1MouseExited(evt);
+            }
+        });
+        RegisterPlaceGo_Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPlaceGo_Button1ActionPerformed(evt);
+            }
+        });
+        RegisterPlaceGo_Panel1.add(RegisterPlaceGo_Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
+
+        Decoration_Panel37.add(RegisterPlaceGo_Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 120, 40));
+
+        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Decoration_Panel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 320, 360));
 
         Decoration_Panel30.setBackground(new java.awt.Color(40, 170, 108));
         Decoration_Panel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1448,9 +1794,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel92.setBackground(new java.awt.Color(219, 219, 219));
         jLabel92.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel92.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel92.setText("Register or update information about a gender out of the database");
+        jLabel92.setText("Register, update or delete information about a gender ");
         jLabel92.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel34.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 640, 40));
+        jPanel34.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 520, 40));
 
         Decoration_Panel30.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -1458,44 +1804,52 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
 
         Decoration_Panel31.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Decoration_Panel31.add(RegisterInfoName_TextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 140, 30));
-
-        RegisterPersonGo_Button3.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button3.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button3.setText("Go!");
-        RegisterPersonGo_Button3.setBorder(null);
-        RegisterPersonGo_Button3.setFocusable(false);
-        RegisterPersonGo_Button3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button3MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button3ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel31.add(RegisterPersonGo_Button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 90, 40));
+        Decoration_Panel31.add(RegisterInfoName_TextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 140, 30));
 
         jLabel99.setBackground(new java.awt.Color(219, 219, 219));
         jLabel99.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel99.setForeground(new java.awt.Color(0, 0, 0));
         jLabel99.setText("Register:");
         jLabel99.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel31.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 90, 40));
+        Decoration_Panel31.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 90, 40));
 
         jLabel122.setBackground(new java.awt.Color(219, 219, 219));
         jLabel122.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel122.setForeground(new java.awt.Color(0, 0, 0));
         jLabel122.setText("Name:");
         jLabel122.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel31.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 60, 40));
+        Decoration_Panel31.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 60, 30));
 
-        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Decoration_Panel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 400, 360));
+        Go_Panel16.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button16.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button16.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button16.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button16.setText("Go!");
+        RegisterPersonGo_Button16.setBorder(null);
+        RegisterPersonGo_Button16.setBorderPainted(false);
+        RegisterPersonGo_Button16.setContentAreaFilled(false);
+        RegisterPersonGo_Button16.setFocusPainted(false);
+        RegisterPersonGo_Button16.setFocusable(false);
+        RegisterPersonGo_Button16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button16MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button16ActionPerformed(evt);
+            }
+        });
+        Go_Panel16.add(RegisterPersonGo_Button16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
+
+        Decoration_Panel31.add(Go_Panel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 90, -1));
+
+        RegisterInfo_Gender_JInternalFrame.getContentPane().add(Decoration_Panel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 330, 360));
 
         Panel_Wallpaper13.setBackground(new java.awt.Color(219, 219, 219));
         Panel_Wallpaper13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -1546,7 +1900,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel78.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         List_Panel3.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 120, 40));
 
-        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(List_Panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 680, 370));
+        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(List_Panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 680, 370));
 
         Show_Panel3.setBackground(new java.awt.Color(219, 219, 219));
         Show_Panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1575,7 +1929,60 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         });
         Show_Panel3.add(Show_Button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
 
-        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Show_Panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 160, -1));
+        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Show_Panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, 160, -1));
+
+        Delete_Panel4.setBackground(new java.awt.Color(219, 219, 219));
+        Delete_Panel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel137.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel137.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel137.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel137.setText("ID:");
+        jLabel137.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel4.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 30, 30));
+        Delete_Panel4.add(RegisterInfoName_TextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 140, 30));
+
+        Go_Panel13.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button14.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button14.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button14.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button14.setText("Go!");
+        RegisterPersonGo_Button14.setBorder(null);
+        RegisterPersonGo_Button14.setBorderPainted(false);
+        RegisterPersonGo_Button14.setContentAreaFilled(false);
+        RegisterPersonGo_Button14.setFocusPainted(false);
+        RegisterPersonGo_Button14.setFocusable(false);
+        RegisterPersonGo_Button14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button14MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button14ActionPerformed(evt);
+            }
+        });
+        Go_Panel13.add(RegisterPersonGo_Button14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
+
+        Delete_Panel4.add(Go_Panel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 90, 40));
+
+        jLabel138.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel138.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel138.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel138.setText("Delete:");
+        jLabel138.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel4.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 80, 30));
+
+        Go_Panel17.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Delete_Panel4.add(Go_Panel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 90, -1));
+
+        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Delete_Panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 360, 150));
 
         Decoration_Panel32.setBackground(new java.awt.Color(40, 170, 108));
         Decoration_Panel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1594,9 +2001,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel101.setBackground(new java.awt.Color(219, 219, 219));
         jLabel101.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel101.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel101.setText("Register or update information about a crime type out of the database");
+        jLabel101.setText("Register, update or delete information about a crime type");
         jLabel101.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel36.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 660, 40));
+        jPanel36.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 550, 40));
 
         Decoration_Panel32.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -1605,27 +2012,6 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Decoration_Panel38.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel38.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         Decoration_Panel38.add(RegisterInfoName_TextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 140, 30));
-
-        RegisterPersonGo_Button9.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button9.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button9.setText("Go!");
-        RegisterPersonGo_Button9.setBorder(null);
-        RegisterPersonGo_Button9.setFocusable(false);
-        RegisterPersonGo_Button9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button9MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button9MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button9ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel38.add(RegisterPersonGo_Button9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 80, 40));
 
         jLabel127.setBackground(new java.awt.Color(219, 219, 219));
         jLabel127.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
@@ -1649,32 +2035,40 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Decoration_Panel38.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 110, 40));
         Decoration_Panel38.add(RegisterInfoName_TextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 140, 30));
 
-        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Decoration_Panel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 390, 360));
+        Go_Panel18.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button17.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button17.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button17.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button17.setText("Go!");
+        RegisterPersonGo_Button17.setBorder(null);
+        RegisterPersonGo_Button17.setBorderPainted(false);
+        RegisterPersonGo_Button17.setContentAreaFilled(false);
+        RegisterPersonGo_Button17.setFocusPainted(false);
+        RegisterPersonGo_Button17.setFocusable(false);
+        RegisterPersonGo_Button17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button17MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button17ActionPerformed(evt);
+            }
+        });
+        Go_Panel18.add(RegisterPersonGo_Button17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        Decoration_Panel38.add(Go_Panel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 100, 50));
+
+        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Decoration_Panel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 360, 360));
 
         Decoration_Panel33.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Decoration_Panel33.add(RegisterInfoName_TextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 140, 30));
-
-        RegisterPersonGo_Button4.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button4.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button4.setText("Go!");
-        RegisterPersonGo_Button4.setBorder(null);
-        RegisterPersonGo_Button4.setFocusable(false);
-        RegisterPersonGo_Button4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button4MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button4MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button4ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel33.add(RegisterPersonGo_Button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 80, 40));
+        Decoration_Panel33.add(RegisterInfoName_TextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, 30));
 
         jLabel108.setBackground(new java.awt.Color(219, 219, 219));
         jLabel108.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
@@ -1688,9 +2082,38 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel126.setForeground(new java.awt.Color(0, 0, 0));
         jLabel126.setText("Name:");
         jLabel126.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel33.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 90, 40));
+        Decoration_Panel33.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 90, 40));
 
-        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Decoration_Panel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 360, 360));
+        Go_Panel19.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button18.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button18.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button18.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button18.setText("Go!");
+        RegisterPersonGo_Button18.setBorder(null);
+        RegisterPersonGo_Button18.setBorderPainted(false);
+        RegisterPersonGo_Button18.setContentAreaFilled(false);
+        RegisterPersonGo_Button18.setFocusPainted(false);
+        RegisterPersonGo_Button18.setFocusable(false);
+        RegisterPersonGo_Button18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button18MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button18MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button18ActionPerformed(evt);
+            }
+        });
+        Go_Panel19.add(RegisterPersonGo_Button18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+
+        Decoration_Panel33.add(Go_Panel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 80, 40));
+
+        RegisterInfo_CrimeType_JInternalFrame.getContentPane().add(Decoration_Panel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 360, 200));
 
         Panel_Wallpaper14.setBackground(new java.awt.Color(219, 219, 219));
         Panel_Wallpaper14.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -1741,7 +2164,56 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel79.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         List_Panel4.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 120, 40));
 
-        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(List_Panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 680, 370));
+        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(List_Panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 680, 370));
+
+        Delete_Panel5.setBackground(new java.awt.Color(219, 219, 219));
+        Delete_Panel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel139.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel139.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel139.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel139.setText("ID:");
+        jLabel139.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel5.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 30, 30));
+        Delete_Panel5.add(RegisterInfoName_TextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 140, 30));
+
+        Go_Panel14.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button15.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button15.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button15.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button15.setText("Go!");
+        RegisterPersonGo_Button15.setBorder(null);
+        RegisterPersonGo_Button15.setBorderPainted(false);
+        RegisterPersonGo_Button15.setContentAreaFilled(false);
+        RegisterPersonGo_Button15.setFocusPainted(false);
+        RegisterPersonGo_Button15.setFocusable(false);
+        RegisterPersonGo_Button15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button15MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button15ActionPerformed(evt);
+            }
+        });
+        Go_Panel14.add(RegisterPersonGo_Button15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        Delete_Panel5.add(Go_Panel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 100, 50));
+
+        jLabel140.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel140.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel140.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel140.setText("Delete:");
+        jLabel140.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Delete_Panel5.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 80, 30));
+
+        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Delete_Panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 360, 160));
 
         Show_Panel4.setBackground(new java.awt.Color(219, 219, 219));
         Show_Panel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1770,32 +2242,11 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         });
         Show_Panel4.add(Show_Button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
-        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Show_Panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, 150, -1));
+        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Show_Panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 150, 50));
 
         Decoration_Panel39.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         Decoration_Panel39.add(RegisterInfoName_TextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 260, 30));
-
-        RegisterPersonGo_Button10.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button10.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button10.setText("Go!");
-        RegisterPersonGo_Button10.setBorder(null);
-        RegisterPersonGo_Button10.setFocusable(false);
-        RegisterPersonGo_Button10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button10MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button10MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button10ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel39.add(RegisterPersonGo_Button10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 80, 40));
 
         jLabel131.setBackground(new java.awt.Color(219, 219, 219));
         jLabel131.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
@@ -1819,7 +2270,36 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Decoration_Panel39.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 150, 40));
         Decoration_Panel39.add(RegisterInfoName_TextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 260, 30));
 
-        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Decoration_Panel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 390, 360));
+        Go_Panel20.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button19.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button19.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button19.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button19.setText("Go!");
+        RegisterPersonGo_Button19.setBorder(null);
+        RegisterPersonGo_Button19.setBorderPainted(false);
+        RegisterPersonGo_Button19.setContentAreaFilled(false);
+        RegisterPersonGo_Button19.setFocusPainted(false);
+        RegisterPersonGo_Button19.setFocusable(false);
+        RegisterPersonGo_Button19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button19MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button19MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button19ActionPerformed(evt);
+            }
+        });
+        Go_Panel20.add(RegisterPersonGo_Button19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
+
+        Decoration_Panel39.add(Go_Panel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 90, 40));
+
+        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Decoration_Panel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 380, 360));
 
         Decoration_Panel34.setBackground(new java.awt.Color(40, 170, 108));
         Decoration_Panel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1840,7 +2320,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel110.setForeground(new java.awt.Color(0, 0, 0));
         jLabel110.setText("Register or update information about a ban motive");
         jLabel110.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel38.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 480, 40));
+        jPanel38.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 480, 40));
 
         Decoration_Panel34.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -1848,44 +2328,52 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
 
         Decoration_Panel35.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel35.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Decoration_Panel35.add(RegisterInfoName_TextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 260, 30));
-
-        RegisterPersonGo_Button5.setBackground(new java.awt.Color(40, 170, 108));
-        RegisterPersonGo_Button5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RegisterPersonGo_Button5.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterPersonGo_Button5.setText("Go!");
-        RegisterPersonGo_Button5.setBorder(null);
-        RegisterPersonGo_Button5.setFocusable(false);
-        RegisterPersonGo_Button5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button5MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegisterPersonGo_Button5MouseExited(evt);
-            }
-        });
-        RegisterPersonGo_Button5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterPersonGo_Button5ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel35.add(RegisterPersonGo_Button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 80, 40));
+        Decoration_Panel35.add(RegisterInfoName_TextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 260, 30));
 
         jLabel117.setBackground(new java.awt.Color(219, 219, 219));
         jLabel117.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel117.setForeground(new java.awt.Color(0, 0, 0));
         jLabel117.setText("Register:");
         jLabel117.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel35.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 90, 40));
+        Decoration_Panel35.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 90, 40));
 
         jLabel130.setBackground(new java.awt.Color(219, 219, 219));
         jLabel130.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         jLabel130.setForeground(new java.awt.Color(0, 0, 0));
         jLabel130.setText("New Ban Motive Description:");
         jLabel130.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel35.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 280, 40));
+        Decoration_Panel35.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 280, 40));
 
-        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Decoration_Panel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 390, 360));
+        Go_Panel21.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterPersonGo_Button20.setBackground(new java.awt.Color(48, 166, 109));
+        RegisterPersonGo_Button20.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        RegisterPersonGo_Button20.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterPersonGo_Button20.setText("Go!");
+        RegisterPersonGo_Button20.setBorder(null);
+        RegisterPersonGo_Button20.setBorderPainted(false);
+        RegisterPersonGo_Button20.setContentAreaFilled(false);
+        RegisterPersonGo_Button20.setFocusPainted(false);
+        RegisterPersonGo_Button20.setFocusable(false);
+        RegisterPersonGo_Button20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button20MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegisterPersonGo_Button20MouseExited(evt);
+            }
+        });
+        RegisterPersonGo_Button20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPersonGo_Button20ActionPerformed(evt);
+            }
+        });
+        Go_Panel21.add(RegisterPersonGo_Button20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 50));
+
+        Decoration_Panel35.add(Go_Panel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, 50));
+
+        RegisterInfo_BanMotive_JInternalFrame.getContentPane().add(Decoration_Panel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 360, 190));
 
         Panel_Wallpaper15.setBackground(new java.awt.Color(219, 219, 219));
         Panel_Wallpaper15.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -1931,7 +2419,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Users that haven´t modified their passwords in the last 10 days.");
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel18.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 530, 40));
+        jPanel18.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 600, 40));
 
         Decoration_Panel20.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -2499,15 +2987,15 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Company4.setBackground(new java.awt.Color(219, 219, 219));
         Company4.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
         Company4.setForeground(new java.awt.Color(102, 102, 102));
-        Company4.setText("<html>Register Info about different places. Register communities, districts, cantons, provinces, etc..");
+        Company4.setText("<html>See database statistics about different topics");
         Company4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel26.add(Company4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, 190, 90));
+        Decoration_Panel26.add(Company4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 190, 70));
 
         Places2.setBackground(new java.awt.Color(235, 235, 235));
         Places2.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         Places2.setForeground(new java.awt.Color(0, 0, 0));
-        Places2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/map_icon.png"))); // NOI18N
-        Places2.setText("  Places");
+        Places2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/stats_icon.png"))); // NOI18N
+        Places2.setText("  Statistics");
         Places2.setBorderPainted(false);
         Places2.setContentAreaFilled(false);
         Places2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -2526,40 +3014,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         });
         Decoration_Panel26.add(Places2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 50, 190, 50));
 
-        Profile_Button6.setBackground(new java.awt.Color(235, 235, 235));
-        Profile_Button6.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
-        Profile_Button6.setForeground(new java.awt.Color(0, 0, 0));
-        Profile_Button6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ban_icon.png"))); // NOI18N
-        Profile_Button6.setText("  Ban Motives");
-        Profile_Button6.setBorderPainted(false);
-        Profile_Button6.setContentAreaFilled(false);
-        Profile_Button6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Profile_Button6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Profile_Button6MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Profile_Button6MouseExited(evt);
-            }
-        });
-        Profile_Button6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Profile_Button6ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel26.add(Profile_Button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 200, 50));
-
-        jLabel51.setBackground(new java.awt.Color(219, 219, 219));
-        jLabel51.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel51.setText("<html>Register Info about person´s genders");
-        jLabel51.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel26.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 250, 70));
-
         UserLists_Button.setBackground(new java.awt.Color(235, 235, 235));
         UserLists_Button.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
         UserLists_Button.setForeground(new java.awt.Color(0, 0, 0));
-        UserLists_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/company_icon.png"))); // NOI18N
+        UserLists_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/userlist_icon.png"))); // NOI18N
         UserLists_Button.setText("  User List");
         UserLists_Button.setBorderPainted(false);
         UserLists_Button.setContentAreaFilled(false);
@@ -2578,13 +3036,6 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
             }
         });
         Decoration_Panel26.add(UserLists_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 190, 50));
-
-        Company5.setBackground(new java.awt.Color(219, 219, 219));
-        Company5.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
-        Company5.setForeground(new java.awt.Color(102, 102, 102));
-        Company5.setText("<html>Register Info about different ban types.");
-        Company5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel26.add(Company5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, 190, 50));
 
         Profile_Button7.setBackground(new java.awt.Color(235, 235, 235));
         Profile_Button7.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
@@ -2616,65 +3067,12 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel52.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Decoration_Panel26.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 250, 60));
 
-        Profile_Button8.setBackground(new java.awt.Color(235, 235, 235));
-        Profile_Button8.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
-        Profile_Button8.setForeground(new java.awt.Color(0, 0, 0));
-        Profile_Button8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gender_icon.png"))); // NOI18N
-        Profile_Button8.setText("  Gender");
-        Profile_Button8.setBorderPainted(false);
-        Profile_Button8.setContentAreaFilled(false);
-        Profile_Button8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Profile_Button8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Profile_Button8MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Profile_Button8MouseExited(evt);
-            }
-        });
-        Profile_Button8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Profile_Button8ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel26.add(Profile_Button8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 160, 50));
-
         Company6.setBackground(new java.awt.Color(219, 219, 219));
         Company6.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
         Company6.setForeground(new java.awt.Color(102, 102, 102));
         Company6.setText("<html>See a list about users");
         Company6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel26.add(Company6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 200, 80));
-
-        Profile_Button9.setBackground(new java.awt.Color(235, 235, 235));
-        Profile_Button9.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
-        Profile_Button9.setForeground(new java.awt.Color(0, 0, 0));
-        Profile_Button9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/typecrime_icon.png"))); // NOI18N
-        Profile_Button9.setText("  Crime Type");
-        Profile_Button9.setBorderPainted(false);
-        Profile_Button9.setContentAreaFilled(false);
-        Profile_Button9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Profile_Button9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Profile_Button9MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Profile_Button9MouseExited(evt);
-            }
-        });
-        Profile_Button9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Profile_Button9ActionPerformed(evt);
-            }
-        });
-        Decoration_Panel26.add(Profile_Button9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 190, 50));
-
-        Company7.setBackground(new java.awt.Color(219, 219, 219));
-        Company7.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
-        Company7.setForeground(new java.awt.Color(102, 102, 102));
-        Company7.setText("<html>Register Info about different crime types.Register if they are homicies, sexual harassment.");
-        Company7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Decoration_Panel26.add(Company7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 180, 80));
+        Decoration_Panel26.add(Company6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 200, 60));
 
         AdditionalQueries_JInternalFrame.getContentPane().add(Decoration_Panel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 930, 350));
 
@@ -2794,6 +3192,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         Panel_Wallpaper1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         DangerousZones_JInternalFrame.getContentPane().add(Panel_Wallpaper1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 1050, 390));
 
+        jPanel49.setBackground(new java.awt.Color(255, 255, 255));
+        DangerousZones_JInternalFrame.getContentPane().add(jPanel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 160));
+
         getContentPane().add(DangerousZones_JInternalFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 1050, 650));
 
         RegisterCriminalRecord_JInternalFrame.setBackground(new java.awt.Color(255, 255, 255));
@@ -2817,6 +3218,13 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         jLabel54.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel25.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, -1));
         jPanel25.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 170, 180));
+
+        jLabel88.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel88.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel88.setText("Register a Criminal File information");
+        jLabel88.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel25.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 340, 40));
 
         Decoration_Panel17.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
@@ -2979,6 +3387,182 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         RegisterCriminalRecord_JInternalFrame.getContentPane().add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 160));
 
         getContentPane().add(RegisterCriminalRecord_JInternalFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 1050, 650));
+
+        UserList_JInternalFrame.setBackground(new java.awt.Color(255, 255, 255));
+        UserList_JInternalFrame.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(48, 166, 109)));
+        UserList_JInternalFrame.setVisible(false);
+        UserList_JInternalFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Decoration_Panel40.setBackground(new java.awt.Color(40, 170, 108));
+        Decoration_Panel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel47.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel47.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel84.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel84.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel84.setText("Photo");
+        jLabel84.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel47.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, -1));
+        jPanel47.add(jPanel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 170, 180));
+
+        jLabel93.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel93.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel93.setText("See the list of users in the database");
+        jLabel93.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel47.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 340, 40));
+
+        Decoration_Panel40.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
+
+        UserList_JInternalFrame.getContentPane().add(Decoration_Panel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 1050, 70));
+
+        Decoration_Panel41.setBackground(new java.awt.Color(219, 219, 219));
+        Decoration_Panel41.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegisterInfoName_TextField19.setFocusable(false);
+        Decoration_Panel41.add(RegisterInfoName_TextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 710, 310));
+
+        UserList_JInternalFrame.getContentPane().add(Decoration_Panel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 930, 370));
+
+        Panel_Wallpaper16.setBackground(new java.awt.Color(219, 219, 219));
+        Panel_Wallpaper16.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        Panel_Wallpaper16.setForeground(new java.awt.Color(0, 0, 0));
+        Panel_Wallpaper16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Panel_Wallpaper.png"))); // NOI18N
+        Panel_Wallpaper16.setText("Password:");
+        Panel_Wallpaper16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        UserList_JInternalFrame.getContentPane().add(Panel_Wallpaper16, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 230, 1060, 390));
+
+        jPanel50.setBackground(new java.awt.Color(255, 255, 255));
+
+        DangerousZones_Logo16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/UserList_Logo.png"))); // NOI18N
+        jPanel50.add(DangerousZones_Logo16);
+
+        UserList_JInternalFrame.getContentPane().add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 160));
+
+        getContentPane().add(UserList_JInternalFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 1050, 650));
+
+        Statistics_JInternalFrame.setBackground(new java.awt.Color(255, 255, 255));
+        Statistics_JInternalFrame.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(48, 166, 109)));
+        Statistics_JInternalFrame.setVisible(false);
+        Statistics_JInternalFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Chart_Panel.setBackground(new java.awt.Color(255, 255, 255));
+        Chart_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel98.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel98.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel98.setText("Graphic:");
+        jLabel98.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Chart_Panel.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 80, 30));
+
+        ExittGraphic_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/salida.png"))); // NOI18N
+        ExittGraphic_Button.setBorder(null);
+        ExittGraphic_Button.setContentAreaFilled(false);
+        ExittGraphic_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExittGraphic_ButtonActionPerformed(evt);
+            }
+        });
+        Chart_Panel.add(ExittGraphic_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 50, 50));
+
+        Statistics_JInternalFrame.getContentPane().add(Chart_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 620, 340));
+
+        Decoration_Panel42.setBackground(new java.awt.Color(40, 170, 108));
+        Decoration_Panel42.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel51.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel51.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel94.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel94.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel94.setText("Photo");
+        jLabel94.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel51.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, -1));
+        jPanel51.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 170, 180));
+
+        jLabel96.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel96.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel96.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel96.setText("See different statistics about the database");
+        jLabel96.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel51.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 400, 40));
+
+        Decoration_Panel42.add(jPanel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
+
+        Statistics_JInternalFrame.getContentPane().add(Decoration_Panel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 1050, 70));
+
+        Decoration_Panel43.setBackground(new java.awt.Color(219, 219, 219));
+        Decoration_Panel43.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel95.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel95.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel95.setText("Select a Statistic:");
+        jLabel95.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Decoration_Panel43.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 170, 40));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Decoration_Panel43.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 170, 40));
+
+        Go_Panel15.setBackground(new java.awt.Color(48, 166, 109));
+        Go_Panel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Go!");
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Go_Panel15.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 50));
+
+        Decoration_Panel43.add(Go_Panel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 110, 50));
+
+        Statistics_JInternalFrame.getContentPane().add(Decoration_Panel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 230, 160));
+
+        Panel_Wallpaper17.setBackground(new java.awt.Color(219, 219, 219));
+        Panel_Wallpaper17.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        Panel_Wallpaper17.setForeground(new java.awt.Color(0, 0, 0));
+        Panel_Wallpaper17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Panel_Wallpaper.png"))); // NOI18N
+        Panel_Wallpaper17.setText("Password:");
+        Panel_Wallpaper17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Statistics_JInternalFrame.getContentPane().add(Panel_Wallpaper17, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 230, 1060, 390));
+
+        jPanel53.setBackground(new java.awt.Color(255, 255, 255));
+
+        DangerousZones_Logo17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Stistics_Logo.png"))); // NOI18N
+        jPanel53.add(DangerousZones_Logo17);
+
+        Statistics_JInternalFrame.getContentPane().add(jPanel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 160));
+
+        Decoration_Panel44.setBackground(new java.awt.Color(219, 219, 219));
+        Decoration_Panel44.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel97.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel97.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel97.setText("Select a Statistics:");
+        jLabel97.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Decoration_Panel44.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 170, 40));
+
+        Statistics_JInternalFrame.getContentPane().add(Decoration_Panel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 550, 90));
+
+        getContentPane().add(Statistics_JInternalFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 1050, 650));
 
         Lateral_Menu_Panel.setBackground(new java.awt.Color(255, 255, 255));
         Lateral_Menu_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -3276,10 +3860,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         });
         Lateral_Menu_Panel.add(Home_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 240, 60));
 
-        getContentPane().add(Lateral_Menu_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 730));
+        getContentPane().add(Lateral_Menu_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 720));
 
         Wallpaper_User_Main_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Main Menu Wallpaper.png"))); // NOI18N
-        getContentPane().add(Wallpaper_User_Main_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, -1));
+        getContentPane().add(Wallpaper_User_Main_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 1190, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -3306,8 +3890,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);   
      
       Profile_JInternalFrame.setVisible(true);
        
@@ -3335,8 +3921,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);  
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
 
      NewFiles_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_UserList_ButtonActionPerformed
@@ -3363,8 +3951,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
      
      
      BannedUsers_JInternalFrame.setVisible(true);
@@ -3392,8 +3982,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);   
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);    
         
         
      UsersPasswords_JInternalFrame.setVisible(true);
@@ -3431,8 +4023,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);   
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);    
      
      RegisterCriminalRecord_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_RegisterCriminalRecord_ButtonActionPerformed
@@ -3507,7 +4101,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
      RegisterCriminalRecord_JInternalFrame.setVisible(false); 
         
      SearchCriminalFiles_JInternalFrame.setVisible(true);
@@ -3545,8 +4141,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);    
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);     
         
      RegisterInfo_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_RegisterInfo_ButtonActionPerformed
@@ -3583,8 +4181,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);         
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);          
      
      ExpireFiles_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_ExpireFiles_ButtonActionPerformed
@@ -3621,8 +4221,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);     
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);    
         
      AdditionalQueries_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_AdditionalQueries_ButtonActionPerformed
@@ -3657,7 +4259,9 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
      RegisterCriminalRecord_JInternalFrame.setVisible(false);  
         
         RegisterInfo_Place_JInternalFrame.setVisible(true);
@@ -3693,8 +4297,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
         
         RegisterInfo_BanMotive_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_Profile_Button2ActionPerformed
@@ -3729,8 +4335,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
         
      RegisterInfo_Company_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_Places1ActionPerformed
@@ -3765,8 +4373,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);   
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
         
         
         RegisterInfo_Person_JInternalFrame.setVisible(true);
@@ -3802,8 +4412,10 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
         
      RegisterInfo_Gender_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_Profile_Button4ActionPerformed
@@ -3838,10 +4450,12 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
      
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);  
-        
-        
+     
       RegisterInfo_CrimeType_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_Profile_Button5ActionPerformed
 
@@ -3922,20 +4536,36 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Places2MouseExited
 
     private void Places2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Places2ActionPerformed
-        // TODO add your handling code here:
+      Profile_JInternalFrame.setVisible(false);
+     RegisterInfo_JInternalFrame.setVisible(false);
+            RegisterInfo_Person_JInternalFrame.setVisible(false);
+            RegisterInfo_Company_JInternalFrame.setVisible(false);
+                        List_Panel.setVisible(false);
+            RegisterInfo_Place_JInternalFrame.setVisible(false);
+                        List_Panel1.setVisible(false);
+            RegisterInfo_Gender_JInternalFrame.setVisible(false);
+                        List_Panel2.setVisible(false);
+            RegisterInfo_CrimeType_JInternalFrame.setVisible(false);            
+                        List_Panel3.setVisible(false);
+            RegisterInfo_BanMotive_JInternalFrame.setVisible(false);
+                        List_Panel4.setVisible(false);
+                        
+     UsersPasswords_JInternalFrame.setVisible(false);
+     NewFiles_JInternalFrame.setVisible(false); 
+     BannedUsers_JInternalFrame.setVisible(false);
+     SearchCriminalFiles_JInternalFrame.setVisible(false);
+     ExpireFiles_JInternalFrame.setVisible(false);
+     AdditionalQueries_JInternalFrame.setVisible(false); 
+            DangerousZones_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
+        
+        
+     
+     Statistics_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_Places2ActionPerformed
-
-    private void Profile_Button6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button6MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button6MouseEntered
-
-    private void Profile_Button6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button6MouseExited
-
-    private void Profile_Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Profile_Button6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button6ActionPerformed
 
     private void UserLists_ButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserLists_ButtonMouseEntered
         // TODO add your handling code here:
@@ -3946,7 +4576,33 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_UserLists_ButtonMouseExited
 
     private void UserLists_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserLists_ButtonActionPerformed
-        // TODO add your handling code here:
+     Profile_JInternalFrame.setVisible(false);
+     RegisterInfo_JInternalFrame.setVisible(false);
+            RegisterInfo_Person_JInternalFrame.setVisible(false);
+            RegisterInfo_Company_JInternalFrame.setVisible(false);
+                        List_Panel.setVisible(false);
+            RegisterInfo_Place_JInternalFrame.setVisible(false);
+                        List_Panel1.setVisible(false);
+            RegisterInfo_Gender_JInternalFrame.setVisible(false);
+                        List_Panel2.setVisible(false);
+            RegisterInfo_CrimeType_JInternalFrame.setVisible(false);            
+                        List_Panel3.setVisible(false);
+            RegisterInfo_BanMotive_JInternalFrame.setVisible(false);
+                        List_Panel4.setVisible(false);
+                        
+     UsersPasswords_JInternalFrame.setVisible(false);
+     NewFiles_JInternalFrame.setVisible(false); 
+     BannedUsers_JInternalFrame.setVisible(false);
+     SearchCriminalFiles_JInternalFrame.setVisible(false);
+     ExpireFiles_JInternalFrame.setVisible(false);
+     AdditionalQueries_JInternalFrame.setVisible(false); 
+            DangerousZones_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
+        
+     UserList_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_UserLists_ButtonActionPerformed
 
     private void Profile_Button7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button7MouseEntered
@@ -3979,36 +4635,16 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false); 
         
         
         
         
         DangerousZones_JInternalFrame.setVisible(true);
     }//GEN-LAST:event_Profile_Button7ActionPerformed
-
-    private void Profile_Button8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button8MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button8MouseEntered
-
-    private void Profile_Button8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button8MouseExited
-
-    private void Profile_Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Profile_Button8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button8ActionPerformed
-
-    private void Profile_Button9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button9MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button9MouseEntered
-
-    private void Profile_Button9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Profile_Button9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button9MouseExited
-
-    private void Profile_Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Profile_Button9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Profile_Button9ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
@@ -4030,65 +4666,17 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Go_Button5ActionPerformed
 
-    private void RegisterPersonGo_Button2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button2MouseEntered
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(59,211,138));
-    }//GEN-LAST:event_RegisterPersonGo_Button2MouseEntered
+    private void RegisterUpdatePersonGo_ButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterUpdatePersonGo_ButtonMouseEntered
+        RegisterUpdatePersonGo_Panel.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterUpdatePersonGo_ButtonMouseEntered
 
-    private void RegisterPersonGo_Button2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button2MouseExited
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(48,166,109));
-    }//GEN-LAST:event_RegisterPersonGo_Button2MouseExited
+    private void RegisterUpdatePersonGo_ButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterUpdatePersonGo_ButtonMouseExited
+       RegisterUpdatePersonGo_Panel.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterUpdatePersonGo_ButtonMouseExited
 
-    private void RegisterPersonGo_Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button2ActionPerformed
+    private void RegisterUpdatePersonGo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterUpdatePersonGo_ButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button2ActionPerformed
-
-    private void RegisterPersonGo_Button3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button3MouseEntered
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(59,211,138));
-    }//GEN-LAST:event_RegisterPersonGo_Button3MouseEntered
-
-    private void RegisterPersonGo_Button3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button3MouseExited
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(48,166,109));
-    }//GEN-LAST:event_RegisterPersonGo_Button3MouseExited
-
-    private void RegisterPersonGo_Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button3ActionPerformed
-
-    private void RegisterPersonGo_Button4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button4MouseEntered
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(59,211,138));
-    }//GEN-LAST:event_RegisterPersonGo_Button4MouseEntered
-
-    private void RegisterPersonGo_Button4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button4MouseExited
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(48,166,109));
-    }//GEN-LAST:event_RegisterPersonGo_Button4MouseExited
-
-    private void RegisterPersonGo_Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button4ActionPerformed
-
-    private void RegisterPersonGo_Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button5ActionPerformed
-
-    private void RegisterPersonGo_Button5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button5MouseExited
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(48,166,109));
-    }//GEN-LAST:event_RegisterPersonGo_Button5MouseExited
-
-    private void RegisterPersonGo_Button5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button5MouseEntered
-        RegisterPersonGo_Button.setBackground(new java.awt.Color(59,211,138));
-    }//GEN-LAST:event_RegisterPersonGo_Button5MouseEntered
-
-    private void RegisterPersonGo_ButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_ButtonMouseEntered
-        Go_Panel5.setBackground(new java.awt.Color(59,211,138));
-    }//GEN-LAST:event_RegisterPersonGo_ButtonMouseEntered
-
-    private void RegisterPersonGo_ButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_ButtonMouseExited
-       Go_Panel5.setBackground(new java.awt.Color(48,166,109));
-    }//GEN-LAST:event_RegisterPersonGo_ButtonMouseExited
-
-    private void RegisterPersonGo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_ButtonActionPerformed
+    }//GEN-LAST:event_RegisterUpdatePersonGo_ButtonActionPerformed
 
     private void RegisterPersonGo_Button6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button6MouseEntered
         Go_Panel6.setBackground(new java.awt.Color(59,211,138));
@@ -4103,7 +4691,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterPersonGo_Button6ActionPerformed
 
     private void Home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Home_ButtonActionPerformed
-     Profile_JInternalFrame.setVisible(false);
+    Profile_JInternalFrame.setVisible(false);
      RegisterInfo_JInternalFrame.setVisible(false);
             RegisterInfo_Person_JInternalFrame.setVisible(false);
             RegisterInfo_Company_JInternalFrame.setVisible(false);
@@ -4124,45 +4712,11 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
      ExpireFiles_JInternalFrame.setVisible(false);
      AdditionalQueries_JInternalFrame.setVisible(false); 
             DangerousZones_JInternalFrame.setVisible(false);
-     
-     RegisterCriminalRecord_JInternalFrame.setVisible(false);  
+            UserList_JInternalFrame.setVisible(false);
+            Statistics_JInternalFrame.setVisible(false);
+
+     RegisterCriminalRecord_JInternalFrame.setVisible(false);   
     }//GEN-LAST:event_Home_ButtonActionPerformed
-
-    private void RegisterPersonGo_Button8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button8MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button8MouseEntered
-
-    private void RegisterPersonGo_Button8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button8MouseExited
-
-    private void RegisterPersonGo_Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button8ActionPerformed
-
-    private void RegisterPersonGo_Button9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button9MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button9MouseEntered
-
-    private void RegisterPersonGo_Button9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button9MouseExited
-
-    private void RegisterPersonGo_Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button9ActionPerformed
-
-    private void RegisterPersonGo_Button10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button10MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button10MouseEntered
-
-    private void RegisterPersonGo_Button10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button10MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button10MouseExited
-
-    private void RegisterPersonGo_Button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterPersonGo_Button10ActionPerformed
 
     private void RegisterPersonGo_Button11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button11MouseEntered
        Go_Panel8.setBackground(new java.awt.Color(59,211,138));
@@ -4268,6 +4822,218 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DangerousZonesGo_ButtonActionPerformed
 
+    private void RegisterPersonGo_Button7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button7MouseEntered
+       Go_Panel10.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button7MouseEntered
+
+    private void RegisterPersonGo_Button7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button7MouseExited
+       Go_Panel10.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button7MouseExited
+
+    private void RegisterPersonGo_Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button7ActionPerformed
+
+    private void DeletePlaceGo_ButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeletePlaceGo_ButtonMouseEntered
+        DeletePlaceGo_Panel.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_DeletePlaceGo_ButtonMouseEntered
+
+    private void DeletePlaceGo_ButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeletePlaceGo_ButtonMouseExited
+        DeletePlaceGo_Panel.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_DeletePlaceGo_ButtonMouseExited
+
+    private void DeletePlaceGo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletePlaceGo_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeletePlaceGo_ButtonActionPerformed
+
+    private void RegisterPersonGo_Button13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button13MouseEntered
+      Go_Panel12.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button13MouseEntered
+
+    private void RegisterPersonGo_Button13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button13MouseExited
+     Go_Panel12.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button13MouseExited
+
+    private void RegisterPersonGo_Button13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button13ActionPerformed
+        
+    }//GEN-LAST:event_RegisterPersonGo_Button13ActionPerformed
+
+    private void RegisterPersonGo_Button14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button14MouseEntered
+    Go_Panel13.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button14MouseEntered
+
+    private void RegisterPersonGo_Button14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button14MouseExited
+     Go_Panel13.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button14MouseExited
+
+    private void RegisterPersonGo_Button14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button14ActionPerformed
+
+    private void RegisterPersonGo_Button15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button15MouseEntered
+       Go_Panel14.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button15MouseEntered
+
+    private void RegisterPersonGo_Button15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button15MouseExited
+       Go_Panel14.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button15MouseExited
+
+    private void RegisterPersonGo_Button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button15ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        dataset.setValue("Assault", new Double(30));
+        dataset.setValue("Sexual Harassment", new Double(20));
+        dataset.setValue("Stolen Apache Helicopter", new Double(5));
+        dataset.setValue("scam", new Double(13));
+        dataset.setValue("Being Diego", new Double(15));
+        dataset.setValue("Giovanazo", new Double(17));
+        
+        
+        // create pir chart
+        JFreeChart chart = ChartFactory.createPieChart3D(
+                "Crime Types", // chart title                   
+                dataset, // data 
+                true, // include legend                   
+                true,
+                false);
+        // set chart properties
+        PiePlot3D plot = (PiePlot3D) chart.getPlot();
+        plot.setStartAngle(270);    //Rotr gráfica
+        plot.setForegroundAlpha(0.60f);     //Transparencia
+        plot.setInteriorGap(0.05);
+        // create chart panel the add it to swing panel in  jframe
+        ChartPanel chartPanel = new ChartPanel(chart);
+        frame = new ChartFrame("Pie Chart", chart);
+        
+        
+        
+        frame.setLocation(1050,510);       
+        frame.setUndecorated(true);  // quitar bordes 
+        frame.setSize(500,300);
+        frame.setResizable(false);
+        frame.setVisible(true);
+        
+        
+        
+        //Chart_Panel.removeAll();        // clear panel before add new chart
+        //Chart_Panel.add(chartPanel, BorderLayout.CENTER);
+        //Chart_Panel.validate(); 
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ExittGraphic_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExittGraphic_ButtonActionPerformed
+    frame.setVisible(false);
+    }//GEN-LAST:event_ExittGraphic_ButtonActionPerformed
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+    Go_Panel15.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+    Go_Panel15.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void RegisterPersonGo_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button1ActionPerformed
+
+    private void RegisterPersonGo_Button1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button1MouseExited
+       Go_Panel9.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button1MouseExited
+
+    private void RegisterPersonGo_Button1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button1MouseEntered
+       Go_Panel9.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button1MouseEntered
+
+    private void RegisterPlaceGo_ButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPlaceGo_ButtonMouseEntered
+      RegisterPlaceGo_Panel.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPlaceGo_ButtonMouseEntered
+
+    private void RegisterPlaceGo_ButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPlaceGo_ButtonMouseExited
+      RegisterPlaceGo_Panel.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPlaceGo_ButtonMouseExited
+
+    private void RegisterPlaceGo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPlaceGo_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPlaceGo_ButtonActionPerformed
+
+    private void RegisterPlaceGo_Button1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPlaceGo_Button1MouseEntered
+        RegisterPlaceGo_Panel1.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPlaceGo_Button1MouseEntered
+
+    private void RegisterPlaceGo_Button1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPlaceGo_Button1MouseExited
+        RegisterPlaceGo_Panel1.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPlaceGo_Button1MouseExited
+
+    private void RegisterPlaceGo_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPlaceGo_Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPlaceGo_Button1ActionPerformed
+
+    private void RegisterPersonGo_Button16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button16MouseEntered
+      Go_Panel16.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button16MouseEntered
+
+    private void RegisterPersonGo_Button16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button16MouseExited
+      Go_Panel16.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button16MouseExited
+
+    private void RegisterPersonGo_Button16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button16ActionPerformed
+
+    private void RegisterPersonGo_Button17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button17MouseEntered
+      Go_Panel18.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button17MouseEntered
+
+    private void RegisterPersonGo_Button17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button17MouseExited
+      Go_Panel18.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button17MouseExited
+
+    private void RegisterPersonGo_Button17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button17ActionPerformed
+
+    private void RegisterPersonGo_Button18MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button18MouseEntered
+        Go_Panel19.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button18MouseEntered
+
+    private void RegisterPersonGo_Button18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button18MouseExited
+         Go_Panel19.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button18MouseExited
+
+    private void RegisterPersonGo_Button18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button18ActionPerformed
+
+    private void RegisterPersonGo_Button19MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button19MouseEntered
+        Go_Panel20.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button19MouseEntered
+
+    private void RegisterPersonGo_Button19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button19MouseExited
+         Go_Panel20.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button19MouseExited
+
+    private void RegisterPersonGo_Button19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button19ActionPerformed
+         
+    }//GEN-LAST:event_RegisterPersonGo_Button19ActionPerformed
+
+    private void RegisterPersonGo_Button20MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button20MouseEntered
+       Go_Panel21.setBackground(new java.awt.Color(59,211,138));
+    }//GEN-LAST:event_RegisterPersonGo_Button20MouseEntered
+
+    private void RegisterPersonGo_Button20MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button20MouseExited
+        Go_Panel21.setBackground(new java.awt.Color(48,166,109));
+    }//GEN-LAST:event_RegisterPersonGo_Button20MouseExited
+
+    private void RegisterPersonGo_Button20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPersonGo_Button20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterPersonGo_Button20ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4309,6 +5075,11 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdditionalQueries_Button;
@@ -4319,14 +5090,13 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel BannedUsers_Panel;
     private javax.swing.JTextArea BannedUsers_TextField;
     private javax.swing.JTextArea BannedUsers_TextField1;
+    private javax.swing.JPanel Chart_Panel;
     private javax.swing.JLabel Company;
     private javax.swing.JLabel Company1;
     private javax.swing.JLabel Company2;
     private javax.swing.JLabel Company3;
     private javax.swing.JLabel Company4;
-    private javax.swing.JLabel Company5;
     private javax.swing.JLabel Company6;
-    private javax.swing.JLabel Company7;
     private javax.swing.JComboBox<String> Country_ComboBox;
     private javax.swing.JButton DangerousZonesGo_Button;
     private javax.swing.JInternalFrame DangerousZones_JInternalFrame;
@@ -4338,6 +5108,8 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel DangerousZones_Logo13;
     private javax.swing.JLabel DangerousZones_Logo14;
     private javax.swing.JLabel DangerousZones_Logo15;
+    private javax.swing.JLabel DangerousZones_Logo16;
+    private javax.swing.JLabel DangerousZones_Logo17;
     private javax.swing.JLabel DangerousZones_Logo2;
     private javax.swing.JLabel DangerousZones_Logo3;
     private javax.swing.JLabel DangerousZones_Logo4;
@@ -4382,17 +5154,31 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel Decoration_Panel38;
     private javax.swing.JPanel Decoration_Panel39;
     private javax.swing.JPanel Decoration_Panel4;
+    private javax.swing.JPanel Decoration_Panel40;
+    private javax.swing.JPanel Decoration_Panel41;
+    private javax.swing.JPanel Decoration_Panel42;
+    private javax.swing.JPanel Decoration_Panel43;
+    private javax.swing.JPanel Decoration_Panel44;
     private javax.swing.JPanel Decoration_Panel5;
     private javax.swing.JPanel Decoration_Panel6;
     private javax.swing.JPanel Decoration_Panel7;
     private javax.swing.JPanel Decoration_Panel8;
     private javax.swing.JPanel Decoration_Panel9;
+    private javax.swing.JPanel DeletePerson_Panel;
+    private javax.swing.JButton DeletePlaceGo_Button;
+    private javax.swing.JPanel DeletePlaceGo_Panel;
+    private javax.swing.JPanel Delete_Panel1;
+    private javax.swing.JPanel Delete_Panel2;
+    private javax.swing.JPanel Delete_Panel3;
+    private javax.swing.JPanel Delete_Panel4;
+    private javax.swing.JPanel Delete_Panel5;
     private javax.swing.JTextArea Districts_TextArea;
     private javax.swing.JButton ExitList_Button;
     private javax.swing.JButton ExitList_Button1;
     private javax.swing.JButton ExitList_Button2;
     private javax.swing.JButton ExitList_Button3;
     private javax.swing.JButton ExitList_Button4;
+    private javax.swing.JButton ExittGraphic_Button;
     private javax.swing.JButton ExpireFiles_Button;
     private javax.swing.JInternalFrame ExpireFiles_JInternalFrame;
     private javax.swing.JPanel ExpireFiles_Panel;
@@ -4404,13 +5190,24 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton Go_Button5;
     private javax.swing.JPanel Go_Panel;
     private javax.swing.JPanel Go_Panel1;
+    private javax.swing.JPanel Go_Panel10;
+    private javax.swing.JPanel Go_Panel12;
+    private javax.swing.JPanel Go_Panel13;
+    private javax.swing.JPanel Go_Panel14;
+    private javax.swing.JPanel Go_Panel15;
+    private javax.swing.JPanel Go_Panel16;
+    private javax.swing.JPanel Go_Panel17;
+    private javax.swing.JPanel Go_Panel18;
+    private javax.swing.JPanel Go_Panel19;
     private javax.swing.JPanel Go_Panel2;
+    private javax.swing.JPanel Go_Panel20;
+    private javax.swing.JPanel Go_Panel21;
     private javax.swing.JPanel Go_Panel3;
     private javax.swing.JPanel Go_Panel4;
-    private javax.swing.JPanel Go_Panel5;
     private javax.swing.JPanel Go_Panel6;
     private javax.swing.JPanel Go_Panel7;
     private javax.swing.JPanel Go_Panel8;
+    private javax.swing.JPanel Go_Panel9;
     private javax.swing.JButton Home_Button;
     private javax.swing.JPanel Lateral_Menu_Panel;
     private javax.swing.JPanel List_Panel;
@@ -4427,6 +5224,8 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel Panel_Wallpaper13;
     private javax.swing.JLabel Panel_Wallpaper14;
     private javax.swing.JLabel Panel_Wallpaper15;
+    private javax.swing.JLabel Panel_Wallpaper16;
+    private javax.swing.JLabel Panel_Wallpaper17;
     private javax.swing.JLabel Panel_Wallpaper2;
     private javax.swing.JLabel Panel_Wallpaper3;
     private javax.swing.JLabel Panel_Wallpaper4;
@@ -4451,10 +5250,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton Profile_Button3;
     private javax.swing.JButton Profile_Button4;
     private javax.swing.JButton Profile_Button5;
-    private javax.swing.JButton Profile_Button6;
     private javax.swing.JButton Profile_Button7;
-    private javax.swing.JButton Profile_Button8;
-    private javax.swing.JButton Profile_Button9;
     private javax.swing.JInternalFrame Profile_JInternalFrame;
     private javax.swing.JPanel Profile_Panel;
     private javax.swing.JComboBox<String> Province_ComboBox;
@@ -4480,7 +5276,14 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JTextField RegisterInfoName_TextField16;
     private javax.swing.JTextField RegisterInfoName_TextField17;
     private javax.swing.JTextField RegisterInfoName_TextField18;
+    private javax.swing.JTextField RegisterInfoName_TextField19;
     private javax.swing.JTextField RegisterInfoName_TextField2;
+    private javax.swing.JTextField RegisterInfoName_TextField20;
+    private javax.swing.JTextField RegisterInfoName_TextField21;
+    private javax.swing.JTextField RegisterInfoName_TextField22;
+    private javax.swing.JTextField RegisterInfoName_TextField23;
+    private javax.swing.JTextField RegisterInfoName_TextField24;
+    private javax.swing.JTextField RegisterInfoName_TextField25;
     private javax.swing.JTextField RegisterInfoName_TextField3;
     private javax.swing.JTextField RegisterInfoName_TextField4;
     private javax.swing.JTextField RegisterInfoName_TextField5;
@@ -4497,16 +5300,24 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel RegisterInfo_Panel;
     private javax.swing.JInternalFrame RegisterInfo_Person_JInternalFrame;
     private javax.swing.JInternalFrame RegisterInfo_Place_JInternalFrame;
-    private javax.swing.JButton RegisterPersonGo_Button;
-    private javax.swing.JButton RegisterPersonGo_Button10;
+    private javax.swing.JButton RegisterPersonGo_Button1;
     private javax.swing.JButton RegisterPersonGo_Button11;
-    private javax.swing.JButton RegisterPersonGo_Button2;
-    private javax.swing.JButton RegisterPersonGo_Button3;
-    private javax.swing.JButton RegisterPersonGo_Button4;
-    private javax.swing.JButton RegisterPersonGo_Button5;
+    private javax.swing.JButton RegisterPersonGo_Button13;
+    private javax.swing.JButton RegisterPersonGo_Button14;
+    private javax.swing.JButton RegisterPersonGo_Button15;
+    private javax.swing.JButton RegisterPersonGo_Button16;
+    private javax.swing.JButton RegisterPersonGo_Button17;
+    private javax.swing.JButton RegisterPersonGo_Button18;
+    private javax.swing.JButton RegisterPersonGo_Button19;
+    private javax.swing.JButton RegisterPersonGo_Button20;
     private javax.swing.JButton RegisterPersonGo_Button6;
-    private javax.swing.JButton RegisterPersonGo_Button8;
-    private javax.swing.JButton RegisterPersonGo_Button9;
+    private javax.swing.JButton RegisterPersonGo_Button7;
+    private javax.swing.JButton RegisterPlaceGo_Button;
+    private javax.swing.JButton RegisterPlaceGo_Button1;
+    private javax.swing.JPanel RegisterPlaceGo_Panel;
+    private javax.swing.JPanel RegisterPlaceGo_Panel1;
+    private javax.swing.JButton RegisterUpdatePersonGo_Button;
+    private javax.swing.JPanel RegisterUpdatePersonGo_Panel;
     private javax.swing.JButton SearchCriminalFile_Button;
     private javax.swing.JPanel SearchCriminalFile_Panel;
     private javax.swing.JInternalFrame SearchCriminalFiles_JInternalFrame;
@@ -4526,13 +5337,16 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel Show_Panel2;
     private javax.swing.JPanel Show_Panel3;
     private javax.swing.JPanel Show_Panel4;
+    private javax.swing.JInternalFrame Statistics_JInternalFrame;
     private javax.swing.JComboBox<String> Type_ComboBox;
     private javax.swing.JButton UserList_Button;
+    private javax.swing.JInternalFrame UserList_JInternalFrame;
     private javax.swing.JPanel UserList_Panel;
     private javax.swing.JButton UserLists_Button;
     private javax.swing.JButton UsersPasswords_Button;
     private javax.swing.JInternalFrame UsersPasswords_JInternalFrame;
     private javax.swing.JLabel Wallpaper_User_Main_Menu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -4540,6 +5354,7 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
@@ -4551,10 +5366,22 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
@@ -4574,7 +5401,13 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -4615,7 +5448,6 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
@@ -4651,14 +5483,22 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -4701,7 +5541,14 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel46;
+    private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
+    private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel50;
+    private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -4722,4 +5569,6 @@ public class Admin_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+
 }

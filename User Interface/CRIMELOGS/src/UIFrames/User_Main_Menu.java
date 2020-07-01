@@ -30,6 +30,7 @@ public class User_Main_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        objectList1 = new org.jfree.chart.util.ObjectList();
         Profile_JInternalFrame = new javax.swing.JInternalFrame();
         DangerousZones_Logo1 = new javax.swing.JLabel();
         Decoration_Panel3 = new javax.swing.JPanel();
@@ -119,7 +120,9 @@ public class User_Main_Menu extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        jLabel93 = new javax.swing.JLabel();
         Decoration_Panel11 = new javax.swing.JPanel();
+        RegisterInfoName_TextField19 = new javax.swing.JTextField();
         Panel_Wallpaper4 = new javax.swing.JLabel();
         BannedUsers_JInternalFrame = new javax.swing.JInternalFrame();
         DangerousZones_Logo5 = new javax.swing.JLabel();
@@ -214,7 +217,7 @@ public class User_Main_Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Home_Button = new javax.swing.JButton();
-        Wallpaper_User_Main_Menu = new javax.swing.JLabel();
+        Wallpaper_User_Main_Menu1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -683,12 +686,21 @@ public class User_Main_Menu extends javax.swing.JFrame {
         jPanel8.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, -1));
         jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 170, 180));
 
+        jLabel93.setBackground(new java.awt.Color(219, 219, 219));
+        jLabel93.setFont(new java.awt.Font("Malgun Gothic", 0, 20)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel93.setText("See a list of users members of the database");
+        jLabel93.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel8.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 420, 40));
+
         Decoration_Panel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 3, 1070, 64));
 
         UserList_JInternalFrame.getContentPane().add(Decoration_Panel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 1050, 70));
 
         Decoration_Panel11.setBackground(new java.awt.Color(219, 219, 219));
         Decoration_Panel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Decoration_Panel11.add(RegisterInfoName_TextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 710, 310));
+
         UserList_JInternalFrame.getContentPane().add(Decoration_Panel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 930, 370));
 
         Panel_Wallpaper4.setBackground(new java.awt.Color(219, 219, 219));
@@ -1388,10 +1400,10 @@ public class User_Main_Menu extends javax.swing.JFrame {
         });
         Lateral_Menu_Panel.add(Home_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 240, 60));
 
-        getContentPane().add(Lateral_Menu_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 730));
+        getContentPane().add(Lateral_Menu_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 720));
 
-        Wallpaper_User_Main_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Main Menu Wallpaper.png"))); // NOI18N
-        getContentPane().add(Wallpaper_User_Main_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, -1));
+        Wallpaper_User_Main_Menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Main Menu Wallpaper.png"))); // NOI18N
+        getContentPane().add(Wallpaper_User_Main_Menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 1190, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1805,6 +1817,7 @@ public class User_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JTextField RegisterInfoIdentification_TextField;
     private javax.swing.JTextField RegisterInfoLastName_TextField;
     private javax.swing.JTextField RegisterInfoName_TextField;
+    private javax.swing.JTextField RegisterInfoName_TextField19;
     private javax.swing.JButton RegisterInfo_Button;
     private javax.swing.JPanel RegisterInfo_Panel;
     private javax.swing.JButton RegisterPersonGo_Button;
@@ -1818,7 +1831,7 @@ public class User_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton UserList_Button;
     private javax.swing.JInternalFrame UserList_JInternalFrame;
     private javax.swing.JPanel UserList_Panel;
-    private javax.swing.JLabel Wallpaper_User_Main_Menu;
+    private javax.swing.JLabel Wallpaper_User_Main_Menu1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -1885,6 +1898,7 @@ public class User_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel93;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1909,5 +1923,6 @@ public class User_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField29;
+    private org.jfree.chart.util.ObjectList objectList1;
     // End of variables declaration//GEN-END:variables
 }

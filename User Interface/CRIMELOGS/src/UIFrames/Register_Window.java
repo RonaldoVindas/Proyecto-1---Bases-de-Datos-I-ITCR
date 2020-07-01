@@ -17,7 +17,9 @@ public class Register_Window extends javax.swing.JFrame {
      * Creates new form Logiin_Window
      */
     public Register_Window() {
+        this.setUndecorated(true);
         initComponents();
+
         this.setLocationRelativeTo(null);
 
     }
@@ -274,7 +276,9 @@ public class Register_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_Username_TextFieldActionPerformed
 
     private void Register_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_ButtonActionPerformed
-        // TODO add your handling code here:
+        User_Main_Menu result = new User_Main_Menu();
+        result.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_Register_ButtonActionPerformed
 
     private void Username_TextFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Username_TextFieldMouseEntered
