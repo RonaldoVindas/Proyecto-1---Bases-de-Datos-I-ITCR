@@ -1,4 +1,4 @@
-/*==================================================CREACIÓN DE TABLAS======================================================*/
+﻿/*==================================================CREACIÓN DE TABLAS======================================================*/
 /*En esquema PE ===============================================================*/
 CREATE TABLE photo (
 	id_photo NUMBER(12),
@@ -36,9 +36,9 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 /*En esquema PE ===============================================================*/
 
 ALTER TABLE photo
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE SECUENCIAS PARA ID´s DE  TABLAS======================================================*/
