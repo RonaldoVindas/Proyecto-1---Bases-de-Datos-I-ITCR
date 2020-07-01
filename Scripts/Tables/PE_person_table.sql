@@ -8,13 +8,12 @@ CREATE TABLE person(
 	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL,
 	birth_day DATE,
 	email VARCHAR2(50) CONSTRAINT person_email_unique UNIQUE,
-	user_name VARCHAR2(30) CONSTRAINT person_user_name_unique UNIQUE, /*Qué pasa con las personas que no están registraas en la base?*/
-	password VARCHAR2(20) CONSTRAINT person_password_not_null NOT NULL,
+	user_name VARCHAR2(30) CONSTRAINT person_user_name_unique UNIQUE,
+	password VARCHAR2(20),
 	id_gender NUMBER(6),
 	id_institution NUMBER(6),
-	id_user_password_binnacle NUMBER(8),
+	id_user_password_binnacle NUMBER(8)CONSTRAINT person_user_name_unique UNIQUE,
 	id_type_person NUMBER(6)
-	/*person_age NUMBER(4,4)*/
 );
 
 ALTER TABLE person

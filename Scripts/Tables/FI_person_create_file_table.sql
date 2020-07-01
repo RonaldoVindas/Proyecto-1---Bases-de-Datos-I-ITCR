@@ -44,8 +44,7 @@ ADD CONSTRAINT fk_personcreatefile_idcrimrecord FOREIGN KEY
 /* CAMPOS DE AUDITORÃ?A AÃšN NO TIENEN COMENTARIOS!!!!!!!!!*/
 
 /*En esquema FI ===============================================================*/
-ALTER TABLE person_create_file
-MODIFY id_person NUMBER(20);
+
 
 ALTER TABLE person_create_file
 ADD creation_date DATE

@@ -11,7 +11,7 @@ CREATE TABLE person_register_file(
 	sentence_expiration DATE,
 	sentence_date DATE,
 	sentence_number NUMBER(6),
-    house_for_jail VARCHAR2(3) CONSTRAINT personRegfile_houseforjail_nn NOT NULL,
+    	house_for_jail VARCHAR2(3) CONSTRAINT personRegfile_houseforjail_nn NOT NULL,
 	resolution VARCHAR2(50) CONSTRAINT personRegfile_resolution_nn NOT NULL
 );
 

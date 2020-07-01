@@ -30,8 +30,6 @@ TABLESPACE pe_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 
-ALTER TABLE institution
-RENAME COLUMN name TO institution_name;
 /*==================================================CAMPOS DE AUDITORÃ?A PARA TABLAS======================================================*/
 /* CAMPOS DE AUDITORÃ?A AÃšN NO TIENEN COMENTARIOS!!!!!!!!!*/
 

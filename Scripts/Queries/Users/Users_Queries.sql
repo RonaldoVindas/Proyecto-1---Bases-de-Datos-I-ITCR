@@ -81,7 +81,7 @@ return vcCursor;
 
 end; 
 /
-/*Recuperar información del usuario*/
+/*Recuperar información del usuario. Query opcional*/
 
 create or replace function recoverInfo(pid IN NUMBER)
 return sys_refcursor
@@ -101,7 +101,7 @@ where a.id_person=pid;
 return vcCursor;
 end;
 /
-/*Crimenes en un mismo día*/
+/*Crimenes en un mismo día. Query opcional*/
 create or replace function crimesAmountOneDay(pdate IN DATE)
 return sys_refcursor
 as
@@ -114,7 +114,7 @@ where a.crime_date=pdate;
 return vccursor;
 end;
 /
-/*Persona tiene o no tiene expediente*/
+/*Persona tiene o no tiene expediente. Query adicional necesario*/
 create or replace function personHasFile(pid_person in number)return sys_refcursor
 as
 vcCursor sys_refcursor;
@@ -134,7 +134,7 @@ where a.id_person=pid_person;
 return vcCursor;
 end;
 
-/*Expedientes por genero*/
+/*Expedientes por genero. Query adicional necesario*/
 /
 create or replace function filesbygender(pid_gender in number)
 return sys_refcursor
@@ -154,7 +154,7 @@ where a.id_gender =pid_gender;
 return vcCursor;
 end;
 /
-/*crimenes por mes en un año*/
+/*crimenes por mes en un año. Query adicional necesario*/
 create or replace function crimes_per_month(pyear number)
 return sys_refcursor
 as
@@ -168,7 +168,7 @@ group by Extract(MONTH from a.crime_date);
 return vcCursor;
 end;
 /
-/*Personas con mas expedientes ligados*/
+/*Personas con mas expedientes ligados. Query adicional necesario*/
 create or replace function topPersonMostFiles(pNumber in number)
 return sys_refcursor
 as
@@ -183,12 +183,12 @@ inner join FI.person_create_file b
 on a.id_person= b.id_person
 join fi.criminal_record c
 on b.id_criminal_record = c.id_criminal_record
-group by c.description order by counter desc)
+group by a. order by counter desc)
 where rownum <= 10;
 return vcCursor;
 end;
 /
-/*Listado de personas que han cometido un crimen específico*/
+/*Listado de personas que han cometido un crimen específico. Query adicional necesario*/
 
 create or replace function personbycrime(pid_crime in number)
 return sys_refcursor

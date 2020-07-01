@@ -407,7 +407,7 @@ begin
         WHEN TOO_MANY_ROWS THEN
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+        DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pIdPerson.');
         WHEN STORAGE_ERROR THEN
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
@@ -428,7 +428,7 @@ begin
         WHEN TOO_MANY_ROWS THEN
         DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
         WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+        DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pIdCriminalRecord.');
         WHEN STORAGE_ERROR THEN
         DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
         WHEN VALUE_ERROR THEN
