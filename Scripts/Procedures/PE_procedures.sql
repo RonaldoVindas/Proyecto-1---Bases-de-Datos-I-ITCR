@@ -1,4 +1,4 @@
-﻿/*====================================================CREACIÓN DE PROCEDIMIENTOS DE TABLAS====================================*/
+/*====================================================CREACIÓN DE PROCEDIMIENTOS DE TABLAS====================================*/
 
 /*EN ESQUEMA PE: ========================================*/
 
@@ -114,8 +114,18 @@ END update_institution_name;
 /
 
 /*Tabla: Person: ========================================*/
-
 CREATE OR REPLACE PROCEDURE insert_person (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
+                                                                                pemail VARCHAR, pid_gender NUMBER, pid_institution NUMBER, pid_type_person NUMBER)  AS
+
+BEGIN 
+	INSERT INTO person(id_person,first_name, last_name, birth_day, email, id_gender, id_institution, id_type_person)
+	VALUES(pid_person,pfirst_name, plast_name, pbirth_day, pemail, pid_gender, pid_institution,pid_type_person);
+	COMMIT;
+END insert_user;
+
+/
+
+CREATE OR REPLACE PROCEDURE insert_user (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
 								pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
 								pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, 
 								pid_type_person NUMBER)  AS
@@ -124,7 +134,7 @@ BEGIN
 	INSERT INTO person(id_person,first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person)
 	VALUES(pid_person,pfirst_name, plast_name, pbirth_day, pemail, puser_name, encryptpassword(ppassword), pid_gender, pid_institution,pid_binnacle,pid_type_person);
 	COMMIT;
-END insert_person;
+END insert_user;
 
 /
 
@@ -271,10 +281,11 @@ END update_person_username;
 
 /
 
-CREATE OR REPLACE PROCEDURE update_person_type_person(pid_person IN NUMBER, ptype IN NUMBER)
+CREATE OR REPLACE PROCEDURE update_person_type_person(pid_person IN NUMBER, ptype IN NUMBER)AS
+e_invalid_person EXCEPTION;
 BEGIN
 	UPDATE person
-	SET id_type_person = ptypee
+	SET id_type_person = ptype
 	WHERE id_person = id_person;
 	COMMIT;
     IF SQL%NOTFOUND THEN 

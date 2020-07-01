@@ -1,8 +1,7 @@
 CREATE OR REPLACE PACKAGE control_person IS
-PROCEDURE insert_person (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
-								pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
-								pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, 
-								pid_type_person NUMBER);
+PROCEDURE insert_person (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE,  pemail VARCHAR, pid_gender NUMBER, pid_institution NUMBER, pid_type_person NUMBER);
+PROCEDURE insert_user (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
+                                        pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, pid_type_person NUMBER);
 PROCEDURE remove_person(pid_person IN NUMBER);
 PROCEDURE update_person_first_name(pid_person IN NUMBER, pfirst_name IN VARCHAR2);
 PROCEDURE update_person_last_name(pid_person IN NUMBER, plast_name IN VARCHAR2);
@@ -31,16 +30,22 @@ END control_person;
 /
 CREATE OR REPLACE PACKAGE BODY control_person IS
 
-PROCEDURE insert_person(pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, 
-								pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
-								pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, 
-								pid_type_person NUMBER) as 
-begin 
-INSERT INTO person(id_person,first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person)
-	VALUES(pid_person,pfirst_name, plast_name, pbirth_day, pemail, puser_name, encryptpassword(ppassword), pid_gender, pid_institution,pid_binnacle,pid_type_person);
+PROCEDURE insert_person (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE,  pemail VARCHAR, pid_gender NUMBER, pid_institution NUMBER, pid_type_person NUMBER)  AS
+
+BEGIN 
+	INSERT INTO person(id_person,first_name, last_name, birth_day, email, id_gender, id_institution, id_type_person)
+	VALUES(pid_person,pfirst_name, plast_name, pbirth_day, pemail, pid_gender, pid_institution,pid_type_person);
 	COMMIT;
 END insert_person;
 
+PROCEDURE insert_user (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE, pemail VARCHAR2, puser_name VARCHAR2, ppassword VARCHAR2, 
+                                        pid_gender NUMBER, pid_institution NUMBER, pid_binnacle NUMBER, pid_type_person NUMBER)  AS
+
+BEGIN 
+	INSERT INTO person(id_person,first_name, last_name, birth_day, email, user_name, password, id_gender, id_institution, id_user_password_binnacle, id_type_person)
+	VALUES(pid_person,pfirst_name, plast_name, pbirth_day, pemail, puser_name, encryptpassword(ppassword), pid_gender, pid_institution,pid_binnacle,pid_type_person);
+	COMMIT;
+END insert_user;
 
 PROCEDURE remove_person (pid_person IN NUMBER) AS
 e_invalid_person EXCEPTION;
