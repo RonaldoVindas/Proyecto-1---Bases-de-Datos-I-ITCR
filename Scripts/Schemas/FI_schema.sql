@@ -1,4 +1,4 @@
-/*==================================================CREACIÓN DE TABLESPACES======================================================*/
+﻿/*==================================================CREACIÓN DE TABLESPACES======================================================*/
 
 /*TABLESPACE para Expediente = file = fi*/
 CREATE TABLESPACE fi_data
@@ -44,10 +44,17 @@ GRANT INSERT, DELETE, UPDATE, SELECT ON fi.community TO PE;
 GRANT INSERT, DELETE, UPDATE, SELECT ON fi.country TO PE;
 GRANT INSERT, DELETE, UPDATE, SELECT ON fi.crime_type TO PE;
 GRANT INSERT, DELETE, UPDATE, SELECT ON fi.district TO PE;
-GRANT INSERT, DELETE, UPDATE, SELECT ON fi.person_has_file TO PE;
+GRANT INSERT, DELETE, UPDATE, SELECT ON fi.person_create_file TO PE;
 GRANT INSERT, DELETE, UPDATE, SELECT ON fi.person_register_file TO PE;
 GRANT INSERT, DELETE, UPDATE, SELECT ON fi.province TO PE;
-
+grant execute on fi.control_community to PE;
+grant execute on fi.control_country to  PE;
+grant execute on fi.control_crime_Type to PE;
+grant execute on fi.control_criminal_record to PE;
+grant execute on fi.control_district to PE;
+grant execute on fi.control_province to PE;
+grant execute on fi.cONTROL_CREATE_FILE to PE;
+grant execute on fi.CONTROL_register_FILE to PE;
 
 
 

@@ -2,7 +2,7 @@
 /*En esquema PE ===============================================================*/
 
 CREATE TABLE person(
-	id_person NUMBER(8),
+	id_person NUMBER(9),
 	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL,
 	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL,
 	birth_day DATE,
@@ -14,9 +14,6 @@ CREATE TABLE person(
 	id_user_password_binnacle NUMBER(8)CONSTRAINT person_user_name_unique UNIQUE,
 	id_type_person NUMBER(6)
 );
-
-ALTER TABLE person
-ADD person_age NUMBER(4,4);
 
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
@@ -72,8 +69,8 @@ ALTER TABLE person
 ADD CONSTRAINT fk_person_id_gender FOREIGN KEY
 (id_gender) REFERENCES gender(id_gender);
 
-ALTER TABLE person
-MODIFY id_person NUMBER(20);
+/*ALTER TABLE person
+MODIFY id_person NUMBER(20);*/
 
 ALTER TABLE person
 ADD CONSTRAINT fk_person_id_institution FOREIGN KEY

@@ -1,70 +1,71 @@
-Create or replace package control_Institution is
-PROCEDURE insert_institution_name( pname IN VARCHAR2);
-PROCEDURE remove_institution (pid_institution IN NUMBER);
-PROCEDURE update_institution_name(pid_institution IN NUMBER, pname IN VARCHAR2);
-FUNCTION getInstitutionName(pid_institution IN NUMBER) RETURN VARCHAR2;
-FUNCTION getInstitutionID(pDescription IN VARCHAR2) RETURN number;
-end control_Institution;
+Create or replace package control_Gender is
+PROCEDURE insert_gender (pdescription IN VARCHAR2);
+PROCEDURE remove_gender (pid_gender IN NUMBER);
+PROCEDURE update_gender_description(pid_gender IN NUMBER, pdescription IN VARCHAR2);
+FUNCTION getGenderDescription(pid_gender IN NUMBER) RETURN VARCHAR2;
+FUNCTION get_gender_id(pdescription varchar2) return number;
+end control_Gender;
 /
-CREATE OR REPLACE PACKAGE BODY control_Institution IS
+CREATE OR REPLACE PACKAGE BODY control_Gender IS
 
-PROCEDURE insert_institution_name( pname IN VARCHAR2) AS
+PROCEDURE insert_gender (pdescription IN VARCHAR2) AS
 BEGIN
-    INSERT INTO institution(Institution_name)
-	VALUES(pname);
-	COMMIT;
-END insert_institution_name;
+	INSERT INTO gender(description)
+	VALUES(pdescription);
+END insert_gender;
 
-PROCEDURE remove_institution (pid_institution IN NUMBER) AS
-e_invalid_institution EXCEPTION;
+PROCEDURE remove_gender (pid_gender IN NUMBER) AS
+e_invalid_gender EXCEPTION;
 BEGIN
-	DELETE FROM institution
-	WHERE id_institution = pid_institution;
+	DELETE FROM gender
+	WHERE id_gender = pid_gender;
 	COMMIT;
     IF SQL%NOTFOUND THEN 
-        RAISE e_invalid_institution;
+        RAISE e_invalid_gender;
     END IF;
     EXCEPTION
-    WHEN e_invalid_institution THEN
-        DBMS_OUTPUT.PUT_LINE('No such institution.');
+    WHEN e_invalid_gender THEN
+        DBMS_OUTPUT.PUT_LINE('No such gender.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to remove.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-END remove_institution;
+END remove_gender;
 
-PROCEDURE update_institution_name(pid_institution IN NUMBER, pname IN VARCHAR2) AS
-e_invalid_institution EXCEPTION;
+
+PROCEDURE update_gender_description(pid_gender IN NUMBER, pdescription IN VARCHAR2) AS
+e_invalid_gender EXCEPTION;
 BEGIN
-	UPDATE institution
-	SET Institution_name = pname
-	WHERE id_institution = pid_institution;
+	UPDATE gender
+	SET description = pdescription
+	WHERE id_gender = pid_gender;
 	COMMIT;
     IF SQL%NOTFOUND THEN 
-        RAISE e_invalid_institution;
+        RAISE e_invalid_gender;
     END IF;
     EXCEPTION
-    WHEN e_invalid_institution THEN
-        DBMS_OUTPUT.PUT_LINE('No such institution.');
+    WHEN e_invalid_gender THEN
+        DBMS_OUTPUT.PUT_LINE('No such gender.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('An error has ocurred in the attempt to update.');
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
         DBMS_OUTPUT.PUT_LINE(SQLCODE);
-END update_institution_name;
+END update_gender_description;
 
 
-FUNCTION getInstitutionName(pid_institution IN NUMBER) RETURN VARCHAR2
-IS vcInstitution VARCHAR2(50);
+FUNCTION getGenderDescription(pid_gender IN NUMBER) RETURN VARCHAR2
+IS 
+    vcGenderDescription VARCHAR2(50);
     BEGIN
-        SELECT institution_name
-        INTO vcInstitution
-        FROM institution
-        WHERE id_institution = pid_institution;
-        RETURN (vcInstitution);
+        SELECT description
+        INTO vcGenderDescription
+        FROM gender
+        WHERE id_gender = pid_gender;
+        RETURN (vcGenderDescription);
         EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
@@ -76,28 +77,31 @@ IS vcInstitution VARCHAR2(50);
             DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
             WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
-    END getInstitutionName;
+    END;
     
     
-FUNCTION getInstitutionID(pDescription IN VARCHAR2) RETURN number
-is vcInstitutionId number(4);
-BEGIN
-        SELECT id_Institution
-        INTO vcInstitutionId
-        FROM institution
-        WHERE institution_name = pDescription;
-        RETURN ( vcInstitutionId);
-        EXCEPTION
-            WHEN TOO_MANY_ROWS THEN
-            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
-            WHEN NO_DATA_FOUND THEN
-            DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
-            WHEN STORAGE_ERROR THEN
-            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
-            WHEN VALUE_ERROR THEN
-            DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
-            WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
-    END getInstitutionID;
+    
+    
+FUNCTION get_gender_id(pdescription varchar2) return number
 
-end control_Institution;
+IS 
+    vcGenderID VARCHAR2(50);
+    BEGIN
+        SELECT description
+        INTO vcGenderID
+        FROM gender
+        WHERE description = pdescription;
+        RETURN (vcGenderID);
+        EXCEPTION
+            WHEN TOO_MANY_ROWS THEN
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+            WHEN STORAGE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
+            WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+    END;
+end control_gender;

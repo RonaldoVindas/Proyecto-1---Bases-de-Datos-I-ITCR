@@ -1,4 +1,4 @@
-/*==================================================CREACIÓN DE TABLAS======================================================*/
+﻿/*==================================================CREACIÓN DE TABLAS======================================================*/
 /*En esquema PE ===============================================================*/
 CREATE TABLE personXphoto(
 	id_person NUMBER(8),
@@ -43,9 +43,9 @@ ADD CONSTRAINT fk_personXphoto_id_photo FOREIGN KEY
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE personXphoto
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 

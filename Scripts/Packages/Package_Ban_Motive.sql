@@ -3,6 +3,7 @@ PROCEDURE insert_ban_motive(p_ban_motive_description IN VARCHAR2);
 PROCEDURE remove_ban_motive(p_id_ban_motive IN NUMBER);
 PROCEDURE update_ban_motive(p_ban_motive_description IN VARCHAR2,p_id_ban_motive IN NUMBER);
 FUNCTION getBanMotiveDescription(pId IN NUMBER) return varchar2;
+FUNCTION get_Motive_ID(pDescription varchar2) return number;
 end control_Ban_Motive;
 /
 CREATE OR REPLACE PACKAGE BODY control_BAN_Motive IS
@@ -66,6 +67,28 @@ BEGIN
     FROM ban_motive
     WHERE id_ban_motive = pId;
     RETURN (vcMotiveDescription);
+    EXCEPTION
+            WHEN TOO_MANY_ROWS THEN
+            DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
+            WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE ('Could not find a register with the name||pcnombre.');
+            WHEN STORAGE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('PL/SQL ran out of memory or memory is corrupted.');
+            WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('An arithmetic, conversion, truncation, or size constraint error ocurred.');
+            WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Unexpected error.');
+END; 
+
+
+FUNCTION get_Motive_ID(pDescription varchar2) RETURN number
+IS vcMotiveID number(3);
+BEGIN
+    SELECT id_ban_motive
+    INTO vcMotiveID
+    FROM ban_motive
+    WHERE ban_motive_description = pDescription;
+    RETURN (vcMotiveID);
     EXCEPTION
             WHEN TOO_MANY_ROWS THEN
             DBMS_OUTPUT.PUT_LINE ('Your SELECT statement retrieved multiple rows.');
