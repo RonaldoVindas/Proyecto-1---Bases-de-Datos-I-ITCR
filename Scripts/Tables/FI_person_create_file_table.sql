@@ -38,7 +38,7 @@ ADD CONSTRAINT fk_personcreatefileId_person FOREIGN KEY
 (id_person) REFERENCES pe.person(id_person);
 
 ALTER TABLE person_create_file
-ADD CONSTRAINT fk_personcreatefile_idcrimrecord FOREIGN KEY
+ADD CONSTRAINT fk_perscreatefile_idcrimrcrd FOREIGN KEY
 (id_criminal_record) REFERENCES criminal_record(id_criminal_record);
 
 /*==================================================CAMPOS DE AUDITORÃ?A PARA TABLAS======================================================*/
