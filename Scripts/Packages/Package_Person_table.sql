@@ -22,6 +22,7 @@ FUNCTION getPersonAge(pId IN NUMBER) RETURN NUMBER;
 FUNCTION getPersonIdInstitution(pid_person IN NUMBER) RETURN NUMBER;
 FUNCTION getPersonIdBinnacle(pid_person IN NUMBER) RETURN NUMBER;
 FUNCTION getPersonIdTypePerson(pid_person IN NUMBER) RETURN NUMBER;
+FUNCTION EncryptPassword(pencrypt_password IN VARCHAR2) RETURN VARCHAR2;
 
 
 
@@ -29,6 +30,19 @@ FUNCTION getPersonIdTypePerson(pid_person IN NUMBER) RETURN NUMBER;
 END control_person; 
 /
 CREATE OR REPLACE PACKAGE BODY control_person IS
+
+FUNCTION EncryptPassword(pencrypt_password IN VARCHAR2) RETURN VARCHAR2
+AS
+    data VARCHAR2(255);
+    BEGIN
+    data := rpad(pencrypt_password, (trunc(length(pencrypt_password)/8)+1)*8, chr(0) );
+    dbms_obfuscation_toolkit.DESEncrypt
+          ( input_string => data,
+            key_string   => 'DBAKey03',
+            encrypted_string=> data );
+ 
+    RETURN data;
+  END;
 
 PROCEDURE insert_person (pid_person IN NUMBER,pfirst_name IN VARCHAR2, plast_name VARCHAR2, pbirth_day DATE,  pemail VARCHAR, pid_gender NUMBER, pid_institution NUMBER, pid_type_person NUMBER)  AS
 
