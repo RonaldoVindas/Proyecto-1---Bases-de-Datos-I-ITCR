@@ -1,4 +1,4 @@
-/*==================================================CREACIÓN DE TABLAS======================================================*/
+﻿/*==================================================CREACIÓN DE TABLAS======================================================*/
 /*En esquema PE ===============================================================*/
 CREATE TABLE ban (
 	id_ban NUMBER(6),
@@ -45,9 +45,9 @@ ADD CONSTRAINT fk_ban_id_motive FOREIGN KEY
 /*En esquema PE ===============================================================*/
 
 ALTER TABLE ban
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE SECUENCIAS PARA ID´s DE  TABLAS======================================================*/

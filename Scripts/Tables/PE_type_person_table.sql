@@ -1,6 +1,6 @@
-/*==================================================CREACIÓN DE TABLAS======================================================*/
+﻿/*==================================================CREACIÓN DE TABLAS======================================================*/
 /*En esquema PE ===============================================================*/
-CREATE TABLE user_type (   												/*Tipo de Persona: Usuario, Admin, Imputado, etc*/
+CREATE TABLE type_person (   												/*Tipo de Persona: Usuario, Admin, Imputado, etc*/
 		id_type_person NUMBER(6),
 		description VARCHAR(50) CONSTRAINT type_person_description_nn NOT NULL
 	);
@@ -34,9 +34,9 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE type_person
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE SECUENCIAS PARA ID´s DE  TABLAS======================================================*/

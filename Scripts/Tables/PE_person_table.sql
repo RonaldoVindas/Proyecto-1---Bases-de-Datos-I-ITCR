@@ -1,5 +1,4 @@
 /*==================================================CREACIÃ“N DE TABLAS======================================================*/
-DROP TABLE person;
 /*En esquema PE ===============================================================*/
 
 CREATE TABLE person(
@@ -37,16 +36,13 @@ Is 'Repository to store person´s information.';
 	COMMENT ON COLUMN person.birth_day
 	IS 'Person´s birth day.';
     
-    COMMENT ON COLUMN person.person_age
-	IS 'Person´s age.';
-
 	COMMENT ON COLUMN person.user_name
 	IS 'Person´s user name.';
 
 	COMMENT ON COLUMN person.password
 	IS 'Person´s password.';
 
-	COMMENT ON COLUMN person.id_genre
+	COMMENT ON COLUMN person.id_gender
 	IS 'Person´s genre identification';
 
 	COMMENT ON COLUMN person.id_institution
@@ -98,9 +94,9 @@ MODIFY birth_day CONSTRAINT birth_day_not_null NOT NULL;
 
 /*En esquema PE ===============================================================*/
 ALTER TABLE person
-ADD creation_date DATE;
-ADD creation_user VARCHAR(10);
-ADD date_last_modification DATE;
+ADD creation_date DATE
+ADD creation_user VARCHAR(10)
+ADD date_last_modification DATE
 ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÃ“N DE SECUENCIAS PARA IDÂ´s DE TODAS LAS TABLAS======================================================*/
