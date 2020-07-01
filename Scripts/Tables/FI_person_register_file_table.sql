@@ -19,7 +19,7 @@ CREATE TABLE person_register_file(
 
 /*En esquema FI ===============================================================*/
 COMMENT ON TABLE person_register_file
-IS 'Repository to store information about the relationship between Person and Case File creators.'
+IS 'Repository to store information about the relationship between Person and Case File creators.';
 
 	COMMENT ON COLUMN person_register_file.id_person
 	IS 'Person´s identification.';

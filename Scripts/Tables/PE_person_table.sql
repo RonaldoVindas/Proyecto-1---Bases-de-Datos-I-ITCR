@@ -2,7 +2,7 @@
 /*En esquema PE ===============================================================*/
 
 CREATE TABLE person(
-	id_person NUMBER(8),
+	id_person NUMBER(9),
 	first_name VARCHAR2(20) CONSTRAINT person_first_name_not_null NOT NULL,
 	last_name VARCHAR2(30) CONSTRAINT person_last_name_not_null NOT NULL,
 	birth_day DATE,
@@ -17,7 +17,6 @@ CREATE TABLE person(
 
 ALTER TABLE person
 ADD person_age NUMBER(4,4);
-
 /*==================================================COMENTARIOS EN TABLAS Y COLUMNAS======================================================*/
 
 /*En esquema PE ===============================================================*/

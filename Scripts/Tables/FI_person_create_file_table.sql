@@ -1,5 +1,6 @@
 /*==================================================CREACIÓN DE TABLAS======================================================*/
 
+/*==================================================CREACIÓN DE TABLAS======================================================*/
 /*En esquema FI ===============================================================*/
 
 CREATE TABLE person_create_file(
@@ -57,22 +58,23 @@ ADD user_last_modification VARCHAR(10);
 
 /*==================================================CREACIÓN DE TRIGGERS PARA TABLAS======================================================*/
 
-CREATE OR REPLACE TRIGGER fi.beforeInsertperson_has_file
+CREATE OR REPLACE TRIGGER fi.beforeInsertperson_create_file
 BEFORE INSERT
-ON fi.person_has_file
+ON fi.person_create_file
 FOR EACH ROW
 BEGIN
     :new.creation_date := SYSDATE;
     :new.creation_user := USER;
-END beforeInsertperson_has_file; 
+END beforeInsertperson_create_file; 
 
 /
 
-CREATE OR REPLACE TRIGGER fi.beforeUPDATEperson_has_file
+CREATE OR REPLACE TRIGGER fi.beforeUPDATEperson_create_file
 BEFORE UPDATE
-ON fi.person_has_file
+ON fi.person_create_file
 FOR EACH ROW
 BEGIN
     :new.date_last_modification:= SYSDATE;
     :new.user_last_modification:= USER;
-END beforeUPDATEperson_has_file; 
+END beforeUPDATEperson_create_file; 
+
