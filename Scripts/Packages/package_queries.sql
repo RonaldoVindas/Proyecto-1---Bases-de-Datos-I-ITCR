@@ -10,6 +10,21 @@ function filesbygender(pid_gender in number) return sys_refcursor;
 function crimes_per_month(pyear number) return sys_refcursor;
 function topPersonMostFiles(pNumber in number) return sys_refcursor;
 function personbycrime(pid_crime in number) return sys_refcursor;
+function TotalPercentFiles  return sys_refcursor;
+function filesPerZoneALL(pPais varchar,pProvincia varchar,pcanton varchar, pdistrito varchar)  return sys_refcursor;
+function filesPerZonewd(pPais varchar,pProvincia varchar,pcanton varchar)  return sys_refcursor;
+function filesPerZonewc(pPais varchar,pProvincia varchar)  return sys_refcursor;
+function filesPerZonewp(pPais varchar)  return sys_refcursor;
+function AgeRange85(type_person int)  return int;
+function AgeRange75_85(type_person int)  return int;
+function AgeRange66_75(type_person int)  return int;
+function AgeRange56_65(type_person int)  return int;
+function AgeRange46_55(type_person int)  return int;
+function AgeRange31_45(type_person int)  return int;
+function AgeRange19_30(type_person int)  return int;
+function AgeRange0_18(type_person int)  return int;
+function averageSentenceTimePerCP( Crime_type varchar2)return sys_refcursor;
+function totalYearsPerCrimeType return sys_refcursor;
 end control_queries;
 /
 CREATE OR REPLACE PACKAGE BODY control_queries IS
@@ -256,5 +271,233 @@ where b.id_crime_type = pid_crime;
 return vcCursor;
 end;
 
+function TotalPercentFiles return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select count(1) quantity, sum(count(1)) over() total, round(100*(count(*) / sum(count(*)) over ()),2) porcentaje, b.description crime_type
+from FI.criminal_record a
+join FI.crime_type b
+on a.id_crime_type = b.id_crime_type
+group by a.id_crime_type;
+return vcCursor;
+end;
+
+function filesPerZoneALL(pPais varchar,pProvincia varchar,pcanton varchar, pdistrito varchar)  return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select count(1) quantity, sum(count(1)) over() total, round(100*(count(*) / sum(count(*)) over ()),2) porcentaje, b.name community, c.name district, d.name canton, e.name province
+from FI.criminal_record a
+inner join FI.community b
+on a.id_community = b.id_community
+inner join FI.district c
+on b.id_district = c.id_district
+inner join fi.canton d
+on c.id_Canton = d.id_canton
+inner join fi.province e
+on d.id_province = e.id_province
+inner join fi.Country f
+on e.id_country = f.id_country
+where c.name = pdistrito and d.name= pcanton and e.name =pprovincia and f.name = pPais
+group by c.id_district;
+return vcCursor;
+end;
+
+function filesPerZonewd(pPais varchar,pProvincia varchar,pcanton varchar)  return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select count(1) quantity, sum(count(1)) over() total, round(100*(count(*) / sum(count(*)) over ()),2) porcentaje, b.name community, c.name district, d.name canton, e.name province
+from FI.criminal_record a
+inner join FI.community b
+on a.id_community = b.id_community
+inner join FI.district c
+on b.id_district = c.id_district
+inner join fi.canton d
+on c.id_Canton = d.id_canton
+inner join fi.province e
+on d.id_province = e.id_province
+inner join fi.Country f
+on e.id_country = f.id_country
+where  d.name= pcanton and e.name =pprovincia and f.name = pPais
+group by c.id_canton;
+return vcCursor;
+end;
+
+function filesPerZonewc(pPais varchar,pProvincia varchar)  return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select count(1) quantity, sum(count(1)) over() total, round(100*(count(*) / sum(count(*)) over ()),2) porcentaje, b.name community, c.name district, d.name canton, e.name province
+from FI.criminal_record a
+inner join FI.community b
+on a.id_community = b.id_community
+inner join FI.district c
+on b.id_district = c.id_district
+inner join fi.canton d
+on c.id_Canton = d.id_canton
+inner join fi.province e
+on d.id_province = e.id_province
+inner join fi.Country f
+on e.id_country = f.id_country
+where e.name =pprovincia and f.name = pPais
+group by e.id_province;
+return vcCursor;
+end;
+
+function filesPerZonewp(pPais varchar)  return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select count(1) quantity, sum(count(1)) over() total, round(100*(count(*) / sum(count(*)) over ()),2) porcentaje, b.name community, c.name district, d.name canton, e.name province
+from FI.criminal_record a
+inner join FI.community b
+on a.id_community = b.id_community
+inner join FI.district c
+on b.id_district = c.id_district
+inner join fi.canton d
+on c.id_Canton = d.id_canton
+inner join fi.province e
+on d.id_province = e.id_province
+inner join fi.Country f
+on e.id_country = f.id_country
+where f.name = pPais
+group by f.id_country;
+return vcCursor;
+end;
+
+function AgeRange0_18(type_person int)  return int
+as
+vcCursor  number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25)<=18 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+
+function AgeRange19_30(type_person int)  return int
+as
+vcCursor  number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >18 and trunc((sysdate-person.birth_day)/365.25)<=30 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+
+function AgeRange31_45(type_person int)  return int
+as
+vcCursor  number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >30 and trunc((sysdate-person.birth_day)/365.25)<=45 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+
+
+function AgeRange46_55(type_person int)  return int
+as
+vcCursor  number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >45 and trunc((sysdate-person.birth_day)/365.25)<=55 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+
+function AgeRange56_65(type_person int)  return int
+as
+vcCursor  number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >55 and trunc((sysdate-person.birth_day)/365.25)<=65 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+
+function AgeRange66_75(type_person int)  return int
+as
+vcCursor  number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >65 and trunc((sysdate-person.birth_day)/365.25)<=75 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+function AgeRange75_85(type_person int)  return int
+as
+vcCursor number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >75 and trunc((sysdate-person.birth_day)/365.25)<=85 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+
+function AgeRange85(type_person int)  return int
+as
+vcCursor number(8);
+begin
+select count(1) quantity
+into vcCursor
+from person 
+where trunc((sysdate-person.birth_day)/365.25) >85 and person.id_type_person=type_person;
+return vcCursor;
+end;
+
+function averageSentenceTimePerCP( Crime_type varchar2)return sys_refcursor
+as
+vcCursor sys_refcursor;
+
+begin 
+open vcCursor for
+select count(1) , a.sentence_years
+from fi.person_register_file a
+inner join fi.criminal_Record b
+on a.id_criminal_record = b.id_criminal_record
+inner join fi.crime_type c
+on b.id_crime_type = c.id_crime_type
+where c.description = crime_type
+group by a.sentence_years;
+return vcCursor;
+end;
+
+function totalYearsPerCrimeType return sys_refcursor
+as
+vcCursor sys_refcursor;
+begin
+open vcCursor for
+select sum(a.sentence_years) 
+from fi.person_register_file a
+inner join fi.criminal_Record b
+on a.id_criminal_record = b.id_criminal_record
+inner join fi.crime_type c
+on b.id_crime_type = c.id_crime_type
+where a.House_for_jail = 'TRU'
+group by b.id_crime_type;
+return vcCursor;
+end;
 
 END control_queries;
